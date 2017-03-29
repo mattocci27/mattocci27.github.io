@@ -16,7 +16,7 @@ markdown: kramdown
 title:       "Masatoshi Katabuchi - Community and funcitonal ecology"
 keywords:    "functional trait, functional diversity, community ecology"
 description: "A personal website of Masatoshi Katabuchi (片渕正紀)"
-source_link: "https://github.com/mattocci27/mattocci27.github.io"
+source_link: "https://mattocci27.github.io"
 favicon:     "img/favicon.ico"
 touch_icon:  "img/apple-touch-icon.png"
 google_analytics_key: UA-47408626-1 ## put YOUR key here to enable tracking! (blank to disable)
