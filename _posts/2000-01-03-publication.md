@@ -12,7 +12,7 @@ fa-icon: book
 - **Katabuchi M**, K. Kitajima, S. J. Wright, S. A. Van Bale, J. L. D. Osnas and J. W. Lichstein. Decomposing leaf mass into photosynthetic and structural companies explains divergent pattens of trait variation within and among plant species (in review) [[bioRxiv]](http://biorxiv.org/content/early/2017/03/22/116855)
 
 ## -2016-
-- Nakamura, A., C. J. Burwell, L. A. Ashton, M. J. Laidlaw, **M. Katabuchi**, and R. L. Kitching. 2015b. Identifying indicator species of elevation: Comparing the utility of woody plants, ants and moths for long‐term monitoring. *Austral Ecology* 41:179–188.
+- Nakamura, A., C. J. Burwell, L. A. Ashton, M. J. Laidlaw, **M. Katabuchi**, and R. L. Kitching. 2016. Identifying indicator species of elevation: Comparing the utility of woody plants, ants and moths for long‐term monitoring. *Austral Ecology* 41:179–188.
 
 - Ashton, L. A., A. Nakamura, Y. Basset, C. J. Burwell, M. Cao, R. Eastwood, E. Odell, E. G. de Oliveira, K. Hurley, **M. Katabuchi**, S. Maunsell, J. McBroom, J. Schmidl, Z. Sun, Y. Tang, T. Whitaker, M. J. Laidlaw, W. J. F. McDonald, and R. L. Kitching. 2016. Vertical stratification of moths across elevation and latitude. *Journal of Biogeography* 43:59–69.
 
@@ -23,7 +23,7 @@ fa-icon: book
 
 - Siefert, A., C. Violle, L. Chalmandrier, C. H. Albert, A. Taudiere, A. Fajardo, L. W. Aarssen, C. Baraloto, M. B. Carlucci, M. V. Cianciaruso, V. de L Dantas, F. de Bello, L. D. S. Duarte, C. R. Fonseca, G. T. Freschet, S. Gaucherand, N. Gross, K. Hikosaka, B. Jackson, V. Jung, C. Kamiyama, **M. Katabuchi**, S. W. Kembel, E. Kichenin, N. J. B. Kraft, A. Lagerström, Y. L. Bagousse-Pinguet, Y. Li, N. Mason, J. Messier, T. Nakashizuka, J. M. Overton, D. A. Peltzer, I. M. Pérez-Ramos, V. D. Pillar, H. C. Prentice, S. Richardson, T. Sasaki, B. S. Schamp, C. Schöb, B. Shipley, M. Sundqvist, M. T. Sykes, M. Vandewalle, and D. A. Wardle. 2015. A global meta-analysis of the relative extent of intraspecific trait variation in plant communities. *Ecology Letters* 18:1406–1419.
 
-- Nakamura, A., C. J. Burwell, C. L. Lambkin, **M. Katabuchi**, A. McDougall, R. J. Raven, and V. J. Neldner. 2015a. The role of human disturbance in island biogeography of arthropods and plants: an information theoretic approach. *Journal of Biogeography* 42:1406–1417.
+- Nakamura, A., C. J. Burwell, C. L. Lambkin, **M. Katabuchi**, A. McDougall, R. J. Raven, and V. J. Neldner. 2015. The role of human disturbance in island biogeography of arthropods and plants: an information theoretic approach. *Journal of Biogeography* 42:1406–1417.
 
 ## -2014-
 - Kamiyama, C., **M. Katabuchi**, T. Sasaki, M. Shimazaki, T. Nakashizuka, and K. Hikosaka. 2014. Leaf-trait responses to environmental gradients in moorland communities: contribution of intraspecific variation, species replacement and functional group replacement. *Ecological Research* 29:607–617.
@@ -41,9 +41,9 @@ fa-icon: book
 
 
 ## -2012-
-- Sasaki, T., **M. Katabuchi**, C. Kamiyama, M. Shimazaki, T. Nakashizuka, and K. Hikosaka. 2012b. Nestedness and niche-based species loss in moorland plant communities. *Oikos* 121:1783–1790.
+- Sasaki, T., **M. Katabuchi**, C. Kamiyama, M. Shimazaki, T. Nakashizuka, and K. Hikosaka. 2012. Nestedness and niche-based species loss in moorland plant communities. *Oikos* 121:1783–1790.
 
-- Sasaki, T., **M. Katabuchi**, C. Kamiyama, M. Shimazaki, T. Nakashizuka, and K. Hikosaka. 2012a. Diversity partitioning of moorland plant communities across hierarchical spatial scales. *Biodiversity and Conservation* 21:1577–1588.
+- Sasaki, T., **M. Katabuchi**, C. Kamiyama, M. Shimazaki, T. Nakashizuka, and K. Hikosaka. 2012. Diversity partitioning of moorland plant communities across hierarchical spatial scales. *Biodiversity and Conservation* 21:1577–1588.
 
 - **Katabuchi, M.**, H. Kurokawa, S. J. Davies, S. Tan, and T. Nakashizuka. 2012. Soil resource availability shapes community trait structure in a species-rich dipterocarp forest. *Journal of Ecology* 100:643–651.
 
