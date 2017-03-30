@@ -48,6 +48,6 @@ fa-icon: book
 - **Katabuchi, M.**, H. Kurokawa, S. J. Davies, S. Tan, and T. Nakashizuka. 2012. Soil resource availability shapes community trait structure in a species-rich dipterocarp forest. *Journal of Ecology* 100:643–651.
 
 ## -2008-
-- **Katabuchi, M.**, Y. Isagi, and T. Nakashizuka. 2008b. Development of 17 microsatellite markers for Ceratosolen constrictus, the pollinating fig wasp of Ficus fistulosa. *Molecular Ecology Resources* 8:840–842.
+- **Katabuchi, M.**, Y. Isagi, and T. Nakashizuka. 2008. Development of 17 microsatellite markers for *Ceratosolen constrictus*, the pollinating fig wasp of *Ficus fistulosa*. *Molecular Ecology Resources* 8:840–842.
 
-- **Katabuchi, M.**, R. D. Harrison, and T. Nakashizuka. 2008a. Documenting the effect of foundress number in a dioecious fig, Ficus fistulosa, in Malaysia. *Biotropica* 40:457–461.
+- **Katabuchi, M.**, R. D. Harrison, and T. Nakashizuka. 2008. Documenting the effect of foundress number in a dioecious fig, *Ficus fistulosa*, in Malaysia. *Biotropica* 40:457–461.
