@@ -10,6 +10,7 @@ fa-icon: book
 - **Katabuchi M**, S. J. Wright, N. G. Swenson, K. J. Feeley, R. Condit, S. P. Hubbell, and S. J. Davies. Contrasting outcomes of species- and community-level analyses of the temporal consistency of functional composition. (in revision)
 
 - **Katabuchi M**, K. Kitajima, S. J. Wright, S. A. Van Bale, J. L. D. Osnas and J. W. Lichstein. Decomposing leaf mass into photosynthetic and structural companies explains divergent pattens of trait variation within and among plant species (in review) [[bioRxiv]](https://doi.org/10.1101/116855)
+
 ## -2016-
 - Nakamura, A., C. J. Burwell, L. A. Ashton, M. J. Laidlaw, **M. Katabuchi**, and R. L. Kitching. 2016. Identifying indicator species of elevation: Comparing the utility of woody plants, ants and moths for long‐term monitoring. *Austral Ecology* 41:179–188.
 
