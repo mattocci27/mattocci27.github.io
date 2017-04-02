@@ -4,7 +4,13 @@ bg: white
 color: dark
 fa-icon: book
 ---
-<a href="https://scholar.google.com/citations?user=ZF7iS6UAAAAJ&hl=en"><i class="fa fa-google fa-5x"></i></a>
+
+<!-- <p>
+<a href="https://scholar.google.com/citations?user=ZF7iS6UAAAAJ&hl=en">
+  <i  class="ai ai-google-scholar fa-1x"></i>
+   Google Scholar
+</a>
+</p> -->
 
 ## -In review/revision/preprint-
 - **Katabuchi M**, S. J. Wright, N. G. Swenson, K. J. Feeley, R. Condit, S. P. Hubbell, and S. J. Davies. Contrasting outcomes of species- and community-level analyses of the temporal consistency of functional composition. (in revision)
