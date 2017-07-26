@@ -13,11 +13,11 @@ fa-icon: book
 </p> -->
 
 ## -In review/revision/preprint-
-- **Katabuchi M**, S. J. Wright, N. G. Swenson, K. J. Feeley, R. Condit, S. P. Hubbell, and S. J. Davies. Contrasting outcomes of species- and community-level analyses of the temporal consistency of functional composition. (in revision)
-
 - **Katabuchi M**, K. Kitajima, S. J. Wright, S. A. Van Bale, J. L. D. Osnas and J. W. Lichstein. Decomposing leaf mass into photosynthetic and structural components explains divergent pattens of trait variation within and among plant species (in review) [[bioRxiv]](https://doi.org/10.1101/116855)
 
 ## -2017-
+- **Katabuchi, M.**, S. J. Wright, N. G. Swenson, K. J. Feeley, R. Condit, S. P. Hubbell, and S. J. Davies. Contrasting outcomes of species- and community-level analyses of the temporal consistency of functional composition. *Ecology* [doi:10.1002/ecy.1952](http://onlinelibrary.wiley.com/doi/10.1002/ecy.1952/full)
+
 - Li, Y., Shipley, B., Price, J. N., de L. Dantas, V., Tamme, R., Westoby, M., Siefert, A., Schamp, B. S., Spasojevic, M. J., Jung, V., Laughlin, D. C., Richardson, S. J., Le Bagousse-Pinguet, Y., Schöb, C., Gazol, A., Prentice, H. C., Gross, N., Overton, J., Cianciaruso, M. V., Louault, F., Kamiyama, C., Nakashizuka, T., Hikosaka, K., Sasaki, T., **Katabuchi, M.**, Frenette Dussault, C., Gaucherand, S., Chen, N., Vandewalle, M. and Batalha, M. A. 2017. Habitat filtering determines the functional niche occupancy of plant communities worldwide. *Journal of Ecology* [doi:10.1111/1365-2745.12802](http://onlinelibrary.wiley.com/doi/10.1111/1365-2745.12802/full)
 
 ## -2016-
