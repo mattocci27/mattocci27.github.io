@@ -383,3 +383,55 @@ nav ul li:hover, nav ul li.active {
   -webkit-transform: scale(1.1) rotate(4deg);
   transform: scale(1.1) rotate(4deg);
 }
+
+/*icon behavior*/
+/*refered from just4jin website*/
+/*https://github.com/just4jin/just4jin.github.io*/
+
+.more-icons2 i{
+  /*float: left;*/
+  margin: 0px
+  font-size: 20%;
+}
+
+.more-icons2 i:hover{
+ color: #808080;
+}
+
+
+.label {
+        border: 1px solid #ccc;
+        margin-right: 1em;
+        padding: 1px 4px;
+        border-radius: 3px;
+        font-size: 80%;
+        background-color: #fbfbfb;
+        text-align: center;
+        &:hover{
+            background-color: #f3f3f3;
+        }
+        text-transform: uppercase;
+        a {
+            color: $c1;
+            text-decoration: none;
+            border: 0px solid;
+            &:hover {
+                color: $c3;
+            }
+            i {
+                display: inline !important;
+            }
+        }
+        i {
+            text-align: center;
+            display: inline !important;
+            color: #627066;
+            &.fa-star {
+                color: #f2af29 !important;
+            }
+        }
+    }
+
+/*.label i:hover{
+/*  color: #0000FF;
+/*}
