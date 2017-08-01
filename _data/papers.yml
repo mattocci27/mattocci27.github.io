@@ -1,0 +1,30 @@
+- title: "Bringing Elton and Grinnell together: a quantitative framework to represent the biogeography of ecological interaction networks"
+  key: niches
+  authors:
+    - name: D. Gravel
+    - name: B. Baiser
+    - name: J.A. Dunne
+    - name: J.P. Kopelke
+    - name: N.D. Martinez
+    - name: T. Nyman
+    - name: T. Poisot
+      type: pi
+    - name: D.B. Stouffer
+    - name: J.M. Tylianakis
+    - name: S.A. Wood
+    - name: T. Roslin
+  date: 2016
+  labels:
+    - type: preprint
+      doi: 10.1101/055558
+- title: "Evolutionary Ecology of Specialisation"
+  key: elsspe
+  authors:
+     - name: J.C. Vamosi
+     - name: T. Poisot
+       type: pi
+  date: 2016
+  labels:
+     - type: published
+       doi: 10.1002/9780470015902.a0026281
+       in: eLS

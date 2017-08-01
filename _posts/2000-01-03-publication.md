@@ -11,13 +11,23 @@ fa-icon: book
    Google Scholar
 </a>
 </p> -->
-
 ## -In review/revision/preprint-
-- **Katabuchi M**, K. Kitajima, S. J. Wright, S. A. Van Bale, J. L. D. Osnas and J. W. Lichstein. Decomposing leaf mass into photosynthetic and structural components explains divergent pattens of trait variation within and among plant species (in review) [[bioRxiv]](https://doi.org/10.1101/116855)
+- **Katabuchi M**, K. Kitajima, S. J. Wright, S. A. Van Bale, J. L. D. Osnas and J. W. Lichstein. Decomposing leaf mass into photosynthetic and structural components explains divergent pattens of trait variation within and among plant species (in review)
+<span class="label">
+   <a href="http://www.biorxiv.org/content/early/2017/03/30/116855">
+    <i class="ai ai-biorxiv"></i> bioRxiv
+   </a>
+ </span>
+ <span class="label"> 
+   <a href="https://github.com/mattocci27/LMApLMAs">
+    <i class="fa fa-github"></i> Github
+   </a>
+ </span>
 
 ## -2017-
 
-- **Katabuchi, M.**, S. J. Wright, N. G. Swenson, K. J. Feeley, R. Condit, S. P. Hubbell, and S. J. Davies. Contrasting outcomes of species- and community-level analyses of the temporal consistency of functional composition. *Ecology* [doi:10.1002/ecy.1952](http://onlinelibrary.wiley.com/doi/10.1002/ecy.1952/full) <span class="label"> 
+- **Katabuchi, M.**, S. J. Wright, N. G. Swenson, K. J. Feeley, R. Condit, S. P. Hubbell, and S. J. Davies. Contrasting outcomes of species- and community-level analyses of the temporal consistency of functional composition. *Ecology* [doi:10.1002/ecy.1952](http://onlinelibrary.wiley.com/doi/10.1002/ecy.1952/full) 
+<span class="label"> 
    <a href="https://github.com/mattocci27/TurnoverBCImain">
     <i class="fa fa-github"></i> Github
    </a>
