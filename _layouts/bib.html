@@ -3,35 +3,35 @@
 
 <div class="ref">
 <!-- Title -->
-<span class="title">{{entry.title}}</span> <br>
+<div class="title">{{entry.title}}</div> 
   <!-- List of authors -->
-  <span class="author">
+  <div class="author">
    {% assign author_num = entry.author_array.size %}
    {% if author_num != 1 %}
     {% for author in entry.author_array %}
       {% unless forloop.last %}
         {% if author.last == site.scholar.last_name %}
          <span class="my_name">
-           {{author.last}}, {{author.first | ini}}
+           {{author.last}} {{author.first | ini2}}
          </span>
         {% else %}
           {% if site.data.coauthors[author.last] %}
             <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first | ini}}</a>,
           {% else %}
-          {{author.last}}, {{author.first | ini}}
+          {{author.last}} {{author.first | ini2}}
           {% endif %}
         {% endif %}
       {% else %}
         and
         {% if author.last == site.scholar.last_name %}
          <span class="my_name">
-          {{author.last}}, {{author.first | ini}}
+          {{author.last}} {{author.first | ini2}}
          </span>
         {% else %}
           {% if site.data.coauthors[author.last] %}
             <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first | ini}}</a>
           {% else %}
-            {{author.last}}, {{author.first | ini}}
+            {{author.last}} {{author.first | ini_last2}}
           {% endif %}
         {% endif %}
       {% endunless %}
@@ -39,16 +39,15 @@
   {% else %}
     {% for author in entry.author_array %}
          <span class="my_name">
-          {{author.last}}, {{author.first | ini_last}}
+          {{author.last}} {{author.first | ini_last2}}
          </span>
     {% endfor %}
   {% endif %}
 
-  </span>
-  <br>
+  </div>
 
   <!-- Date/Journal -->
-  <span class="periodical">
+  <div class="periodical">
   {% if entry.type == "article" or entry.type == "unpublished" %}
     <em>{{entry.journal}}</em>
   {% elsif entry.type == "inproceedings" or entry.type == "incollection" %}
@@ -57,8 +56,7 @@
   {% if entry.year %}
     {{entry.year}}
   {% endif %}
-  </span>
-  <br>
+  </div>
 
   <!-- Links -->
   {% if entry.doi %}

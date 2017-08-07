@@ -1,6 +1,6 @@
 ---
 title: "PUBLICATION"
-bg: white0
+bg: white
 color: dark
 fa-icon: book
 years: [2017, 2016, 2015, 2014, 2013, 2012, 2008]

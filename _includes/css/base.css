@@ -21,7 +21,12 @@
 	#Forms
 	#Misc */
 
-
+/* #font family
+================================================== */
+:root {
+  --font-sans: 'Raleway', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: 'Inconsolata', monospace;
+}
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -34,7 +39,7 @@
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block; }
 	body {
-		line-height: 1; }
+		line-height: 1.5; }
 	ol, ul {
 		list-style: none; }
 	blockquote, q {
@@ -48,11 +53,15 @@
 		border-spacing: 0; }
 
 
+	
+
 /* #Basic Styles
 ================================================== */
 	body {
 		background: #fff;
-		font: 14px/21px "Raleway", "HelveticaNeue-Light", Arial, sans-serif;
+		/*font: 8px/4em var(--font-sans);*/
+    font-family: var(--font-sans);
+		font-size: 14px/21px;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
@@ -92,10 +101,10 @@
 
 /* #Links
 ================================================== */
-	a, a:visited { text-decoration: underline;
+	a, a:visited { text-decoration: none;
                  outline: 0;
                  }
-	a:hover, a:focus {  }
+	a:hover, a:focus { text-decoration: underline; }
 	p a, p a:visited { line-height: inherit; }
 
 
@@ -152,7 +161,7 @@
 	  margin-bottom: 20px;
 	  line-height: normal;
 	  padding: 8px 10px;
-	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	  font-family: var(--font-sans); }
 
 	.button:hover,
 	button:hover,
@@ -221,7 +230,7 @@
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
-		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 13px $primaryFont;
 		color: #777;
 		margin: 0;
 		width: 210px;
@@ -276,7 +285,15 @@
   width:90%;
 }
 
-.highlight pre, .highlight code { display:block; margin:0; padding:0; background: #373b41; overflow:auto; word-wrap: normal; }
+.highlight pre, .highlight code { 
+  display:block; 
+  margin:0;
+  padding:0;
+  font-family: var(--font-mono);
+  font-size: 13pt;
+  background: #373b41;
+  overflow:auto;
+  word-wrap: normal; }
 
 /* # remove border 
 .highlight, .linenodiv {
@@ -424,10 +441,12 @@ span.lineno {
 .title {
   font-weight: bold;
   font-size: 100%;
+  margin-bottom: 4px;
 }
 
 .author {
-  font-size: 90%;
+  font-size: 100%;
+  margin-bottom: 4px;
 }
 
 .my_name {
@@ -436,7 +455,8 @@ span.lineno {
 }
 
 .periodical {
-  font-size: 90%;
+  font-size: 100%;
+  margin-bottom: 4px;
 }
 
 .label {
@@ -445,7 +465,7 @@ span.lineno {
     padding: 1px 4px;
     border-radius: 10px;
     font-size: 90%;
-    color: #37474F;
+    color: blue;
     background-color:url(img/bgnoise.png);
     text-align: center;
     text-transform: uppercase;

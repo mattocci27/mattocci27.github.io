@@ -22,7 +22,7 @@ html { box-sizing: border-box; }
   nav .p-{{id}} { border-color: {{ bg }}; }
   #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
   /*#{{id}} a { color: {{ fg }}; } */
-  #{{id}} a { color: #999; } 
+  #{{id}} a { color: #409e6e; } 
   #{{id}} .more-icons i{ color: {{ fg }}; } */
   #{{id}} .sectiondivider { color: {{ bg }}; }
 {% endfor %}
@@ -30,7 +30,7 @@ html { box-sizing: border-box; }
 
 /* ----- code, syntax highlighting, etc ----- */
 
-code, pre { font-family: Monaco, Menlo, Consolas, "Courier New", monospace; }
+code, pre { font-family: Menlo, Consolas, "Courier New", monospace; }
 
 /* spesifically inline code */
 code, pre {
