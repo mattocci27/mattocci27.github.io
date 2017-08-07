@@ -23,12 +23,13 @@ google_analytics_key: UA-47408626-1 ## put YOUR key here to enable tracking! (bl
 highlighter: rouge
 
 
-
 ### template colors, used site-wide via css ###
 colors:
   black:     '#111111'
   dark:      '#313437'
+  lightgray: '#E0E0E0'
   white:     '#f8f8f8'
+  white0:    '#ffffff'
   blue:      '#49a7e9'
   green:     '#9bcf2f'
   purple:    '#c869bf'
@@ -37,3 +38,36 @@ colors:
 
 kramdown:
   auto_ids:  false
+
+plugins: ['jekyll/scholar']
+
+# Pagination
+#paginate: 15
+#permalink: /blog/:year/:title/
+#paginate_path: /blog/post:num/
+
+# Bibliography settings
+scholar:
+  last_name: Katabuchi
+
+  #style: cell 
+  locale: en
+  #bibliography_list_tag: ol
+  #bibliography_item_tag: li
+
+  sort_by: year,month
+  order: descending,descending
+
+  source: ./_bibliography
+  bibliography: works.bib
+  bibliography_template: bib
+
+  replace_strings: true
+  join_strings:    true
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"
+#
