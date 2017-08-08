@@ -440,34 +440,34 @@ span.lineno {
     margin-top: 0
 }
 
-.feature .column {
+.feature .column2 {
     display: table-cell;
     float: none
 }
 .columns {
     overflow: hidden;
-    width: 100%
+    width: 100%;
 }
 
-.columns .column {
+.columns .column2 {
     float: left;
     padding-left: 20px;
     padding-right: 20px;
     vertical-align: top
 }
 
-.columns .column:first-child {
+.columns .column2:first-child {
     padding-left: 0;
     padding-right: 20px
 }
 
-.columns .column:last-child {
+.columns .column2:last-child {
     padding-left: 20px;
     padding-right: 0
 }
 
 .columns .left, .columns .right {
-    width: 45%
+    width: 50%
 }
 
 .columns .sidebar {
@@ -478,11 +478,11 @@ span.lineno {
     width: 66.6%
 }
 
-.columns.middle-align .column {
+.columns.middle-align .column2 {
     vertical-align: middle
 }
 
-.columns.middle-align .column h2 {
+.columns.middle-align .column2 h2 {
     font-weight: 300;
     font-size: 36px
 }
