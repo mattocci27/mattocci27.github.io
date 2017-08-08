@@ -386,6 +386,107 @@ span.lineno {
 .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
 
+/* #img
+================================================== */
+
+.leaf-img {
+  display: inline-block;
+  background-image: url(../../img/test.001.png);
+  line-height:0;
+  width:350px;
+  height:350px;
+  vertical-align: top;
+  background-position: center top;
+  background-size:350px 350px;
+  border-radius: 5px;
+  box-shadow: 0 14px 12px -10px rgba(0, 8, 26, 0.32);
+  margin-top: 0px
+
+}
+
+.mglmn-img {
+  display: inline-block;
+  background-image: url(../../img/mglmn_site.png);
+  line-height:0;
+  width:410px;
+  height:190px;
+  vertical-align: top;
+  background-position: center top;
+  background-size:410px 190px;
+  border-radius: 5px;
+  box-shadow: 0 14px 12px -10px rgba(0, 8, 26, 0.32);
+  margin-top: 0px
+}
+
+.feature {
+    display: table;
+}
+
+.feature .left, .feature .right {
+    vertical-align: middle;
+    height: 400px
+}
+
+.feature img {
+    display: block;
+    height: 370px;
+    width: 370px;
+    line-height: 0
+}
+
+.feature h3 {
+    font-weight: 300;
+    font-size: 30px;
+    margin-top: 0
+}
+
+.feature .column {
+    display: table-cell;
+    float: none
+}
+.columns {
+    overflow: hidden;
+    width: 100%
+}
+
+.columns .column {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align: top
+}
+
+.columns .column:first-child {
+    padding-left: 0;
+    padding-right: 20px
+}
+
+.columns .column:last-child {
+    padding-left: 20px;
+    padding-right: 0
+}
+
+.columns .left, .columns .right {
+    width: 45%
+}
+
+.columns .sidebar {
+    width: 33.3%
+}
+
+.columns .main-column {
+    width: 66.6%
+}
+
+.columns.middle-align .column {
+    vertical-align: middle
+}
+
+.columns.middle-align .column h2 {
+    font-weight: 300;
+    font-size: 36px
+}
+
 /* #icons
 ================================================== */
 /*icon behavior*/
