@@ -11,6 +11,7 @@ html { box-sizing: border-box; }
 .border-{{c[0]}} { border-color: {{ c[1] }} !important; }
 .text-{{c[0]}}   { color: {{ c[1] }}; } 
 .text-{{c[0]}} a { color: {{ c[1] }}; } 
+.text-{{c[0]}} a:hover { color: #409e6e; } 
 .bg-{{c[0]}}     { background-color: {{ c[1] }} !important; }
 {% endfor %}
 
@@ -136,7 +137,7 @@ nav ul {
 
 nav ul li {
   display:inline-block;
-  border-top:{{navborder}}px solid;
+  /*---border-top:{{navborder}}px solid;---*/
   padding: {{navborder}}px;
   *display:inline;
   zoom:1;
@@ -157,7 +158,9 @@ nav ul li a, nav ul li a:visited {
 }
 
 nav ul li a:hover {
-  opacity:1
+  opacity:1;
+  text-decoration:none;
+  color: #409e6e
 }
 nav ul li:hover, nav ul li.active {
   border-top-width: {{navborder_active}}px;
