@@ -17,18 +17,20 @@ title:       "Masatoshi Katabuchi - Community and funcitonal ecology"
 keywords:    "functional trait, functional diversity, community ecology, katabuchi, Masatoshi, 片渕, 正紀"
 description: "A personal website of Masatoshi Katabuchi (片渕正紀)"
 source_link: "https://mattocci27.github.io"
-favicon:     "img/favicon.ico"
+favicon:     "img/favicon-msu.ico"
 touch_icon:  "img/apple-touch-icon.png"
 google_analytics_key: UA-47408626-1 ## put YOUR key here to enable tracking! (blank to disable)
 highlighter: rouge
-
 
 
 ### template colors, used site-wide via css ###
 colors:
   black:     '#111111'
   dark:      '#313437'
-  white:     '#f8f8f8'
+  lightgray: '#E0E0E0'
+  #white:     '#f8f8f8'
+  white:     '#ffffff'
+  white0:    '#faf6ec'
   blue:      '#49a7e9'
   green:     '#9bcf2f'
   purple:    '#c869bf'
@@ -37,3 +39,36 @@ colors:
 
 kramdown:
   auto_ids:  false
+
+plugins: ['jekyll/scholar']
+
+# Pagination
+#paginate: 15
+#permalink: /blog/:year/:title/
+#paginate_path: /blog/post:num/
+
+# Bibliography settings
+scholar:
+  last_name: Katabuchi
+
+  #style: cell 
+  locale: en
+  #bibliography_list_tag: ol
+  #bibliography_item_tag: li
+
+  sort_by: year,month
+  order: descending,descending
+
+  source: ./_bibliography
+  bibliography: works.bib
+  bibliography_template: bib
+
+  replace_strings: true
+  join_strings:    true
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"
+#

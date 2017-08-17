@@ -21,7 +21,12 @@
 	#Forms
 	#Misc */
 
-
+/* #font family
+================================================== */
+:root {
+  --font-sans: 'Raleway', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: 'Inconsolata', monospace;
+}
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -34,7 +39,7 @@
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block; }
 	body {
-		line-height: 1; }
+		line-height: 1.5; }
 	ol, ul {
 		list-style: none; }
 	blockquote, q {
@@ -48,11 +53,15 @@
 		border-spacing: 0; }
 
 
+	
+
 /* #Basic Styles
 ================================================== */
 	body {
 		background: #fff;
-		font: 14px/21px "Raleway", "HelveticaNeue-Light", Arial, sans-serif;
+		/*font: 8px/4em var(--font-sans);*/
+    font-family: var(--font-sans);
+		font-size: 14px/21px;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
@@ -92,8 +101,10 @@
 
 /* #Links
 ================================================== */
-	a, a:visited { text-decoration: underline; outline: 0; }
-	a:hover, a:focus { }
+	a, a:visited { text-decoration: none;
+                 outline: 0;
+                 }
+	a:hover, a:focus { text-decoration: underline; }
 	p a, p a:visited { line-height: inherit; }
 
 
@@ -101,7 +112,7 @@
 ================================================== */
 	ul, ol { margin-bottom: 20px; }
 	ul { list-style: none outside; }
-	ol { list-style: decimal; }
+	ol { list-style: none; } /* for ref */ 
 	ul, ul.square { list-style: square outside; }
 	ul ul, ul.circle { list-style: circle outside; }
 	ul ul ul, ul.disc { list-style: disc outside; }
@@ -150,7 +161,7 @@
 	  margin-bottom: 20px;
 	  line-height: normal;
 	  padding: 8px 10px;
-	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	  font-family: var(--font-sans); }
 
 	.button:hover,
 	button:hover,
@@ -219,7 +230,7 @@
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
-		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 13px $primaryFont;
 		color: #777;
 		margin: 0;
 		width: 210px;
@@ -274,14 +285,24 @@
   width:90%;
 }
 
-.highlight pre, .highlight code { display:block; margin:0; padding:0; background: none; overflow:auto; word-wrap: normal; }
+.highlight pre, .highlight code { 
+  display:block; 
+  margin:0;
+  padding:0;
+  font-family: var(--font-mono);
+  font-size: 13pt;
+  background: #373b41;
+  overflow:auto;
+  word-wrap: normal; }
 
+/* # remove border 
 .highlight, .linenodiv {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWPQ1dU1BgABzQC7XXMTYQAAAABJRU5ErkJggg==);
   display:block;
   padding: 10px;
   margin-bottom:20px;
-}
+}*/
+
 .gutter, .lineno { color: #ccc; }
 
 td.gl { width: 40px; }
@@ -294,7 +315,7 @@ td.gl { width: 40px; }
 span.lineno {
   display: block;
   float: left;
-  width: 40px;
+  width: 4px;
   padding-right: 8px;
   text-align: right;
 }
@@ -364,3 +385,196 @@ span.lineno {
 .gu { color: #75715e; } /* Generic.Subheading & Diff Unified/Comment? */
 .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+
+/* #img
+================================================== */
+
+.leaf-img {
+  display: inline-block;
+  background-image: url(../../img/test.001.png);
+  line-height:0;
+  width:350px;
+  height:350px;
+  vertical-align: top;
+  background-position: center top;
+  background-size:350px 350px;
+  border-radius: 5px;
+  box-shadow: 0 14px 12px -10px rgba(0, 8, 26, 0.32);
+  margin-top: 0px
+
+}
+
+.mglmn-img {
+  display: inline-block;
+  background-image: url(../../img/mglmn_site.png);
+  line-height:0;
+  width:410px;
+  height:190px;
+  vertical-align: top;
+  background-position: center top;
+  background-size:410px 190px;
+  border-radius: 5px;
+  box-shadow: 0 14px 12px -10px rgba(0, 8, 26, 0.32);
+  margin-top: 0px
+}
+
+.feature {
+    display: table;
+}
+
+.feature .left, .feature .right {
+    vertical-align: middle;
+    height: 400px
+}
+
+.feature img {
+    display: block;
+    height: 370px;
+    width: 370px;
+    line-height: 0
+}
+
+.feature h3 {
+    font-weight: 300;
+    font-size: 30px;
+    margin-top: 0
+}
+
+.feature .column2 {
+    display: table-cell;
+    float: none
+}
+.columns {
+    overflow: hidden;
+    width: 100%;
+}
+
+.columns .column2 {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align: top
+}
+
+.columns .column2:first-child {
+    padding-left: 0;
+    padding-right: 20px
+}
+
+.columns .column2:last-child {
+    padding-left: 20px;
+    padding-right: 0
+}
+
+.columns .left, .columns .right {
+    width: 50%
+}
+
+.columns .sidebar {
+    width: 33.3%
+}
+
+.columns .main-column {
+    width: 66.6%
+}
+
+.columns.middle-align .column2 {
+    vertical-align: middle
+}
+
+.columns.middle-align .column2 h2 {
+    font-weight: 300;
+    font-size: 36px
+}
+
+/* #icons
+================================================== */
+/*icon behavior*/
+/*refered from just4jin website*/
+/*https://github.com/just4jin/just4jin.github.io*/
+
+.more-icons i{
+  /*float: left;*/
+  margin: 20px
+}
+
+
+.more-icons i:hover{
+ color: #808080;
+}
+
+.more-icons i {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.more-icons i:hover, .more-icons i:focus, .more-icons i:active {
+  -webkit-transform: scale(1.1) rotate(4deg);
+  transform: scale(1.1) rotate(4deg);
+}
+
+}
+
+
+.more-icons2 i{
+  /*float: left;*/
+  margin: 0px
+  font-size: 20%;
+}
+
+.more-icons2 i:hover{
+ color: #808080;
+}
+
+
+/* ----- publication ----- */
+
+.ref {
+  line-height: 1.5;
+  margin: 2em 0px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 100%;
+  margin-bottom: 4px;
+}
+
+.author {
+  font-size: 100%;
+  margin-bottom: 4px;
+}
+
+.my_name {
+  font-weight: bold;
+  /* --text-decoration: underline; --- */
+}
+
+.periodical {
+  font-size: 100%;
+  margin-bottom: 4px;
+}
+
+.label {
+    border: 1px solid #ccc;
+    margin-right: 1em;
+    padding: 1px 4px;
+    border-radius: 10px;
+    font-size: 90%;
+    color: blue;
+    background-color:url(img/bgnoise.png);
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: baseline
+    }
+
+.lable i:hover{
+    background-color: #f3f3f3;
+    color: #808080;
+}
+

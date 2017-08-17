@@ -1,0 +1,83 @@
+---
+---
+
+<div class="ref">
+<!-- Title -->
+<div class="title">{{entry.title}}</div> 
+  <!-- List of authors -->
+  <div class="author">
+   {% assign author_num = entry.author_array.size %}
+   {% if author_num != 1 %}
+    {% for author in entry.author_array %}
+      {% unless forloop.last %}
+        {% if author.last == site.scholar.last_name %}
+         <span class="my_name">
+           {{author.last}} {{author.first | ini2}}
+         </span>
+        {% else %}
+          {% if site.data.coauthors[author.last] %}
+            <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first | ini}}</a>,
+          {% else %}
+          {{author.last}} {{author.first | ini2}}
+          {% endif %}
+        {% endif %}
+      {% else %}
+        and
+        {% if author.last == site.scholar.last_name %}
+         <span class="my_name">
+          {{author.last}} {{author.first | ini2}}
+         </span>
+        {% else %}
+          {% if site.data.coauthors[author.last] %}
+            <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.last}}, {{author.first | ini}}</a>
+          {% else %}
+            {{author.last}} {{author.first | ini_last2}}
+          {% endif %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  {% else %}
+    {% for author in entry.author_array %}
+         <span class="my_name">
+          {{author.last}} {{author.first | ini_last2}}
+         </span>
+    {% endfor %}
+  {% endif %}
+
+  </div>
+
+  <!-- Date/Journal -->
+  <div class="periodical">
+  {% if entry.type == "article" or entry.type == "unpublished" %}
+    <em>{{entry.journal}}</em>
+  {% elsif entry.type == "inproceedings" or entry.type == "incollection" %}
+    <em>In {{entry.booktitle}}</em>
+  {% endif %}
+  {% if entry.year %}
+    {{entry.year}}
+  {% endif %}
+  </div>
+
+  <!-- Links -->
+  {% if entry.doi %}
+  <span class="label"> 
+  <a href="http://doi.org/{{ entry.doi }}">
+    <i class="ai ai-doi"></i> {{ entry.doi }} </a>
+  </span>
+  {% endif %}
+
+  {% if entry.git %}
+  <span class="label"> 
+  <a href="https://github.com/mattocci27/{{ entry.git }}">
+    <i class="fa fa-github"></i> Github </a>
+  </span>
+  {% endif %}
+
+
+<!-- <span data-badge-popover="right" data-badge-type="1" data-doi="{{ entry.doi }}"
+data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed"></span> --->
+
+</div>
+
+
+
