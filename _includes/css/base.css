@@ -24,7 +24,7 @@
 /* #font family
 ================================================== */
 :root {
-  --font-sans: Raleway, sans-serif;
+  --font-sans: Raleway;
   --font-mono: "Inconsolata", monospace;
 }
 /* #Reset & Basics (Inspired by E. Meyers)
