@@ -24,7 +24,7 @@
 /* #font family
 ================================================== */
 :root {
-  --font-sans: Raleway;
+  --font-sans: "Raleway", "HelveticaNeue-Light", Arial, sans-serif;
   --font-mono: "Inconsolata", monospace;
 }
 /* #Reset & Basics (Inspired by E. Meyers)
@@ -59,9 +59,9 @@
 ================================================== */
 	body {
 		background: #fff;
-		/*font: 8px/4em var(--font-sans);*/
+		/*font: 14px/21px var(--font-sans);*/
     font-family: var(--font-sans);
-		font-size: 14px/21px;
+		font-size: 14px/21px; 
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
