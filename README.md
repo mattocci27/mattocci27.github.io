@@ -10,7 +10,7 @@ Modified from [t413.com/SinglePaged](https://github.com/t413/SinglePaged).
 
 ```shell
 % gem install bundler
-% bundle install 
+% bundle install
 ```
 
 ## Usage
