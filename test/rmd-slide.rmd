@@ -1,0 +1,403 @@
+---
+title: Introduction to R Markdown
+author: Masatoshi Katabuchi
+date: August 9, 2019
+output:
+  xaringan::moon_reader:
+   #css: ["default", "rladies", "rladies-fonts.css"]
+   #css: ["default", "robot", "robot-fonts"]
+   #css: ["default", "lucy", "lucy-fonts"]
+    css: ["default", "fc2.css", "fc2-fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    includes:
+      after_body: "collapseoutput.js"
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+#htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+class: center, middle
+
+![](images/tweet3.png)
+---
+
+class: center, middle
+
+![](images/tweet2.png)
+
+---
+
+class: center, middle
+
+![](images/tweet1.png)
+
+---
+
+class: center, middle
+
+![](images/tweet4.png)
+
+---
+
+class: center, middle
+
+#### What is R Markdown?
+
+---
+
+class: center, middle
+
+#### Why do people use R Markdown to write scientific papers?
+
+---
+
+# Today's Goals and objectives
+
+.large[
+- Learn what R Markdown is
+- Learn why we want to use R Markdown
+]
+
+---
+
+# What is Markdown?
+
+Markdown is an easy-to-use **text-based** language.
+
+---
+
+# What is Markdown?
+
+Markdown is an easy-to-use **text-based** language.
+
+
+![](images/md_preview.png)
+
+---
+
+# What is R Markdown?
+
+![](images/what_is_rmd.png)
+
+---
+
+# What is R Markdown?
+
+You can embed R code in Markdown.
+
+.pull-left-50[
+
+### syntax
+
+```
+### Histogram
+
+- normal
+- *italic*
+- **bold**
+
+```
+
+```{r, eval = F}
+library(tidyverse)
+rnorm(100) %>%
+  hist
+```
+
+]
+.pull-right-50[
+### becomes
+### Histogram
+
+- normal
+- *italic*
+- **bold**
+
+```{r, echo = F, fig.width = 4, fig.height = 3.5}
+library(tidyverse)
+rnorm(100) %>%
+  hist
+```
+]
+
+---
+
+
+# R Markdown can be converted into
+
+![](images/rmd_conv.png)
+
+---
+
+class: center, middle
+
+# R Markdown Workflow
+
+
+![](images/workflow.png)
+
+
+---
+
+class: center, middle
+
+#### Learn why we want to use R Markdown
+
+---
+
+class: center, middle
+
+#### Things I don't like about Word/PPT/Excel with R
+
+---
+
+
+# Non-reproducible workflows
+
+We can save our results but we can't record what we done.
+
+![](images/repro1.jpg)
+
+
+---
+
+class: center, middle
+
+# Updating figures and tables manually
+
+[Non-reproducible workflows: a horror movie](https://www.youtube.com/watch?v=s3JldKoA0zw&feature=youtu.be)
+
+![](images/a_reproducible_workflow.gif)
+
+---
+
+# Version control
+
+![](images/MS_version.jpg)
+
+---
+
+class: center, middle
+
+# Version control
+
+<img src="images/version-control-1.jpg" alt="drawing" width="500">
+
+---
+
+
+class: center, middle
+
+#### Benefits of using R Markdown
+
+---
+
+# Updating results automatically
+
+.pull-left-50[
+
+.small[All data]
+
+```{r, echo = T, fig.width = 6, fig.height = 3}
+
+ggplot(diamonds,
+       aes(x = carat,
+           y = price,
+           color = cut)) +
+    geom_point() +
+    scale_color_brewer(type='div', palette=4) +
+    xlab("Carats") +
+    ylab("Price") +
+    ggtitle("Diamonds")
+
+```
+
+]
+.pull-right-50[
+]
+
+
+---
+
+# Updating results automatically
+
+.pull-left-50[
+
+.small[All data]
+
+```{r, echo = T, fig.width = 6, fig.height = 3}
+
+ggplot(diamonds,
+       aes(x = carat,
+           y = price,
+           color = cut)) +
+    geom_point() +
+    scale_color_brewer(type='div', palette=4) +
+    xlab("Carats") +
+    ylab("Price") +
+    ggtitle("Diamonds")
+
+```
+
+]
+.pull-right-50[
+
+.small[Data without `Fair`]
+
+```{r, echo = T, fig.width = 6, fig.height = 3}
+
+ggplot(diamonds %>%
+       filter(cut != "Fair"),
+       aes(x = carat,
+           y = price,
+           color = cut)) +
+    geom_point() +
+    scale_color_brewer(type='div', palette=4) +
+    xlab("Carats") +
+    ylab("Price") +
+    ggtitle("Diamonds")
+
+```
+
+]
+
+---
+
+# More reproducible documents
+
+We can record what we done.
+
+![](images/repro3.jpg)
+
+---
+
+# Version control with Git
+
+We can version our manuscripts, codes and data [(Example)](https://github.com/mattocci27/rmd_template/commit/5f8eb204a5d3c0debb922686b5ecd2323346afff#diff-023d6195dd2101e3dad0eca4777dfb98).
+
+![](images/git2.png)
+
+---
+
+class: center, middle
+
+# Some examples
+
+---
+
+# Example 1: Simple regression
+
+$$
+y_i \sim \mathcal{N}(\mu_i, \sigma),\; \mu_i = 0.8\times x_i -1.2,\; \sigma = 0.2
+$$
+
+.details[
+```{r}
+set.seed(123)
+xx <- rnorm(100)
+yy <- rnorm(100, 0.8 * xx - 1.2, 0.2)
+dat <- tibble(xx = xx, yy = yy)
+lm(yy ~ xx, dat) %>% summary
+```
+]
+
+
+---
+
+# Example 2: R Plots
+
+
+```{r ex2, fig.height=4, fig.width=4, dev='png'}
+ggplot(dat, aes(x = xx, y = yy)) +
+  geom_point()
+```
+
+
+---
+
+# Example 3: HTML
+
+[HTML](https://mattocci27.github.io/assets/poilog.html) and [Rmd](https://github.com/mattocci27/blog/blob/master/poilog/poilog.rmd)
+
+![](images/poilog.jpg)
+
+
+---
+
+# Example 4: Scientific papers (PDF and docx)
+
+[R Markdown templete](https://github.com/mattocci27/rmd_template)
+
+![](images/rmd_template.png)
+
+---
+
+class: center, middle
+
+#### R Markdown Makes Your Life Much Easier
+
+---
+
+# Study Resources 1
+
+## Markdown/R Markdown basics
+
+.small[
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+- [Rmarkdown-cheatsheet-2.0.pdf](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+- [Introduction to R Markdown](https://m-clark.github.io/Introduction-to-Rmarkdown/)
+
+- [RMarkdown Tips and Tricks
+An Introduction to RMarkdown](https://www.richardshanna.com/tutorial/rmarkdown_tutorial_1/)
+
+## Git version control
+
+- [Github version control](https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/VersionControl/)
+
+- Blischak JD, Davenport ER, Wilson G (2016) A Quick Introduction to Version Control with Git and GitHub. PLoS Comput Biol 12(1): e1004668. [https://doi.org/10.1371/journal.pcbi.1004668](https://doi.org/10.1371/journal.pcbi.1004668)
+
+]
+---
+
+# Study Resources 2
+
+## Writing papers with R Markdown
+
+
+.small[
+- [The Plain Person’s Guide to Plain Text Social Science](http://plain-text.co/index.html#introduction)
+
+- [How to create professional reports from R scripts, with custom styles](https://jozef.io/r913-spin-with-style/)
+
+- [Reproducible Reporting with RMarkdown](https://4va.github.io/biodatasci/r-rmarkdown.html)
+
+- [Reproducible workflow, Metadata, and R Markdown](https://uoftcoders.github.io/rcourse/lec16-rmarkdown.html#what_are_the_barriers_to_reproducibility)
+
+- [Writing Technical Papers with Markdown](https://blog.kdheepak.com/writing-papers-with-markdown.html)
+
+- [Writing your thesis with R Markdown (1) – Getting started](https://rosannavanhespenresearch.wordpress.com/2016/02/03/writing-your-thesis-with-r-markdown-1-getting-started/)
+
+]
+
+---
+
+# Study Resources 3
+
+## Git repos
+
+- [xaringan: an R package for creating slideshows](https://github.com/yihui/xaringan)
+
+- [Collapsible Code Output for `xaringan`](https://gist.github.com/emitanaka/eaa258bb8471c041797ff377704c8505)
+
+- [R Markdown template for scienfitic papers](https://github.com/mattocci27/rmd_template)
