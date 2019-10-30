@@ -1,5 +1,4 @@
-# AFEC2019: Phylogenetic diversity, functional diversity and trait-based
-approaches
+# AFEC2019: Phylogenetic diversity, functional diversity and trait-based approaches
 
 Slides and materials for 2019-10-30 AFEC at XTBG.
 
