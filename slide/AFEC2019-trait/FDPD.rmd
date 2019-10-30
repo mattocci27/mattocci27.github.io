@@ -38,7 +38,7 @@ class: left, middle
 <img src="https://cdn-images-1.medium.com/max/800/1*3O597Dv2NGbNzg_dWRu2Hw.png"
 alt="phylo" width="180" />
 
-Masatoshi Katabuchi | katabuchi@xtbg.ac.cn | AFEC-X 2010::XTBG | 2019-10-30
+Masatoshi Katabuchi | katabuchi@xtbg.ac.cn | AFEC-X 2019::XTBG | 2019-10-30
 
 <!-- this ends up being the title slide since seal = FALSE-->
 
@@ -130,6 +130,10 @@ class: middle
 
 # How to quantify ecological communities `r emo::ji("leaf")`
 
+.footnote[
+[1] Vellend, M. (2016). The Theory of Ecological Communities. Princeton University Press
+]
+
 --
 
 ## 1a) First-order properties of single communities
@@ -183,6 +187,10 @@ name: first-order-multi
 
 ## 1b) First-order properties of multiple communities (Beta diversity)
 
+.footnote[
+[1] Vellend, M. (2016). The Theory of Ecological Communities. Princeton University Press
+]
+
 --
 
 .pull-left[
@@ -231,6 +239,10 @@ Site 1 vs Site2:  1 - (2 * (0 + 250 + 56 + 18) / (4 +300 + 56 + 23 + 0 + 250 + 1
 ---
 name: second-order-env
 
+.footnote[
+[1] Vellend, M. (2016). The Theory of Ecological Communities. Princeton University Press
+]
+
 ## 2a) Second-Order properties with site characteristics (1950s ~)
 
 .pull-left[
@@ -273,7 +285,12 @@ rbind(ab, env) %>%
 ---
 name: second-order-trait
 
+.footnote[
+[1] Vellend, M. (2016). The Theory of Ecological Communities. Princeton University Press
+]
+
 ## 2b) Second-Order properties with species characteristics (2000s ~)
+
 
 .pull-left[
 
@@ -508,7 +525,6 @@ edgelabels(t$edge.length,
 
 # Faith's Index (PD)
 
-
 ```{r, echo = F}
 my_samp1 <- my_samp
 my_samp1[, 4:6] <- 0
@@ -633,12 +649,20 @@ tiplabels(
 
 ```{r, fig.width =4, fig.height=4.5}
 
-plot(t,
+aa2 <- c(1, 3, 5, 9, 11, 13)
+names(aa2) <- c("E", "F", "D", "B", "A", "C")
+
+t2 <- aa2 %>%
+  dist %>%
+  hclust %>%
+  as.phylo
+
+plot(t2,
    show.tip.label = FALSE,
    direction = "rightwards",
    main = "Community phylogeny")
 
-tiplabels(t$tip.label,
+tiplabels(t2$tip.label,
           cex = 2,
           frame = "none")
 
@@ -690,7 +714,6 @@ dist1 <- mat_all[LETTERS[1:4], LETTERS[1:4]] %>% as.dist
 dist1
 ```
 
-
 Mean pairwise nodal distance (**MPD**) = (1 + 2 + 2 + 4 + 4 + 3) / 6 = 2.66
 
 Net Related Index (**NRI**) = 1 - (2.66 / 3.66) = 0.273
@@ -724,7 +747,7 @@ name:mntd
 [1] $MNTD = \frac{1}{n} \Sigma^n_i min \delta_{i,j} \; i \neq j$, where $min \delta_{i, j}$ is the minimum distance between species *i* and all other species in the community.
 ]
 
-Greatest possible nearest nodel distance for a community of 4 taxa = 2 (for A, B, E, F)
+Greatest possible nearest nodel distance for a community of 4 taxa = 2 (for A, C, D, F)
 
 (A to C = 2, C to A = 2, E to F = 2, F to E = 2)
 
@@ -740,9 +763,9 @@ Community 1; A, B, C, D
 dist1
 ```
 
-Mean nearest nodal distance (**MNTD**) = (1 + 2 + 2 + 3) / 4 = 1.75
+Mean nearest nodal distance (**MNTD**) = (1 + 1 + 2 + 3) / 4 = 1.75
 
-Net Related Index (**NRI**) = 1 - (1.75 / 2.0) = 0.125
+Nearest Taxa Index (**NTI**) = 1 - (1.75 / 2.0) = 0.125
 
 ]
 
@@ -759,7 +782,7 @@ dist2
 
 Mean nearest nodal distance (**MNTD**) = (1 + 1 + 1 + 1) / 4 = 1
 
-Net Related Index (**NRI**) = 1 - (1 / 2.0) = 0.5
+Nearest Taxa Index (**NTI**) = 1 - (1 / 2.0) = 0.5
 
 ]
 
@@ -908,6 +931,29 @@ name:Losos2
 
 ---
 
+# Plant functional traits
+
+Measurable properties of plants that are indicative of ecological strategies
+
+.pull-left[
+
+"Hard" traits: e.g., Photosynthetic rates
+
+<img src="https://www.licor.com/env/products/photosynthesis/LI-6800/images/li6800-hero3.png" width="100%"/>
+]
+
+--
+
+.pull-right[
+
+"Soft" traits: e.g., LMA (leaf mass per area)
+
+![LMA](./img/LMA.png)
+
+]
+
+---
+
 # Leaf Economic Spectrum (LES)
 
 .right-column[
@@ -943,32 +989,6 @@ name:Losos2
 .right-column[
 - Global leaf function constrained to a single axis (75 % of variation in the 6 traits)
 ]
-
----
-
-# Plant functional traits
-
-Measurable properties of plants that are indicative of ecological strategies
-
-.pull-left[
-
-"Hard" traits: e.g., Photosynthetic rates
-
-<img src="https://www.licor.com/env/products/photosynthesis/LI-6800/images/li6800-hero3.png" width="100%"/>
-]
-
---
-
-.pull-right[
-
-"Soft" traits: e.g., LMA (leaf mass per area)
-
-![LMA](./img/LMA.png)
-
-]
-
-
-
 
 ---
 
