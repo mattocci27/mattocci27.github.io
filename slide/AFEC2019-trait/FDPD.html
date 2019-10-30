@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Funcitonal diversity and phylogenetic diversity</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Masatoshi Katabuchi" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js" integrity="sha384-R5JkiUweZpJjELPWqttAYmYM1P3SNEJRM6ecTQF05pFFtxmCO+Y1CiUhvuDzgSVZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/default.css" type="text/css" />
+    <link rel="stylesheet" href="css/fdpd.css" type="text/css" />
+    <link rel="stylesheet" href="css/fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+name:FDPD-title
+class: left, middle
+
+# Functional diversity and phylogenetic diversity
+
+&lt;img src="https://cdn-images-1.medium.com/max/800/1*3O597Dv2NGbNzg_dWRu2Hw.png"
+alt="phylo" width="180" /&gt;
+
+Masatoshi Katabuchi | katabuchi@xtbg.ac.cn | AFEC-X 2010::XTBG | 2019-10-30
+
+&lt;!-- this ends up being the title slide since seal = FALSE--&gt;
+
+---
+
+class: middle, inverse
+
+# Objective
+
+.large[
+We Learn:
+
+- Why we use trait and phylogenetic diversity
+- How to calculate trait and phylogenetic diversity
+- Trait-based approaches
+
+]
+
+---
+
+# Outline
+
+
+.pull-left[
+
+- Community assembly
+
+- Diversity measures
+    - First-Order Properties of Single Communities
+    - First-Order Properties of Multiple Communities
+    - Second-Order Properties with Site Characteristics
+    - Second-Order Properties with Species Traits
+
+- Phylogenetic measures
+    - Genus:species ratio
+    - Phylogenetic diversity
+    - (Functional diversity)
+    - Community phylogeny
+    - Phylogenetic signal
+]
+
+.pull-right[
+- Trait measures
+    - Functional traits
+    - Rebuilding community ecology from trait
+    - Phylogenetic middleman problem
+    - Convex hull (multiple trait)
+    - Single trait patterns
+    - Competitive hierarchy
+]
+
+
+---
+
+# Community Assembly and Species Coexistence
+
+For over a century, filed ecologist have been characterizing patterns in ecological communities and trying to draw theoretical inferences form the resulting data.
+
+--
+
+## Central Questions:
+
+- Why do species occurs at the particular places?
+
+--
+
+- Why do some pairs of species coexist while others not?
+
+--
+
+## Predictions:
+
+- **Environmental filtering**: Ecologically similar species should coexist in ecologically similar environments.
+
+--
+
+- **Limiting similarity**: Ecologically dissimilar species should coexist because too similar species competing for the same resources cannot stably coexist.
+
+---
+
+class: middle
+
+# How can we quantify ecological similarity of coexisting species?
+
+---
+
+name: first-order-single
+class: middle
+
+# How to quantify ecological communities 🍁
+
+--
+
+## 1a) First-order properties of single communities
+
+--
+
+.pull-left[
+
+- A vector of species abundance
+- Species compsiton
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site1 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 300 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+- Species richness = 4
+]
+
+--
+
+.pull-right[
+- Simpson's evenness = 1/ Σfreq&lt;sub&gt;i&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt; = (4/383)&lt;sup&gt;2&lt;/sup&gt; + (300/383)&lt;sup&gt;2&lt;/sup&gt; + (56/383)&lt;sup&gt;2&lt;/sup&gt; + (23/383)&lt;sup&gt;2&lt;/sup&gt;
+]
+
+--
+
+.pull-right[
+&lt;img src="FDPD_files/figure-html/unnamed-chunk-2-1.png" width="504" /&gt;
+]
+
+---
+
+name: first-order-multi
+
+## 1b) First-order properties of multiple communities (Beta diversity)
+
+--
+
+.pull-left[
+
+- Species `\(\times\)` site matrix
+- Metacommunity
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 2 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 3 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 4 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 300 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 250 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 120 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 74 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 101 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+- Dissimilarity matrix
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 2 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 3 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 4 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.81 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.92 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Site 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.81 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.79 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.91 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Site 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.92 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.91 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.00 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+Bray–Curtis dissimilarity
+
+`\(BC_{ij}=1-2\frac{\sum min\left(S_{A,i}\mbox{, } S_{B,i}\right)}{\sum S_{A,i}+\sum S_{B,i}}\)`
+
+
+Site 1 vs Site2:  1 - (2 * (0 + 250 + 56 + 18) / (4 +300 + 56 + 23 + 0 + 250 + 120 + 18)) = 0.16
+
+]
+
+---
+name: second-order-env
+
+## 2a) Second-Order properties with site characteristics (1950s ~)
+
+.pull-left[
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 2 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 3 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 4 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr grouplength="4"&gt;&lt;td colspan="5" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Abundance&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Sp 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 315.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Sp 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 300.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 250.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Sp 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 120.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 74.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Sp 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 101.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="4"&gt;&lt;td colspan="5" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Env&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Site characteristic 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Site characteristic 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Site characteristic 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 90.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 92.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 95.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 97.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Site characteristic 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+- Species `\(\times\)` site and site `\(\times\)` environment
+]
+
+--
+
+.pull-right[
+- Diversity-environment relationships
+]
+
+--
+
+.pull-right[
+- Composition-environment relationships
+    - Multivariate ordination: placing the survey plots "in order" based on their multivariate species composition.
+]
+
+
+---
+name: second-order-trait
+
+## 2b) Second-Order properties with species characteristics (2000s ~)
+
+.pull-left[
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 2 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 3 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Site 4 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr grouplength="4"&gt;&lt;td colspan="5" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Abundance&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Sp 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 315.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Sp 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 300.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 250.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Sp 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 120.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 74.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Sp 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 101.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="4"&gt;&lt;td colspan="5" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Env&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Site characteristic 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Site characteristic 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.01 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Site characteristic 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 90.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 92.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 95.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 97.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left; padding-left: 2em;" indentlevel="1"&gt; Site characteristic 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.00 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Trait 1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Trait 2 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Trait 3 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Trait 4 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sp 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 119.9 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+- Trait `\(\times\)` species, species `\(\times\)` site, site `\(\times\)` environment
+]
+
+--
+
+.pull-right[
+- Trait diversity and composition
+]
+
+--
+
+.pull-right[
+- Trait composition-environment relationships
+]
+
+---
+
+
+# How to measure species characteristics?
+
+.left-column[
+
+Photosynthetic rates
+
+&lt;img src="https://www.licor.com/env/products/photosynthesis/LI-6800/images/li6800-hero3.png" width="100%"/&gt;
+]
+
+--
+
+.right-column[
+
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/BorneoRainforest_DSC_9267.JPG/1200px-BorneoRainforest_DSC_9267.JPG" width="100%"/&gt;
+
+]
+
+
+---
+
+# Assuming closely related species are more ecologically similar
+
+## Genus:species ratio: Relatedness as a substitute for ecological similarity
+
+--
+
+Community with 3 genus and 3 species (3:3) vs community with 1 genus and 3 species (1:3)
+
+--
+
+- A high genus:species ratio indicates distantly related and ecologically
+  dissimilar species coexist.
+
+    - Limiting similarity
+
+--
+
+- A low genus:species ratio indicates closely related and ecologically
+  similar species coexist.
+
+    - Environmental filtering
+
+---
+
+# Genus:species ratio
+
+.footnote[
+[1] Swenson, N. G. The assembly of tropical tree communities - the advances and shortcomings of phylogenetic and functional trait analyses. Ecography 36, 264–276 (2013).
+]
+
+- The genus:species ratio type of study in plant community ecology started ~1910
+  and was popular until 1990's
+
+--
+
+- A large criticism of genus:speices ratio analyses is that they do not take
+  acount for the different ages of genera and species
+    - Two species in a relatively young genus may be expected to be more similar than two species in a relatively old genus.
+
+
+---
+
+class:middle, center
+
+# Solution for the genus:spcies ratio problem = Use phylogenetic trees
+
+&lt;img src="FDPD_files/figure-html/unnamed-chunk-8-1.png" width="504" /&gt;
+
+---
+
+# Phylodiversity
+
+.footnote[
+[1] Dimensions of Biodiversity: National Science Fundation
+]
+
+.pull-left[
+![div-dim](./img/div-dim.png)
+]
+
+.pull-right[
+- In the 1990's conservation biologists recognized the *biodiversity* is not only species diversity
+
+    - Biodiversity has several axes or dimensions including genetic, taxonomic, phylogenetic and functional diversity
+]
+
+---
+
+# Phylodiversity
+
+.footnote[
+[1] Faith D.P. (1992) Conservation evaluation and phylogenetic diversity. Biological Conservation, 61, 1-10.
+]
+
+- Phylogenetic diversity was first formalized by Dan Faith in 1992
+
+    - He proposed a metic called PD that is also commonly referred to as Faith's
+      Index
+    - Many additional metics have now been generated but this metic is still
+      widely used, especially in the context of conservation
+
+---
+
+# Faith's Index (PD)
+
+
+
+
+.pull-left[
+
+&lt;img src="FDPD_files/figure-html/unnamed-chunk-10-1.png" width="504" /&gt;
+]
+
+.pull-right[
+- PD is the sum of the lengths of all those branches that are members of the corresponding minimum spanning path
+]
+
+--
+
+.pull-right[
+- PD is the phylogenetic analogue of taxon richness and is expressed as the number of tree units which are found in a sample
+]
+
+--
+
+.pull-right[
+- PD will correlate with species richness
+]
+
+--
+
+.pull-right[
+- Total branch length = 18
+]
+
+---
+
+# Faith's Index (PD)
+
+
+
+
+.pull-right[
+- Total branch length = 9
+
+]
+
+
+.pull-left[
+
+&lt;img src="FDPD_files/figure-html/unnamed-chunk-12-1.png" width="504" /&gt;
+
+]
+
+---
+
+# Faith's Index (PD)
+
+
+
+.pull-right[
+- Total branch length = 14
+
+]
+
+.pull-left[
+
+&lt;img src="FDPD_files/figure-html/unnamed-chunk-14-1.png" width="504" /&gt;
+
+]
+
+---
+
+# Pethcey's functional diversity (FD)
+
+
+.footnote[
+[1] Petchey, O. L. &amp; Gaston, K. J. Functional diversity (FD), species richness and community composition. Ecology Letters 5, 402–411 (2002).
+]
+
+.pull-left[
+&lt;img src="./img/functional_dendrogram.png" width=100%&gt;
+]
+
+.pull-right[
+- FD is proposed by Owen Petchey in 2002
+]
+
+--
+
+.pull-right[
+- FD is the total branch length of the functional dendrogram.
+]
+
+--
+
+.pull-right[
+- Analogous to PD
+]
+
+---
+
+# Beyond Faith's Index (PD)
+
+.footnote[
+[1] Webb, C.O., 2000. Exploring the Phylogenetic Structure of Ecological Communities: An Example for Rain Forest Trees. The American Naturalist 156, 145–155. https://doi.org/10.1086/303378
+]
+
+- Solution for genus:species = Use phylogenetic trees to estimate the
+  relatedness of coexisting species
+
+    - This solution was first proposed by Cam Webb in 2000
+
+--
+
+.pull-left[
+
+&lt;img src="FDPD_files/figure-html/unnamed-chunk-15-1.png" width="288" /&gt;
+
+]
+
+--
+
+.pull-right[
+
+Distance matrix
+
+
+```
+##   A B C D E
+## B 1        
+## C 2 2      
+## D 4 4 3    
+## E 5 5 4 2  
+## F 5 5 4 2 1
+```
+]
+
+---
+name:mpd
+
+# Mean Pairwise Distance (MPD) and Net Related Index (NRI)
+
+.footnote[
+[1] `\(MPD = \frac{1}{n} \Sigma^n_i \Sigma^n_j \delta_{i,j} \; i \neq j\)`, where
+`\(\delta_{i, j}\)` is the pairwised distance between species *i* and *j*
+]
+
+Greatest possible mean pairwise node distance for a community of 4 taxa = 22 /4 = 3.66 (for A, B, E, F)
+
+--
+
+.pull-left[
+
+Community 1; A, B, C, D
+
+
+```
+##   A B C
+## B 1    
+## C 2 2  
+## D 4 4 3
+```
+
+
+Mean pairwise nodal distance (**MPD**) = (1 + 2 + 2 + 4 + 4 + 3) / 6 = 2.66
+
+Net Related Index (**NRI**) = 1 - (2.66 / 3.66) = 0.273
+
+]
+
+--
+
+.pull-right[
+
+Community 2; A, B, E, F
+
+
+```
+##   A B E
+## B 1    
+## E 5 5  
+## F 5 5 1
+```
+
+Mean pairwise nodal distance (**MPD**) = (1 + 5 + 5 + 5 + 5 + 1) / 6 = 3.66
+
+Net Related Index (**NRI**) = 1 - (3.66 / 3.66) = 0
+
+]
+
+
+---
+name:mntd
+
+# Mean Nearest Nodal Distance (MNTD) and Nearest Taxa Index (NTI)
+
+.footnote[
+[1] `\(MNTD = \frac{1}{n} \Sigma^n_i min \delta_{i,j} \; i \neq j\)`, where `\(min \delta_{i, j}\)` is the minimum distance between species *i* and all other species in the community.
+]
+
+Greatest possible nearest nodel distance for a community of 4 taxa = 2 (for A, B, E, F)
+
+(A to C = 2, C to A = 2, E to F = 2, F to E = 2)
+
+
+
+.pull-left[
+
+Community 1; A, B, C, D
+
+
+```
+##   A B C
+## B 1    
+## C 2 2  
+## D 4 4 3
+```
+
+Mean nearest nodal distance (**MNTD**) = (1 + 2 + 2 + 3) / 4 = 1.75
+
+Net Related Index (**NRI**) = 1 - (1.75 / 2.0) = 0.125
+
+]
+
+--
+
+.pull-right[
+
+Community 2; A, B, E, F
+
+
+```
+##   A B E
+## B 1    
+## E 5 5  
+## F 5 5 1
+```
+
+Mean nearest nodal distance (**MNTD**) = (1 + 1 + 1 + 1) / 4 = 1
+
+Net Related Index (**NRI**) = 1 - (1 / 2.0) = 0.5
+
+]
+
+---
+
+class:middle, center
+
+# Sparks community phylogeny
+
+&lt;img src="./img/sparks.png" width =80%&gt;
+---
+
+name:Losos1
+
+.pull-left[
+
+![anole](./img/anole.jpg)
+
+]
+
+.pull-right[
+
+
+- We are asuming that related specis are ecologically similar
+
+- Related species can have very different traits
+
+]
+
+.footnote[
+
+[1] https://en.wikipedia.org/wiki/Anolis_ecomorphs
+
+]
+
+
+---
+
+name:Losos2
+
+.pull-left[
+![Losos](./img/Losos1998.png)
+]
+
+
+.pull-right[
+
+## A: Functional dendrogram based on ecomorph
+
+## B: Phylogeny indicates frequent evolution of traits
+
+]
+
+.footnote[
+[1] Losos, J. B., Jackman, T. R., Larson, A., De Queiroz, K. &amp; Rodríguez-Schettino, L. Contingency and determinism in replicated adaptive radiations of island lizards. Science 279, 2115–2118 (1998).
+]
+
+---
+
+# Putting traits on the tips of phylogeny: phylogenetic signal
+
+.footnote[
+[1] Blomberg, S. P., T. Garland Jr., A. R. Ives (2003) Testing for phylogenetic signal in comparative data: Behavioral traits are more labile. Evolution, 57, 717-745.
+]
+
+.pull-left[
+&lt;img src="./img/phylo-sig.png", width =60%&gt;
+]
+
+--
+
+.pull-right[
+- Phylogenetic signal (K) quantifies if the focal traits were inherited from their recent or old common ancestor
+]
+
+--
+
+.pull-right[
+- Large K indicates phylogenetic coservatism and small K indicates phylogenetic divergence
+]
+
+--
+
+.pull-right[
+- (Phylogenetic signal (K): the ratio of the mean squared error of the tip data measured from the phylogneitic corrected mean nd the mean squared error based on the variance–covariance matrix derived from the given phylogeny under the assumption of Brownian motion)
+]
+
+
+---
+
+&lt;img src="./img/Cavender1.jpg", width =60%&gt;
+
+
+.footnote[
+[1] Cavender‐Bares, J., Ackerly, D. D., Baum, D. A. &amp; Bazzaz, F. A. Phylogenetic Overdispersion in Floridian Oak Communities. The American Naturalist 163, 823–843 (2004).
+]
+
+---
+
+&lt;img src="./img/Cavender2.jpg", width =60%&gt;
+
+---
+
+&lt;img src="./img/Cavender3.jpg", width =60%&gt;
+
+---
+
+![cav-tab](./img/Cavender_tab.jpg)
+
+.footnote[
+[1] Cavender‐Bares, J., Ackerly, D. D., Baum, D. A. &amp; Bazzaz, F. A. Phylogenetic Overdispersion in Floridian Oak Communities. The American Naturalist 163, 823–843 (2004).
+]
+
+---
+
+# Leaf Economic Spectrum (LES)
+
+.right-column[
+.footnote[
+[1] Reich, P. B., Walters, M. B. &amp; Ellsworth, D. S. From tropics to tundra: Global convergence in plant functioning. Proceedings of the National Academy of Sciences 94, 13730–13734 (1997).
+
+[2] Wright, I. J., P. B. Reich, M. Westoby et al. The worldwide leaf economics spectrum. Nature 428, 821–827 (2004).
+]
+]
+
+.left-column[
+&lt;img src="./img/LES2004.png" width="100%"/&gt;
+]
+
+.right-column[
+- LES describes pairwise correlations among a bunch of leaf traits from the global leaf database called GLOPNET
+]
+
+--
+
+.right-column[
+- Peter Reich first formulated the idea of LES
+]
+
+--
+
+.right-column[
+- Peter Reich, Ian Wright, Mark Westoby and other people confirmed the generality of the LES
+]
+
+--
+
+.right-column[
+- Global leaf function constrained to a single axis (75 % of variation in the 6 traits)
+]
+
+---
+
+
+class: middle
+
+.footnote[
+[1] McGill, B. J., Enquist, B. J., Weiher, E. &amp; Westoby, M. Rebuilding community ecology from functional traits. Trends in Ecology and Evolution 21, 178–185 (2006).
+]
+
+
+# Rebuilding community ecology from functional traits - trait-based approach
+
+--
+
+- Go beyond 'How many species and why?' to ask 'How much variation in traits and why?'
+
+--
+
+- Go beyond 'In what environments does a species occur?’ to ask 'What traits and environmental variables are most important in determining fundamental niche?'
+
+--
+
+- Go beyond 'What are the most important niche dimensions?' to ask 'What traits are most decisive in translating from fundamental niche to realized niche?'
+
+--
+
+- Go beyond 'How does population dynamics determine abundance?' to ask 'How does the performance of species in the interaction milieu determine their ranking of abundance or biomass?'
+
+--
+
+- Go beyond 'How does space affect population dynamics?' to ask 'How do environmental gradients affect community structuring?'
+
+---
+
+# Rebuilding community ecology from functional traits - trait-based approach
+
+- Non-trait based statement
+
+   - *Campanula aparinoides* is found only in infertile habitats.
+
+- Trait-based statement
+
+   - Compact plants with canopy area &lt; 30 cm &lt;sup&gt;2&lt;/sup&gt;  and small or absent leaves are restricted to marshes with &lt; 18 `\(\mu\)` g g &lt;sup&gt;-1&lt;/sup&gt; soil P.
+
+.footnote[
+[1] McGill, B. J., Enquist, B. J., Weiher, E. &amp; Westoby, M. Rebuilding community ecology from functional traits. Trends in Ecology and Evolution 21, 178–185 (2006).
+]
+
+---
+
+.footnote[
+[1] Swenson, N. G. The assembly of tropical tree communities - the advances and shortcomings of phylogenetic and functional trait analyses. Ecography 36, 264–276 (2013).
+]
+
+.pull-left[
+&lt;img src="./img/phylo-trait.png", width="350"&gt;
+]
+
+.pull-right[
+- Phylogeny as a proxy for the functional or ecological similarity of species.
+]
+
+--
+
+.pull-right[
+- Measuring trait data and arraying it on the phylogenetic tree to demonstrate phylogenetic signal in function so that their phylogenetically-based inferences could be supported.
+]
+
+--
+
+.pull-right[
+- Compared to simply measuring the trait dispersion, this approach is very indirect.
+]
+
+--
+
+.pull-right[
+- This approach should be avoided! (phylogeny and traits are useful to make meaningful evolutionary inferences)
+]
+
+
+---
+
+
+# Convex hull volume (functional richness)
+
+
+.right-column[
+.footnote[
+[1] Cornwell, W. K., Schwilk, L. D. W. &amp; Ackerly, D. D. A trait-based test for habitat filtering: convex hull volume. Ecology 87, 1465–71 (2006).
+]]
+
+.left-column[
+&lt;img src="./img/convexhull.png" width="200"/&gt;
+
+]
+
+.right-column[
+- California woody-plant communities (43 plot, 54 species, 3 traits)
+]
+
+--
+
+.right-column[
+- Is trait volume of California woody-plant communities significantly less than expected by chance?
+    - Environmental filtering
+]
+
+---
+
+
+# Convex hull volume (functional richness)
+
+.footnote[
+[1] Cornwell, W. K., Schwilk, L. D. W. &amp; Ackerly, D. D. A trait-based test for habitat filtering: convex hull volume. Ecology 87, 1465–71 (2006).
+]
+
+.pull-left[
+&lt;img src="./img/convexhull2.png" width="500"/&gt;
+]
+
+.pull-right[
+
+- Species in 40 out of 43 plots occupied less trait space than would be expected by chance
+
+     - Consistent with environmental filtering
+
+
+]
+
+
+
+---
+
+class:center
+
+# Community assembly and trait distribution
+
+&lt;img src="./img/trait_dist.png" width="600"/&gt;
+
+.footnote[
+
+[1] Cornwell, W. K. &amp; Ackerly, D. D. Community assembly and shifts in plant trait distributions across an environmental gradient in coastal California. Ecological Monographs 79, 109–126 (2009).
+
+]
+
+
+---
+
+#  Enviormental filtering and limiting similarity can occur at the same time
+
+.footnote[
+[1] Kraft, N. J. B., Valencia, R. &amp; Ackerly, D. D. Functional Traits and Niche-Based Tree Community Assembly in an Amazonian Forest. Science 322, 580–582 (2008).
+]
+
+.pull-left[
+&lt;img src="./img/Kraft2008.png" width="550"/&gt;
+]
+
+.pull-right[
+- Yasuni topical tree communites, 25ha, 625 20m x 20m qudrats, 1089 species!
+]
+
+--
+
+.pull-right[
+- A: Ridgetops have lower than expected SLA and valleys have higher
+    - Traits match with environment conditions
+]
+
+--
+
+.pull-right[
+- B: Seed masse shows broader distibution than expected
+    - Limiting similarity
+]
+
+--
+
+.pull-right[
+- C: Range of SLA is smaller than expected  
+    - Enviormental filtering
+]
+
+--
+
+.pull-right[
+- D: SD of nearest-neighbor distances for leaf size
+    - Limiting similarity
+]
+
+---
+
+# Competitive hierachy
+
+.footnote[
+[1] `\(t_A\)` and `\(t_B\)` are the functional traits values of species A and B
+
+[2] Kunstler, G. et al. Competitive interactions between forest trees are driven by species’ trait hierarchy, not phylogenetic or functional similarity: Implications for forest community assembly. Ecology Letters 15, 831–840 (2012).
+]
+
+.pull-left[
+
+&lt;img src="./img/comp-hier1.JPG", width ="150"&gt;
+
+## Limiting similarity
+
+Competitive interaction strengths between species will increase with decreasing niche distance, measured as their absolute traits distance `\(|t_A - t_B|\)`
+
+]
+
+--
+
+
+.pull-right[
+
+&lt;img src="./img/comp-hier2.JPG", width ="150"&gt;
+
+## Competitive hierarchy
+
+Competitive effect of species A on species B will increase with increasing `\(t_A - t_B\)`.
+
+]
+
+---
+
+# Summary
+
+
+- Why do we use trait and phylogenetic diversity?
+
+  - We want to quantify ecological similarities of species and multiple dimension of
+    biodiversity
+--
+
+- How to calculate trait and phylogenetic diversity?
+
+  - I hope you remember it!
+
+--
+
+- Trait-based approaches
+
+  - They will make ecology studies more quantitative and predictive
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "atom-one-dark",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+<script>
+(function() {
+  var divHTML = document.querySelectorAll(".details-open");
+  divHTML.forEach(function (el) {
+    var preNodes = el.getElementsByTagName("pre");
+    var outputNode = preNodes[1];
+    outputNode.outerHTML = "<details open class='output'><summary>Output</summary>" + outputNode.outerHTML + "</details>";
+  })
+})();
+(function() {
+  var divHTML = document.querySelectorAll(".details");
+  divHTML.forEach(function (el) {
+    var preNodes = el.getElementsByTagName("pre");
+    var outputNode = preNodes[1];
+    outputNode.outerHTML = "<details class='output'><summary>Output</summary>" + outputNode.outerHTML + "</details>";
+  })
+})();
+</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
