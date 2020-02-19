@@ -2,3 +2,4 @@ _site/
 .DS_Store
 img/*.afdesign
 img/*.pdf
+.jekyll-cache/*
