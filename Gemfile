@@ -31,3 +31,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "unicode"
+
+#Upgrade kramdown to version 2.3.0 or later. For example:
+gem "kramdown", ">= 2.3.0"
