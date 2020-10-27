@@ -389,6 +389,20 @@ span.lineno {
 /* #img
 ================================================== */
 
+.ztpln-img {
+  display: inline-block;
+  background-image: url(../../img/hist.png);
+  line-height:0;
+  width:350px;
+  height:350px;
+  vertical-align: top;
+  background-position: center top;
+  background-size:350px 350px;
+  border-radius: 5px;
+  box-shadow: 0 14px 12px -10px rgba(0, 8, 26, 0.32);
+  margin-top: 0px
+}
+
 .leaf-img {
   display: inline-block;
   background-image: url(../../img/test.001.png);
