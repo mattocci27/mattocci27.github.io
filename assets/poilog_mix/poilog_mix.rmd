@@ -1,0 +1,252 @@
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@mattocci">
+<meta name="twitter:creator" content="@mattocci">
+<meta name="twitter:title" content="A mixture of a Poisson-lognormal distribution">
+<meta name="twitter:description" content="Two-component Possion-lognormal mixtrue">
+<meta name="twitter:image" content="/poilog_mix_files/figure-html/mix_dens-1.png">
+
+```{r setup, include=FALSE}
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+<a href="https://twitter.com/mattocci"><i class="fa fa-twitter fa-1x"></i> Twittter</a>
+<a href="https://github.com/mattocci27/"><i class="fa fa-github fa-1x"></i> Github</a>
+<a href="mailto:mattocci27@gmail.com"><i class="fa fa-envelope fa-1x"></i> Email</a>
+
+Here is a little example of fitting mixture model with R and Stan.
+
+# Mixture model
+
+Given a set of likelihood functions $\pi_1(\boldsymbol y \mid
+\alpha_1), \ldots, \pi_k(\boldsymbol y \mid \alpha_K)$ for  variables $\boldsymbol y = (y_1, \ldots, y_N)$, parameterized by $\boldsymbol \alpha = (\alpha_1, \ldots, \alpha_K)$ and mixture weights $\boldsymbol \theta = (\theta_1, \ldots, \theta_K)$ such that $0 \le \theta_{k} \le 1$ and $\sum\theta_{k} = 1$, the mixture likelihood is
+
+$$
+\pi(\boldsymbol y \mid{\boldsymbol \alpha}, {\boldsymbol \theta}) = \sum_{k=1}^{K}\sum_{n=1}^{N}\theta_k \pi_k(y_n \mid \alpha_k).
+$$
+
+
+# Poisson-lognormal mixture model
+
+Let's consider a simple example where the likelihood is given by a mixture of two Poisson-lognormal [(PoiLog)](https://mattocci27.github.io/assets/poilog.html),
+
+$$
+\pi(y_1, ..., y_N \mid \mu_1, \mu_2, \sigma_1,\sigma_2, \theta) = \sum_{n=1}^{N}\theta PoiLog(y_n \mid \mu_1, \sigma_1) + \sum_{n=1}^{N}(1-\theta) PoiLog(y_n \mid \mu_2, \sigma_2).
+$$
+
+We define two different components of Poisson-lognormal distributions, $PoiLog(\mu_1 = log(50) \simeq 3.91, \sigma_1 = 0.8)$ and $PoiLog(\mu_2 = log(400) \simeq 5.99, \sigma_2 = 0.2)$ with the mixture weight $\theta = 0.8$
+
+```{r}
+mu <- c(log(50), log(400))
+sigma <- c(0.8, 0.2)
+theta <- 0.8
+```
+
+```{r mix-dens}
+library(cowplot)
+library(ggthemes)
+theme_set(theme_solarized(light=FALSE))
+
+xx <- seq(1, 1000, by = 1)
+y1 <- dnorm(log(xx), mu[1], sigma[1])
+y2 <- dnorm(log(xx), mu[2], sigma[2])
+y_mix <- theta * y1 + (1 - theta) * y2
+
+line_dat <- data_frame(xx,
+  comp1 = y1,
+  comp2 = y2,
+  comp_mix = y_mix) %>%
+  gather(Model, val, 2:4) %>%
+  mutate(model2 = ifelse(Model == "comp_mix",
+                         "Mixed components",
+                         "Each component"))
+
+ggplot(line_dat, aes(x = xx %>% log, y = val %>% exp, col = Model)) +
+  geom_line() +
+  geom_point() +
+  facet_wrap(~model2, scale = "free") +
+  xlab("log k") +
+  ylab("Density")
+
+```
+
+then we simulate data based on the above probability density.
+
+```{r mix_hist}
+set.seed(123)
+
+N <- 100
+z <- rbinom(N, 1, 1 - theta) + 1
+log_lambda <- rnorm(N, mu[z], sigma[z])
+Y <- rpois(N, exp(log_lambda))
+#lambda <- rlnorm(N, mu[z] - 0.5 * sigma[z]^2, sigma[z])
+#Y <- rpois(N, lambda)
+
+hist_dat <- data_frame(Y)
+
+p1 <- ggplot(hist_dat, aes(Y)) +
+  geom_histogram(bins = 20, fill = "#268bd2", col = "black")
+
+p2 <- ggplot(hist_dat, aes(log(Y))) +
+  geom_histogram(bins = 20, fill = "#268bd2", col = "black")
+
+plot_grid(p1, p2)
+
+
+```
+
+# Testing
+
+## Centered parameterization
+
+First, we fit the direct centered parameterization.
+
+$$
+\mu_1,\mu_2 \sim \mathcal{N}(0, 10)
+$$
+
+$$
+\sigma_1, \sigma_2 \sim \text{Half-}Cauchy(0, 5),
+$$
+
+$$
+log\lambda_{1n} \sim \mathcal{N}(\mu_1, \sigma_1)
+$$
+
+$$
+log\lambda_{2n} \sim \mathcal{N}(\mu_2, \sigma_2)
+$$
+
+$$
+\theta \sim Beta(2, 2)
+$$
+
+
+```{r}
+writeLines(readLines("poilog_mix_cp.stan"))
+```
+
+The model looks straightforward but this model will suffer inefficiency in parameter sampling. Because the values of $\mu$ and $\sigma$ are highly correlated in the posterior [@Betancourt2013]. When the model is expressed this way, Stan has trouble sampling from the neck of the funnel geometry (Figure 28.1 in Stan Version 2.17.0 Manual), where $\sigma$ is small and thus $\mu$ is constrained to be near 0.
+
+
+```{r, cache=TRUE, comment=NA}
+library(rstan)
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+
+list_dat <- list(N = N, y = Y)
+
+fit_cp <- stan(file = "poilog_mix_cp.stan",
+            data = list_dat,
+            iter = 2000,
+            warmup = 1000,
+            thin = 1,
+            chains =  4,
+            refresh = 500,
+            control = list(adapt_delta = 0.9, max_treedepth = 20))
+
+```
+
+The model did not converge well. Additionally, there were divergent transitions, which indicates that the simulated Hamiltonian diverges from the true Hamiltonian. **Even a few numbers of divergent transitions indicate serious bias on the estimates.**
+
+```{r}
+
+print(fit_cp,
+      pars = c("mu", "sigma", "theta",
+               "log_lambda[1,1]",
+               "log_lambda[1,2]",
+               "log_lambda[1,100]",
+               "log_lambda[2,1]",
+               "log_lambda[2,2]",
+               "log_lambda[2,100]",
+               "lp__"))
+
+```
+
+## Non-Centered parameterization
+
+Instead of sampling $log\lambda_{1n}$ and $log\lambda_{2n}$ directly, the model can be converted to the following more efficient form,
+
+$$
+\mu_1,\mu_2 \sim \mathcal{N}(0, 10)
+$$
+
+$$
+\sigma_1, \sigma_2 \sim \text{Half-}Cauchy(0, 5),
+$$
+
+$$
+log\tilde\lambda_{1n},log\tilde\lambda_{2n}  \sim \mathcal{N}(0,1)
+$$
+
+$$
+log\lambda_{1n} = \mu_1 + log\tilde\lambda_{1n} \times \sigma_1
+$$
+
+$$
+log\lambda_{2n} = \mu_2 + log\tilde\lambda_{2n} \times \sigma_2
+$$
+
+$$
+\theta \sim Beta(2, 2)
+$$
+
+
+```{r}
+writeLines(readLines("poilog_mix_ncp.stan"))
+```
+
+This non-centered parameterization exchanges a direct dependence between ($\mu$, $\sigma$) and $log\lambda$ for a dependence between ($\mu$, $\sigma$) and $y_i$, which would reduce the dependence between $\lambda$, $\mu$, and $\sigma$.
+
+```{r, cache=TRUE, comment=NA}
+
+fit_ncp <- stan(file = "poilog_mix_ncp.stan",
+            data = list_dat,
+            iter = 2000,
+            warmup = 1000,
+            thin = 1,
+            chains =  4,
+            refresh = 500,
+            control = list(adapt_delta = 0.9, max_treedepth = 20))
+
+```
+
+Now we don't have divergent transitions. The resulting estimates well recovered the original values ($\boldsymbol \mu$, $\boldsymbol \sigma$ and $\theta$) `r emo::ji("beer")`. Note that the above model will not work very well when the two components are relatively close ([see detailed explanation](https://betanalpha.github.io/assets/case_studies/identifying_mixture_models.html)).
+
+
+```{r}
+print(fit_ncp,
+      pars = c("mu", "sigma", "theta",
+               "log_lambda[1,1]",
+               "log_lambda[1,2]",
+               "log_lambda[1,100]",
+               "log_lambda[2,1]",
+               "log_lambda[2,2]",
+               "log_lambda[2,100]",
+               "lp__"))
+```
+
+```{r, eval = F, echo = F}
+pairs(fit_ncp, pars=c("mu", "sigma"))
+pairs(fit_cp, pars=c("mu", "sigma"))
+```
+
+# Computing Environment
+
+```{r}
+writeLines(readLines(file.path(Sys.getenv("HOME"), ".R/Makevars")))
+devtools::session_info("rstan")
+```
+
+# Related
+
+- [Mixture model (wiki)](https://en.wikipedia.org/wiki/Mixture_model)
+
+- [Fitting a Poisson-lognormal distribution in Stan (rstan)](https://mattocci27.github.io/assets/poilog.html)
+
+- [Diagnosing Biased Inference with Divergences](https://betanalpha.github.io/assets/case_studies/divergences_and_bias.html#3_a_non-centered_eight_schools_implementation)
+
+- [Identifying Bayesian Mixture Models
+](https://betanalpha.github.io/assets/case_studies/identifying_mixture_models.html)
+
+- [Poisson-LogSkewNormal mixture + partial pooling](https://discourse.mc-stan.org/t/poisson-logskewnormal-mixture-partial-pooling/2189)
+
+# References

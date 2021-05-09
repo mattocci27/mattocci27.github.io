@@ -1,0 +1,30 @@
+- data cleaning takes time
+- goal1: fig
+- goal2: lm
+- objective: tidy-data 
+- non-tidy data
+- basic functions in dplyr and tidy
+  - filter
+  - arrange	
+  - select
+  - mutate
+  - rename	
+  - group_by	
+    - summarise
+  - pivot_longer
+  - functions for row (observation) and col (variable)
+
+- filter
+  - get data of evergreen species
+- arrange
+  - sort observations by the values of Amass
+- select
+  - select variables
+- mutate
+  - create a new variable
+- rename 
+  - re-name variable
+- group_by
+  - apply functions to group
+- pivot_longer
+  - make longer tidy data 

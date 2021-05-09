@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+
+  web-rake:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    command: ["/bin/sh"]
+    #  command: rake publish
+    container_name: web-rake
+    image: web-rake
+    volumes:
+      - .:/home/app/web
