@@ -3,3 +3,7 @@ _site/
 img/*.afdesign
 img/*.pdf
 .jekyll-cache/*
+.bundle
+.env
+.local
+.ssh

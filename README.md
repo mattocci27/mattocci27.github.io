@@ -17,5 +17,11 @@ Modified from [t413.com/SinglePaged](https://github.com/t413/SinglePaged).
 
 ```rake publish``` will generate and publish website to gh-pages. I need this step because the [default Github pages workflow](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/) does not allow most of the plugins to run for security reasons.
 
+## Docker
+
+```shell
+docker-compose up
+```
+
 ## to do
 - markdown for software page

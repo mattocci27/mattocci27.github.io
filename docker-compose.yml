@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
 
@@ -6,9 +6,17 @@ services:
     build:
       context: .
       dockerfile: ./.docker/Dockerfile
-    command: ["/bin/sh"]
-    #  command: rake publish
+    #command: ["/bin/sh"]
+    #command: bash /web/publish.sh
+    #command: ls -lh /temp
+    command: >
+      /bin/bash -c
+      " \
+        git config --global user.email 'mattocci27@gmail.com' && \
+        git config --global user.name 'Masatoshi Katabuchi' &&  \
+        rake publish
+      "
     container_name: web-rake
     image: web-rake
     volumes:
-      - .:/home/app/web
+      - .:/web
