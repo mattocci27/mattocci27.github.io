@@ -1,10 +1,10 @@
 on:
   push:
     branches:
-      - source
+      - dev
   pull_request:
     branches:
-      - source
+      - dev
 
 name: rake
 
