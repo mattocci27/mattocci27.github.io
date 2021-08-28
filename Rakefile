@@ -26,13 +26,15 @@ task :publish => [:generate] do
     pwd = Dir.pwd
     Dir.chdir tmp
 
-    system "pwd"
-    system "ls -lh"
     system "git init"
     system "git add ."
     message = "Site updated at #{Time.now.utc}"
     system "git commit -m #{message.inspect}"
     system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
+    system "git status"
+    system "git log"
+    system "git branch -a"
+    system "git remote -v"
     system "git push origin dev2 --force"
 
     Dir.chdir pwd
