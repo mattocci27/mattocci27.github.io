@@ -34,3 +34,5 @@ gem "unicode"
 
 #Upgrade kramdown to version 2.3.0 or later. For example:
 gem "kramdown", ">= 2.3.0"
+
+gem "rake"
