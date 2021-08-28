@@ -31,4 +31,14 @@ jobs:
       - name: Push to main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: rake publish
+        run: |
+          rake publish
+          temp_dir=$(mktemp -d) \
+          cp -rf _site/. $temp_dir \
+          cd $temp_dir \
+          git init \
+          git add . \
+          export COMMIT_TITLE="Site updated at $(date +"%Y-%m-%d %T UTC")"
+          git commit -m "$COMMIT_TITLE"
+          origin=https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com:mattocci27/mattocci27.github.io.git
+          git push $origin dev2

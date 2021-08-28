@@ -8,13 +8,22 @@ services:
       dockerfile: ./.docker/Dockerfile
     #command: ["/bin/sh"]
     #command: bash /web/publish.sh
-    #command: ls -lh /temp
+    #command: bash
     command: >
       /bin/bash -c
       " \
         git config --global user.email 'mattocci27@gmail.com' && \
         git config --global user.name 'Masatoshi Katabuchi' &&  \
-        rake publish
+        rake publish \
+        temp_dir=$(mktemp -d) \
+        cp -rf _site/. $temp_dir \
+        cd $temp_dir \
+        git init \
+        git add . \
+        export COMMIT_TITLE="Site updated at $(date +"%Y-%m-%d %T UTC")" \
+        git commit -m "$COMMIT_TITLE" \
+        git remote add origin git@github.com:mattocci27/mattocci27.github.io.git \
+        git push origin dev2 --force"
       "
     container_name: web-rake
     image: web-rake
