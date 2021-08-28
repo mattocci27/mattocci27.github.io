@@ -24,6 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: gem install bundler --no-document
+      - run: gem install rake
       - run: bundle config set deployment 'true'
       - run: bundle install --jobs 4 --retry 3
       - run: bundle exec rake
