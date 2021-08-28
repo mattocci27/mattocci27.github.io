@@ -10,7 +10,7 @@ name: rake
 
 env:
   cache-version: v3
-#
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -21,9 +21,9 @@ jobs:
     container:
           image: ruby:3.0.2
 
-        steps:
-          - uses: actions/checkout@v1
-          - run: gem install bundler --no-document
-          - run: bundle config set deployment 'true'
-          - run: bundle install --jobs 4 --retry 3
-          - run: bundle exec rake
+    steps:
+      - uses: actions/checkout@v1
+      - run: gem install bundler --no-document
+      - run: bundle config set deployment 'true'
+      - run: bundle install --jobs 4 --retry 3
+      - run: bundle exec rake
