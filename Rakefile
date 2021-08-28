@@ -26,6 +26,8 @@ task :publish => [:generate] do
     pwd = Dir.pwd
     Dir.chdir tmp
 
+    system "pwd"
+    system "ls -lh"
     system "git init"
     system "git add ."
     message = "Site updated at #{Time.now.utc}"
