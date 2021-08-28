@@ -35,7 +35,7 @@ task :publish => [:generate] do
     system "git log"
     system "git branch -a"
     system "git remote -v"
-    system "git push origin dev2 --force"
+    system "git push origin HEAD:dev2 --force"
 
     Dir.chdir pwd
   end
