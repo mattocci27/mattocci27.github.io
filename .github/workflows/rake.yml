@@ -28,4 +28,7 @@ jobs:
       - run: gem install bundler --no-document
       - run: bundle config set deployment 'true'
       - run: bundle install --jobs 4 --retry 3
-      - run: rake publish
+      - name: Push to main
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: rake publish
