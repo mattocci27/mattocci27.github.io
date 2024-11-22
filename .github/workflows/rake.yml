@@ -11,23 +11,20 @@ name: rake
 env:
   cache-version: v3
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: compose-run
-        shell: bash
-          #env:
-          #  ENVENV1: ${{ secrets.ENVENV1 }}
-          #  ENVENV2: ${{ secrets.ENVENV2 }}
+      # Install Docker Compose
+      - name: Install Docker Compose
         run: |
-         docker-compose up
+          sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version
+
+      # Run docker-compose
+      - name: Compose Run
+        run: docker-compose up
