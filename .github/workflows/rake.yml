@@ -29,6 +29,9 @@ jobs:
             IdentityFile ~/.ssh/id_ed25519
             StrictHostKeyChecking no" > ~/.ssh/config
 
+      - name: Test SSH Connection
+        run: ssh -i ~/.ssh/id_ed25519 -T git@github.com
+
       # Debug workspace (optional, for troubleshooting)
       - name: List Workspace Files
         run: ls -R
