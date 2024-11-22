@@ -1,24 +1,20 @@
+name: Publish Site
+
 on:
   push:
     branches:
       - source
-  pull_request:
-    branches:
-      - source
-
-name: rake
-
-env:
-  cache-version: v3
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      # Checkout the source code
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      # Set up SSH using the Deploy Key
+      # Set up SSH keys for GitHub access
       - name: Set up Deploy Key
         run: |
           mkdir -p ~/.ssh
@@ -29,22 +25,29 @@ jobs:
             IdentityFile ~/.ssh/id_ed25519
             StrictHostKeyChecking no" > ~/.ssh/config
 
-      - name: Test SSH Connection
-        run: ssh -i ~/.ssh/id_ed25519 -T git@github.com || true
-
-      # Debug workspace (optional, for troubleshooting)
-      - name: List Workspace Files
-        run: ls -R
-
-      # Set up Docker Compose
-      - name: Set up Docker Compose
-        uses: KengoTODA/actions-setup-docker-compose@v1
+      # Install Ruby and Bundler
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          version: '2.14.2'
+          ruby-version: 3.0
+          bundler-cache: true
 
-      # Run Docker Compose
-      - name: Run Docker Compose
-        run: docker-compose up
-        env:
-          GIT_USER: ${{ secrets.USER_GITHUB }}
-          GIT_EMAIL: ${{ secrets.EMAIL_GITHUB }}
+      # Install dependencies
+      - name: Install Dependencies
+        run: bundle install
+
+      # Build the Jekyll site
+      - name: Build Site
+        run: bundle exec jekyll build
+
+      # Push the generated site to the master branch
+      - name: Publish Site to Master
+        run: |
+          cd _site
+          git init
+          git config user.name "${{ secrets.USER_GITHUB }}"
+          git config user.email "${{ secrets.EMAIL_GITHUB }}"
+          git add .
+          git commit -m "Site updated at $(date -u)"
+          git remote add origin git@github.com:mattocci27/mattocci27.github.io.git
+          git push --force origin master
