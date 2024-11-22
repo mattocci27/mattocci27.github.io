@@ -2,7 +2,7 @@ services:
   web-rake:
     build:
       context: .
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./.docker/Dockerfile
     command: >
       /bin/bash -c "
       git config --global user.email '${GIT_EMAIL}' &&
