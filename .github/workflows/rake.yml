@@ -29,15 +29,12 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
+          ruby-version: 3.0.2
           bundler-cache: true
 
       # Install dependencies
       - name: Install Dependencies
         run: bundle install
-
-      - name: Install racc
-        run: gem install racc
 
       # Build the Jekyll site
       - name: Build Site
