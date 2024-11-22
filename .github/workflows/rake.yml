@@ -24,13 +24,14 @@ jobs:
         with:
           version: '2.14.2'
 
-      # Debug workspace
+      # Debug workspace (optional, for troubleshooting)
       - name: List Workspace Files
         run: ls -R
 
-      # Run docker-compose
+      # Run Docker Compose
       - name: Run Docker Compose
         run: docker-compose up
         env:
-          GIT_USER: ${{ secrets.GITHUB_USER }}
-          GIT_EMAIL: ${{ secrets.GITHUB_EMAIL }}
+          GIT_USER: ${{ secrets.USER_GITHUB }}
+          GIT_EMAIL: ${{ secrets.EMAIL_GITHUB }}
+          # GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
