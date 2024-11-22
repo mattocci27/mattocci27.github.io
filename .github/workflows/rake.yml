@@ -22,8 +22,15 @@ jobs:
       - name: Set up Docker Compose
         uses: KengoTODA/actions-setup-docker-compose@v1
         with:
-          version: '2.14.2'  # Specify the desired version
+          version: '2.14.2'
+
+      # Debug workspace
+      - name: List Workspace Files
+        run: ls -R
 
       # Run docker-compose
-      - name: Compose Run
+      - name: Run Docker Compose
         run: docker-compose up
+        env:
+          GIT_USER: ${{ secrets.GITHUB_USER }}
+          GIT_EMAIL: ${{ secrets.GITHUB_EMAIL }}
