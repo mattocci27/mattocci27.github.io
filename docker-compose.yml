@@ -13,6 +13,5 @@ services:
     environment:
       GIT_USER: ${GIT_USER}
       GIT_EMAIL: ${GIT_EMAIL}
-      # GITHUB_TOKEN: ${GITHUB_TOKEN}
     volumes:
       - .:/web

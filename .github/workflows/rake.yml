@@ -18,20 +18,27 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      # Set up SSH using the Deploy Key
+      - name: Set up Deploy Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      # Debug workspace (optional, for troubleshooting)
+      - name: List Workspace Files
+        run: ls -R
+
       # Set up Docker Compose
       - name: Set up Docker Compose
         uses: KengoTODA/actions-setup-docker-compose@v1
         with:
           version: '2.14.2'
 
-      # Debug workspace (optional, for troubleshooting)
-      - name: List Workspace Files
-        run: ls -R
-
       # Run Docker Compose
       - name: Run Docker Compose
         run: docker-compose up
         env:
-          GIT_USER: ${{ secrets.USER_GITHUB }}
-          GIT_EMAIL: ${{ secrets.EMAIL_GITHUB }}
-          # GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          USER_NAME_GITHUB: ${{ secrets.USER_NAME_GITHUB }}
+          EMAIL_GITHUB: ${{ secrets.EMAIL_GITHUB }}
