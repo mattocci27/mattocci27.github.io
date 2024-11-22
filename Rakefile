@@ -4,10 +4,8 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 
-
 # Change your GitHub reponame
 GITHUB_REPONAME = "mattocci27/mattocci27.github.io"
-
 
 desc "Generate blog files"
 task :generate do
@@ -17,7 +15,6 @@ task :generate do
   })).process
 end
 
-
 desc "Generate and publish blog to gh-pages"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
@@ -26,13 +23,19 @@ task :publish => [:generate] do
     pwd = Dir.pwd
     Dir.chdir tmp
 
+    # Initialize a Git repository in the temporary directory
     system "git init"
     system "git add ."
+
+    # Commit the changes
     message = "Site updated at #{Time.now.utc}"
     system "git commit -m #{message.inspect}"
-    system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
-    system "git push origin source --force"
 
+    # Push to the master branch of your repository
+    system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
+    system "git push origin master --force"
+
+    # Return to the original directory
     Dir.chdir pwd
   end
 end
