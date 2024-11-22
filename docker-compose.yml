@@ -1,22 +1,19 @@
-version: '3'
-
 services:
-
   web-rake:
     build:
       context: .
-      dockerfile: ./.docker/Dockerfile
-    #command: ["/bin/sh"]
-    #command: bash /web/publish.sh
-    #command: ls -lh /temp
+      dockerfile: ./docker/Dockerfile
     command: >
-      /bin/bash -c
-      " \
-        git config --global user.email 'mattocci27@gmail.com' && \
-        git config --global user.name 'Masatoshi Katabuchi' &&  \
-        rake publish
+      /bin/bash -c "
+      git config --global user.email '${GIT_EMAIL}' &&
+      git config --global user.name '${GIT_USER}' &&
+      rake publish
       "
     container_name: web-rake
     image: web-rake
     volumes:
       - .:/web
+    environment:
+      - GIT_USER
+      - GIT_EMAIL
+      - GITHUB_TOKEN
