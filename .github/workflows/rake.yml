@@ -40,5 +40,5 @@ jobs:
       - name: Run Docker Compose
         run: docker-compose up
         env:
-          GIT_USE: ${{ secrets.USER_GITHUB }}
+          GIT_USER: ${{ secrets.USER_GITHUB }}
           GIT_EMAIL: ${{ secrets.EMAIL_GITHUB }}
