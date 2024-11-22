@@ -37,7 +37,7 @@ jobs:
         run: bundle install
 
       - name: Install racc
-         run: gem install racc
+        run: gem install racc
 
       # Build the Jekyll site
       - name: Build Site
