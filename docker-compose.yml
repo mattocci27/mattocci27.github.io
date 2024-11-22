@@ -15,3 +15,4 @@ services:
       GIT_EMAIL: ${GIT_EMAIL}
     volumes:
       - .:/web
+      - ~/.ssh:/root/.ssh:ro
