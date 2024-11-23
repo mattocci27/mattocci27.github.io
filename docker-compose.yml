@@ -1,0 +1,18 @@
+services:
+  web-rake:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    command: >
+      /bin/bash -c "
+      git config --global user.email '${GIT_EMAIL}' &&
+      git config --global user.name '${GIT_USER}' &&
+      rake publish
+      "
+    container_name: web-rake
+    environment:
+      GIT_USER: ${GIT_USER}
+      GIT_EMAIL: ${GIT_EMAIL}
+    volumes:
+      - .:/web
+      - ~/.ssh:/root/.ssh:ro
