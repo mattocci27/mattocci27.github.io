@@ -19,7 +19,7 @@ description: "A personal website of Masatoshi Katabuchi (片渕正紀)"
 source_link: "https://mattocci27.github.io"
 favicon:     "img/favicon-msu.ico"
 touch_icon:  "img/apple-touch-icon.png"
-google_analytics_key: UA-47408626-1 ## put YOUR key here to enable tracking! (blank to disable)
+google_analytics_key: G-2K5WL7BVG5 ## put YOUR key here to enable tracking! (blank to disable)
 highlighter: rouge
 
 
