@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Cousine&display=swap');
+
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: 400;
+  color: #616161
+}
+h1, h4 { font-family: 'Helvetica'; }
+h2, h3 { font-family: 'Helvetica'; }
+.remark-code, .remark-inline-code { font-family: 'Cousine', monospace; font-size: 60%;}
