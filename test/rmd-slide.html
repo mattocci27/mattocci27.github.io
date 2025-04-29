@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Introduction to R Markdown</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Masatoshi Katabuchi" />
+    <meta name="date" content="2019-08-09" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="fc2.css" type="text/css" />
+    <link rel="stylesheet" href="fc2-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to R Markdown
+### Masatoshi Katabuchi
+### August 9, 2019
+
+---
+
+
+
+
+
+class: center, middle
+
+![](images/tweet3.png)
+---
+
+class: center, middle
+
+![](images/tweet2.png)
+
+---
+
+class: center, middle
+
+![](images/tweet1.png)
+
+---
+
+class: center, middle
+
+![](images/tweet4.png)
+
+---
+
+class: center, middle
+
+#### What is R Markdown?
+
+---
+
+class: center, middle
+
+#### Why do people use R Markdown to write scientific papers?
+
+---
+
+# Today's Goals and objectives
+
+.large[
+- Learn what R Markdown is
+- Learn why we want to use R Markdown
+]
+
+---
+
+# What is Markdown?
+
+Markdown is an easy-to-use **text-based** language.
+
+---
+
+# What is Markdown?
+
+Markdown is an easy-to-use **text-based** language.
+
+
+![](images/md_preview.png)
+
+---
+
+# What is R Markdown?
+
+![](images/what_is_rmd.png)
+
+---
+
+# What is R Markdown?
+
+You can embed R code in Markdown.
+
+.pull-left-50[
+
+### syntax
+
+```
+### Histogram
+
+- normal
+- *italic*
+- **bold**
+
+```
+
+
+```r
+library(tidyverse)
+rnorm(100) %&gt;%
+  hist
+```
+
+]
+.pull-right-50[
+### becomes
+### Histogram
+
+- normal
+- *italic*
+- **bold**
+
+![](rmd-slide_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+]
+
+---
+
+
+# R Markdown can be converted into
+
+![](images/rmd_conv.png)
+
+---
+
+class: center, middle
+
+# R Markdown Workflow
+
+
+![](images/workflow.png)
+
+
+---
+
+class: center, middle
+
+#### Learn why we want to use R Markdown
+
+---
+
+class: center, middle
+
+#### Things I don't like about Word/PPT/Excel with R
+
+---
+
+
+# Non-reproducible workflows
+
+We can save our results but we can't record what we done.
+
+![](images/repro1.jpg)
+
+
+---
+
+class: center, middle
+
+# Updating figures and tables manually
+
+[Non-reproducible workflows: a horror movie](https://www.youtube.com/watch?v=s3JldKoA0zw&amp;feature=youtu.be)
+
+![](images/a_reproducible_workflow.gif)
+
+---
+
+# Version control
+
+![](images/MS_version.jpg)
+
+---
+
+class: center, middle
+
+# Version control
+
+&lt;img src="images/version-control-1.jpg" alt="drawing" width="500"&gt;
+
+---
+
+
+class: center, middle
+
+#### Benefits of using R Markdown
+
+---
+
+# Updating results automatically
+
+.pull-left-50[
+
+.small[All data]
+
+
+```r
+ggplot(diamonds,
+       aes(x = carat,
+           y = price,
+           color = cut)) +
+    geom_point() +
+    scale_color_brewer(type='div', palette=4) +
+    xlab("Carats") +
+    ylab("Price") +
+    ggtitle("Diamonds")
+```
+
+![](rmd-slide_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+]
+.pull-right-50[
+]
+
+
+---
+
+# Updating results automatically
+
+.pull-left-50[
+
+.small[All data]
+
+
+```r
+ggplot(diamonds,
+       aes(x = carat,
+           y = price,
+           color = cut)) +
+    geom_point() +
+    scale_color_brewer(type='div', palette=4) +
+    xlab("Carats") +
+    ylab("Price") +
+    ggtitle("Diamonds")
+```
+
+![](rmd-slide_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+
+]
+.pull-right-50[
+
+.small[Data without `Fair`]
+
+
+```r
+ggplot(diamonds %&gt;%
+       filter(cut != "Fair"),
+       aes(x = carat,
+           y = price,
+           color = cut)) +
+    geom_point() +
+    scale_color_brewer(type='div', palette=4) +
+    xlab("Carats") +
+    ylab("Price") +
+    ggtitle("Diamonds")
+```
+
+![](rmd-slide_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+
+]
+
+---
+
+# More reproducible documents
+
+We can record what we done.
+
+![](images/repro3.jpg)
+
+---
+
+# Version control with Git
+
+We can version our manuscripts, codes and data [(Example)](https://github.com/mattocci27/rmd_template/commit/5f8eb204a5d3c0debb922686b5ecd2323346afff#diff-023d6195dd2101e3dad0eca4777dfb98).
+
+![](images/git2.png)
+
+---
+
+class: center, middle
+
+# Some examples
+
+---
+
+# Example 1: Simple regression
+
+$$
+y_i \sim \mathcal{N}(\mu_i, \sigma),\; \mu_i = 0.8\times x_i -1.2,\; \sigma = 0.2
+$$
+
+.details[
+
+```r
+set.seed(123)
+xx &lt;- rnorm(100)
+yy &lt;- rnorm(100, 0.8 * xx - 1.2, 0.2)
+dat &lt;- tibble(xx = xx, yy = yy)
+lm(yy ~ xx, dat) %&gt;% summary
+```
+
+```
+## 
+## Call:
+## lm(formula = yy ~ xx, data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.3815 -0.1367 -0.0175  0.1161  0.6581 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -1.22056    0.01951  -62.56   &lt;2e-16 ***
+## xx           0.78951    0.02138   36.94   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.1941 on 98 degrees of freedom
+## Multiple R-squared:  0.933,	Adjusted R-squared:  0.9323 
+## F-statistic:  1364 on 1 and 98 DF,  p-value: &lt; 2.2e-16
+```
+]
+
+
+---
+
+# Example 2: R Plots
+
+
+
+```r
+ggplot(dat, aes(x = xx, y = yy)) +
+  geom_point()
+```
+
+![](rmd-slide_files/figure-html/ex2-1.png)&lt;!-- --&gt;
+
+
+---
+
+# Example 3: HTML
+
+[HTML](https://mattocci27.github.io/assets/poilog.html) and [Rmd](https://github.com/mattocci27/blog/blob/master/poilog/poilog.rmd)
+
+![](images/poilog.jpg)
+
+
+---
+
+# Example 4: Scientific papers (PDF and docx)
+
+[R Markdown templete](https://github.com/mattocci27/rmd_template)
+
+![](images/rmd_template.png)
+
+---
+
+class: center, middle
+
+#### R Markdown Makes Your Life Much Easier
+
+---
+
+# Study Resources 1
+
+## Markdown/R Markdown basics
+
+.small[
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+- [Rmarkdown-cheatsheet-2.0.pdf](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+- [Introduction to R Markdown](https://m-clark.github.io/Introduction-to-Rmarkdown/)
+
+- [RMarkdown Tips and Tricks
+An Introduction to RMarkdown](https://www.richardshanna.com/tutorial/rmarkdown_tutorial_1/)
+
+## Git version control
+
+- [Github version control](https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/VersionControl/)
+
+- Blischak JD, Davenport ER, Wilson G (2016) A Quick Introduction to Version Control with Git and GitHub. PLoS Comput Biol 12(1): e1004668. [https://doi.org/10.1371/journal.pcbi.1004668](https://doi.org/10.1371/journal.pcbi.1004668)
+
+]
+---
+
+# Study Resources 2
+
+## Writing papers with R Markdown
+
+
+.small[
+- [The Plain Person’s Guide to Plain Text Social Science](http://plain-text.co/index.html#introduction)
+
+- [How to create professional reports from R scripts, with custom styles](https://jozef.io/r913-spin-with-style/)
+
+- [Reproducible Reporting with RMarkdown](https://4va.github.io/biodatasci/r-rmarkdown.html)
+
+- [Reproducible workflow, Metadata, and R Markdown](https://uoftcoders.github.io/rcourse/lec16-rmarkdown.html#what_are_the_barriers_to_reproducibility)
+
+- [Writing Technical Papers with Markdown](https://blog.kdheepak.com/writing-papers-with-markdown.html)
+
+- [Writing your thesis with R Markdown (1) – Getting started](https://rosannavanhespenresearch.wordpress.com/2016/02/03/writing-your-thesis-with-r-markdown-1-getting-started/)
+
+]
+
+---
+
+# Study Resources 3
+
+## Git repos
+
+- [xaringan: an R package for creating slideshows](https://github.com/yihui/xaringan)
+
+- [Collapsible Code Output for `xaringan`](https://gist.github.com/emitanaka/eaa258bb8471c041797ff377704c8505)
+
+- [R Markdown template for scienfitic papers](https://github.com/mattocci27/rmd_template)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+<script>
+(function() {
+  var divHTML = document.querySelectorAll(".details-open");
+  divHTML.forEach(function (el) {
+    var preNodes = el.getElementsByTagName("pre");
+    var outputNode = preNodes[1];
+    outputNode.outerHTML = "<details open class='output'><summary>Output</summary>" + outputNode.outerHTML + "</details>";
+  })
+})();
+(function() {
+  var divHTML = document.querySelectorAll(".details");
+  divHTML.forEach(function (el) {
+    var preNodes = el.getElementsByTagName("pre");
+    var outputNode = preNodes[1];
+    outputNode.outerHTML = "<details class='output'><summary>Output</summary>" + outputNode.outerHTML + "</details>";
+  })
+})();
+</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
