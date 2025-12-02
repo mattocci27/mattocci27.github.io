@@ -366,3 +366,7 @@ nav ul li:hover, nav ul li.active {
   }
 }
 
+.icon-bsky i {
+  transform: scale(0.92);
+  display: inline-block;
+}
