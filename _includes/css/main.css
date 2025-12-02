@@ -370,3 +370,7 @@ nav ul li:hover, nav ul li.active {
   transform: scale(0.92);
   display: inline-block;
 }
+
+.more-icons .fa-bluesky {
+  font-size: 4em;
+}
