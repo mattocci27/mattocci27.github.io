@@ -374,3 +374,36 @@ nav ul li:hover, nav ul li.active {
 .more-icons .fa-bluesky {
   font-size: 4em;
 }
+
+/* Responsive feature columns */
+.feature.columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: nowrap;
+}
+
+.feature.columns .column2 {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .feature.columns {
+    display: block;
+  }
+
+  .feature.columns .column2 {
+    width: 100%;
+    float: none;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .feature.columns .column2.right,
+  .feature.columns .column2.right span {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
