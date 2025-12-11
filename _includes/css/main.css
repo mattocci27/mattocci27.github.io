@@ -386,6 +386,11 @@ nav ul li:hover, nav ul li.active {
 
 .feature.columns .column2 {
   width: 50%;
+  float: none;
+}
+
+.feature.columns.reverse {
+  flex-direction: row-reverse;
 }
 
 @media (max-width: 768px) {
