@@ -53,7 +53,7 @@
 		border-spacing: 0; }
 
 
-	
+
 
 /* #Basic Styles
 ================================================== */
@@ -61,7 +61,7 @@
 		background: #fff;
 		/*font: 14px/21px var(--font-sans);*/
     font-family: var(--font-sans);
-		font-size: 14px/21px; 
+		font-size: 14px/21px;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
@@ -112,7 +112,7 @@
 ================================================== */
 	ul, ol { margin-bottom: 20px; }
 	ul { list-style: none outside; }
-	ol { list-style: none; } /* for ref */ 
+	ol { list-style: none; } /* for ref */
 	ul, ul.square { list-style: square outside; }
 	ul ul, ul.circle { list-style: circle outside; }
 	ul ul ul, ul.disc { list-style: disc outside; }
@@ -285,8 +285,8 @@
   width:90%;
 }
 
-.highlight pre, .highlight code { 
-  display:block; 
+.highlight pre, .highlight code {
+  display:block;
   margin:0;
   padding:0;
   font-family: var(--font-mono);
@@ -295,7 +295,7 @@
   overflow:auto;
   word-wrap: normal; }
 
-/* # remove border 
+/* # remove border
 .highlight, .linenodiv {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWPQ1dU1BgABzQC7XXMTYQAAAABJRU5ErkJggg==);
   display:block;
@@ -388,6 +388,20 @@ span.lineno {
 
 /* #img
 ================================================== */
+
+.calba-img {
+  display: inline-block;
+  background-image: url(../../img/calba.png);
+  line-height:0;
+  width:350px;
+  height:350px;
+  vertical-align: top;
+  background-position: center top;
+  background-size:350px 350px;
+  border-radius: 5px;
+  box-shadow: 0 14px 12px -10px rgba(0, 8, 26, 0.32);
+  margin-top: 0px
+}
 
 .ztpln-img {
   display: inline-block;
