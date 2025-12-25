@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to Data Handling</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Masatoshi Katabuchi" />
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
+    <link href="libs/font-awesome-animation-1.0/font-awesome-animation-emi.css" rel="stylesheet" />
+    <script src="libs/fontawesome-5.0.13/js/fontawesome-all.min.js"></script>
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/animate.css" type="text/css" />
+    <link rel="stylesheet" href="assets/cssgrid.css" type="text/css" />
+    <link rel="stylesheet" href="assets/monash-brand.css" type="text/css" />
+    <link rel="stylesheet" href="assets/custom.css" type="text/css" />
+    <link rel="stylesheet" href="assets/boxes.css" type="text/css" />
+    <link rel="stylesheet" href="assets/table.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to Data Handling
+### Masatoshi Katabuchi
+### April 17, <a href="mailto:2021@TokyoR91" class="email">2021@TokyoR91</a>
+
+---
+
+
+
+
+
+
+
+
+
+# Thanks to
+
+- **Functional Programming** by Sara Altman, Bill Behrman and Hadley Wickham
+  - .monash-blue[https://github.com/dcl-docs/prog]
+- **Data Wrangling with R Workshop** by Emi Tanaka
+  - .monash-blue[https://github.com/emitanaka/biometrics2019]
+- **Tidyverse Workshop** by Emi Tanaka
+  - .monash-blue[https://github.com/emitanaka/datawrangle-workshop-ssavic]
+
+These slides are licensed under:
+
+.center[
+&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
+&lt;img src="images/by-nc-sa.png" style="width:300px"&gt;&lt;br&gt;
+]
+
+
+---
+
+# About me
+
+- Masatoshi Katabuchi
+
+- Plant Ecologist @ Xishuangbanna Tropical Botanical Garden
+
+- Interests:
+  - Data &lt;i class="fas fa-chart-line"&gt;&lt;/i&gt; |
+    Leaf &lt;i class="fas fa-leaf"&gt;&lt;/i&gt; |
+    Beer &lt;i class="fas fa-beer"&gt;&lt;/i&gt; &lt;i class="fas fa-beer"&gt;&lt;/i&gt; &lt;i class="fas fa-beer"&gt;&lt;/i&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+<span>&lt;i class="fas  fa-envelope faa- animated "&gt;&lt;/i&gt;</span>  mattocci27@gmail.com |
+<span>&lt;i class="fab  fa-twitter faa- animated faa-fast "&gt;&lt;/i&gt;</span> @mattocci |
+<span>&lt;i class="fas  fa-globe faa- animated faa-fast "&gt;&lt;/i&gt;</span> https://mattocci27.github.io
+
+---
+
+# 80/20 rule for R codes
+
+~ 80% of your R code for data analysis and visualization will be spent cleaning and preparing data.
+
+.center[
+&lt;img src="images/workflow.png" style="width:800px"&gt;&lt;br&gt;
+]
+ 
+.footnote[
+Hadley Wickham and Garrett Grolemund (2016) R for Data Science, O'Reilly Media, Inc.
+]
+
+---
+
+class: font_smaller
+
+# Goal 1: using this data, make the plot below
+
+
+
+
+```r
+glimpse(dat)
+```
+
+```
+  Rows: 2,548
+  Columns: 6
+  $ sp_code &lt;chr&gt; "ADEFAS", "ARBMEN", "ARCTOM", "ARTCAL", "BACPIL", "CEACUN", "CEAOLI", "CERBET", "CLELAS", "DIROCC", "ERICAL", "HETARB", "HOLDIS", "LEPCAL", "LONHIS", "LOTSCO", "MIMAUR", "PICMON", "PRUIIL", "QUEAGR", "QUEDUR", "RHACAL", "RHACRO", "RIBCAL", "RIBMAL", "SAMMEX", "SOLUMB", "TOXDIV", "CHETRY", "CHEOAH", "COMOCH", "METPOL", "MYOSAN", "MYRLES", "PELSP", "RHUSAN", "RUBHAW", "SOPCHR", "STYTAM", "VACCHA", "VACRET", "CARKAU", "DODVIS", "DUBSCA", "METPOL", "NEPSP", "DICLIN", "HETCON", "METPOL", "METPOL", "MYRSAN", "NEPSP", "PIPALB", "PSYSP", "BRUARG", "CIBGLA", "CLEMON", "FREARB", "ILEANO", "METPOL", "METPOL", "PEPSP", "COMERN", "COMOCH", "DICLIN", "HEDCEN", "MACMAR", "METPOL", "METPOL", "BETPAP", "PRUSER", "FRAAME", "QUERUB", "QUEALB", "CASDEN", "ULMAME", "ACERUB", "ACESAC", "ACEPEN", "ACASKU", "AEGCOS", "ALLCAM", "AMPTUX", "ASTMEX", "BACTRI", "BROALI", "BURSIM", "CAPBAD", "CASSYL", "CECOBT", "CHAALT", "CHAPIN", "CLABIF", "COCHON", "CORMEG", "CROSCH", "CUPDEN", "CYMBAI", "CYNRET…
+  $ DE      &lt;chr&gt; "E", "E", "E", "D", "E", "E", "E", "E", "D", "D", "E", "E", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "D", "D", "D", "D", "D", NA, "E", "E", NA, NA, NA, NA, NA, "E", NA, "E", "E", "E", NA, "E", "E", NA, NA, NA, NA, NA, NA, "E", NA, NA, "E", "E", NA, "E", NA, NA, NA, NA, NA, "E", "E", NA, "E", NA, NA, NA, "D", "D", "D", "D", "D", NA, "D", "D", "D", "D", "E", "D", "E", "E", "E", "E", "D", "D", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "D", "E", "D", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "D", "D", "E", "E", "E", "D", "E", "E", "D", "E", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", NA, NA, NA, NA, NA, NA, "D", NA, NA, "E", "E", NA, NA, "E", NA, "D", "E", "E", NA, "E", "E", "E", "E", NA, NA, NA, NA, NA, N…
+  $ LMA     &lt;dbl&gt; 281.838, 154.882, 141.254, 95.499, 107.152, 229.087, 120.226, 138.038, 74.131, 56.234, 177.828, 208.930, 77.625, 100.000, 107.152, 95.499, 112.202, 151.356, 151.356, 194.984, 208.930, 74.131, 125.893, 93.325, 74.131, 100.000, 79.433, 79.433, 89.125, 89.125, 79.433, 309.030, 147.911, 154.882, 66.069, 47.863, 36.308, 114.815, 204.174, 53.703, 169.824, 151.356, 144.544, 66.069, 194.984, 154.882, 83.176, 45.709, 141.254, 177.828, 45.709, 47.863, 61.660, 70.795, 72.444, 60.256, 32.359, 60.256, 95.499, 109.648, 204.174, 37.154, 81.283, 39.811, 109.648, 123.027, 223.872, 158.489, 363.078, 100.000, 56.234, 91.201, 109.648, 100.000, 57.544, 64.565, 104.713, 102.329, 58.884, 25.704, 42.658, 107.152, 85.114, 74.131, 54.954, 63.096, 85.114, 56.234, 63.096, 77.625, 41.687, 40.738, 107.152, 104.713, 85.114, 66.069, 114.815, 109.648, 128.825, 93.325, 83.176, 83.176, 48.978, 87.096, 131.826, 104.713, 45.709, 114.815, 100.000, 61.660, 51.286, 93.325, 97.724, 54.954, 100.000, 53.703, 1…
+  $ Nmass   &lt;dbl&gt; 1.172, 1.242, 1.033, NA, 2.443, 1.799, 2.128, 2.410, NA, 2.582, 1.667, 1.371, 1.941, 1.816, NA, 2.296, 1.156, NA, 2.046, NA, NA, 2.080, 2.128, 2.234, NA, 2.535, NA, 1.977, 1.191, 3.631, 1.291, 0.729, 1.291, 0.959, 1.300, 1.400, 2.951, 2.891, 0.820, 1.991, 0.889, 0.971, 1.400, 0.809, 0.859, 1.089, 1.089, 1.180, 0.859, 0.871, 1.050, 1.109, 1.600, 1.309, 1.340, 1.660, 2.851, 1.910, 1.239, 1.109, 0.769, 2.178, 0.991, 1.750, 0.959, 1.271, 0.690, 0.780, 0.590, 2.523, 2.679, 2.280, 2.547, 3.365, 2.588, 2.000, 1.714, 1.667, 2.541, 2.582, 1.552, 1.130, 1.426, 1.667, 1.538, 2.133, 1.514, 1.633, NA, 2.208, 1.202, 1.766, 2.099, NA, 2.133, 1.914, 1.503, 1.315, 1.180, 0.895, 1.687, 1.585, 2.780, 1.236, NA, 1.726, 1.738, 1.750, 1.600, 2.104, 2.118, NA, 2.477, 1.500, 1.514, 1.445, 1.690, 2.529, NA, 1.592, 2.123, 3.221, 2.301, 1.390, 1.671, 1.589, 1.069, 1.035, 1.791, 1.380, 1.091, 1.607, 1.871, 1.346, 0.753, 1.950, NA, 1.419, 2.244, 2.291, 2.168, 1.807, 1.687, 1.117, 2.831, 1.371, 1.…
+  $ Aarea   &lt;dbl&gt; 14.125, 11.220, 10.471, NA, 17.378, 22.909, 17.783, 24.547, NA, 7.762, 18.621, 12.303, 12.589, 12.589, NA, 21.380, 14.791, NA, 9.550, NA, NA, 10.715, 12.589, 10.965, NA, 19.055, NA, 13.183, 5.370, 14.791, 10.000, 4.467, 14.791, 7.244, NA, 16.596, NA, 7.762, NA, 5.129, NA, NA, NA, NA, 9.550, 1.445, NA, NA, NA, 10.965, NA, NA, 14.125, 1.950, 3.311, NA, 1.514, 2.344, NA, 3.311, 3.802, NA, NA, 1.288, NA, 3.715, NA, 4.571, 6.166, 19.498, 18.621, 9.120, 23.442, 22.909, 12.589, 12.882, 12.882, 6.918, 10.000, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 16.596, 12.589, 14.454, 13.490, 13.490, 8.511, 13.490, 15.136, 15.136, 17.378, 17.378, 19.055, 14.791, 8.913, 20.893, 12.882, 22.387, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+  $ Rdmass  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+```
+
+&lt;img src="figure/plot1-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+.footnote[
+Wright et al. 2004. “The worldwide leaf economics spectrum” Nature 428:821–827
+]
+
+---
+
+class: font_smaller
+
+# Goal 2: using this data, make the table below
+
+
+```r
+glimpse(dat)
+```
+
+```
+  Rows: 2,548
+  Columns: 6
+  $ sp_code &lt;chr&gt; "ADEFAS", "ARBMEN", "ARCTOM", "ARTCAL", "BACPIL", "CEACUN", "CEAOLI", "CERBET", "CLELAS", "DIROCC", "ERICAL", "HETARB", "HOLDIS", "LEPCAL", "LONHIS", "LOTSCO", "MIMAUR", "PICMON", "PRUIIL", "QUEAGR", "QUEDUR", "RHACAL", "RHACRO", "RIBCAL", "RIBMAL", "SAMMEX", "SOLUMB", "TOXDIV", "CHETRY", "CHEOAH", "COMOCH", "METPOL", "MYOSAN", "MYRLES", "PELSP", "RHUSAN", "RUBHAW", "SOPCHR", "STYTAM", "VACCHA", "VACRET", "CARKAU", "DODVIS", "DUBSCA", "METPOL", "NEPSP", "DICLIN", "HETCON", "METPOL", "METPOL", "MYRSAN", "NEPSP", "PIPALB", "PSYSP", "BRUARG", "CIBGLA", "CLEMON", "FREARB", "ILEANO", "METPOL", "METPOL", "PEPSP", "COMERN", "COMOCH", "DICLIN", "HEDCEN", "MACMAR", "METPOL", "METPOL", "BETPAP", "PRUSER", "FRAAME", "QUERUB", "QUEALB", "CASDEN", "ULMAME", "ACERUB", "ACESAC", "ACEPEN", "ACASKU", "AEGCOS", "ALLCAM", "AMPTUX", "ASTMEX", "BACTRI", "BROALI", "BURSIM", "CAPBAD", "CASSYL", "CECOBT", "CHAALT", "CHAPIN", "CLABIF", "COCHON", "CORMEG", "CROSCH", "CUPDEN", "CYMBAI", "CYNRET…
+  $ DE      &lt;chr&gt; "E", "E", "E", "D", "E", "E", "E", "E", "D", "D", "E", "E", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "D", "D", "D", "D", "D", NA, "E", "E", NA, NA, NA, NA, NA, "E", NA, "E", "E", "E", NA, "E", "E", NA, NA, NA, NA, NA, NA, "E", NA, NA, "E", "E", NA, "E", NA, NA, NA, NA, NA, "E", "E", NA, "E", NA, NA, NA, "D", "D", "D", "D", "D", NA, "D", "D", "D", "D", "E", "D", "E", "E", "E", "E", "D", "D", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "D", "E", "D", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "D", "D", "E", "E", "E", "D", "E", "E", "D", "E", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", NA, NA, NA, NA, NA, NA, "D", NA, NA, "E", "E", NA, NA, "E", NA, "D", "E", "E", NA, "E", "E", "E", "E", NA, NA, NA, NA, NA, N…
+  $ LMA     &lt;dbl&gt; 281.838, 154.882, 141.254, 95.499, 107.152, 229.087, 120.226, 138.038, 74.131, 56.234, 177.828, 208.930, 77.625, 100.000, 107.152, 95.499, 112.202, 151.356, 151.356, 194.984, 208.930, 74.131, 125.893, 93.325, 74.131, 100.000, 79.433, 79.433, 89.125, 89.125, 79.433, 309.030, 147.911, 154.882, 66.069, 47.863, 36.308, 114.815, 204.174, 53.703, 169.824, 151.356, 144.544, 66.069, 194.984, 154.882, 83.176, 45.709, 141.254, 177.828, 45.709, 47.863, 61.660, 70.795, 72.444, 60.256, 32.359, 60.256, 95.499, 109.648, 204.174, 37.154, 81.283, 39.811, 109.648, 123.027, 223.872, 158.489, 363.078, 100.000, 56.234, 91.201, 109.648, 100.000, 57.544, 64.565, 104.713, 102.329, 58.884, 25.704, 42.658, 107.152, 85.114, 74.131, 54.954, 63.096, 85.114, 56.234, 63.096, 77.625, 41.687, 40.738, 107.152, 104.713, 85.114, 66.069, 114.815, 109.648, 128.825, 93.325, 83.176, 83.176, 48.978, 87.096, 131.826, 104.713, 45.709, 114.815, 100.000, 61.660, 51.286, 93.325, 97.724, 54.954, 100.000, 53.703, 1…
+  $ Nmass   &lt;dbl&gt; 1.172, 1.242, 1.033, NA, 2.443, 1.799, 2.128, 2.410, NA, 2.582, 1.667, 1.371, 1.941, 1.816, NA, 2.296, 1.156, NA, 2.046, NA, NA, 2.080, 2.128, 2.234, NA, 2.535, NA, 1.977, 1.191, 3.631, 1.291, 0.729, 1.291, 0.959, 1.300, 1.400, 2.951, 2.891, 0.820, 1.991, 0.889, 0.971, 1.400, 0.809, 0.859, 1.089, 1.089, 1.180, 0.859, 0.871, 1.050, 1.109, 1.600, 1.309, 1.340, 1.660, 2.851, 1.910, 1.239, 1.109, 0.769, 2.178, 0.991, 1.750, 0.959, 1.271, 0.690, 0.780, 0.590, 2.523, 2.679, 2.280, 2.547, 3.365, 2.588, 2.000, 1.714, 1.667, 2.541, 2.582, 1.552, 1.130, 1.426, 1.667, 1.538, 2.133, 1.514, 1.633, NA, 2.208, 1.202, 1.766, 2.099, NA, 2.133, 1.914, 1.503, 1.315, 1.180, 0.895, 1.687, 1.585, 2.780, 1.236, NA, 1.726, 1.738, 1.750, 1.600, 2.104, 2.118, NA, 2.477, 1.500, 1.514, 1.445, 1.690, 2.529, NA, 1.592, 2.123, 3.221, 2.301, 1.390, 1.671, 1.589, 1.069, 1.035, 1.791, 1.380, 1.091, 1.607, 1.871, 1.346, 0.753, 1.950, NA, 1.419, 2.244, 2.291, 2.168, 1.807, 1.687, 1.117, 2.831, 1.371, 1.…
+  $ Aarea   &lt;dbl&gt; 14.125, 11.220, 10.471, NA, 17.378, 22.909, 17.783, 24.547, NA, 7.762, 18.621, 12.303, 12.589, 12.589, NA, 21.380, 14.791, NA, 9.550, NA, NA, 10.715, 12.589, 10.965, NA, 19.055, NA, 13.183, 5.370, 14.791, 10.000, 4.467, 14.791, 7.244, NA, 16.596, NA, 7.762, NA, 5.129, NA, NA, NA, NA, 9.550, 1.445, NA, NA, NA, 10.965, NA, NA, 14.125, 1.950, 3.311, NA, 1.514, 2.344, NA, 3.311, 3.802, NA, NA, 1.288, NA, 3.715, NA, 4.571, 6.166, 19.498, 18.621, 9.120, 23.442, 22.909, 12.589, 12.882, 12.882, 6.918, 10.000, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 16.596, 12.589, 14.454, 13.490, 13.490, 8.511, 13.490, 15.136, 15.136, 17.378, 17.378, 19.055, 14.791, 8.913, 20.893, 12.882, 22.387, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+  $ Rdmass  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+```
+
+.center[
+## Summary stats
+]
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; DE &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; mean_LMA &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sd_LMA &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; mean_Aarea &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sd_Aarea &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 78.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 602 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 199.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 154.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1004 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 85.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 942 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+.footnote[
+Wright et al. 2004. “The worldwide leaf economics spectrum” Nature 428:821–827
+]
+
+---
+
+# Tidyverse
+
+* **Tidyverse** refers to a collection of R-packages including  `ggplot2`,
+  `dplyr`, `tidyr`, `reader`, `purrr` ...
+
+* Eight of these packages form the **core tidyverse**.
+
+&lt;center&gt;
+&lt;img height="130px" src="images/tidyverse.png"&gt; &lt;img height="100px" src="images/ggplot2.png"&gt;&lt;img height="100px" src="images/dplyr.png"&gt;&lt;img height="100px" src="images/tidyr.png"&gt;&lt;img height="100px" src="images/readr.png"&gt;&lt;img height="100px" src="images/purrr.png"&gt;&lt;img height="100px" src="images/tibble.png"&gt;&lt;img height="100px" src="images/stringr.png"&gt;&lt;img height="100px" src="images/forcats.png"&gt;
+&lt;/center&gt;
+
+* `library(tidyverse)` is a short hand for `library(ggplot2)`,  `library(dplyr)`, ..., `library(forcats)`
+
+* We will use `dplyr` and `tidyr` for data handling today.
+
+.footnote[
+Wickham, H. et al. 2019. “Welcome to the Tidyverse.” Journal of Open. https://joss.theoj.org/papers/10.21105/joss.01686.
+]
+
+
+---
+
+# Data frames
+
+.info-box[
+- `data.frame` and `tibble` are lists of any types of vectors
+- `matrix` can only contain a single type of vectors
+]
+
+::: grid
+::: { .item border-right: dashed 3pt black; }
+
+
+&lt;img src="figure/tibble3-1.png" width="504" style="display: block; margin: auto;" /&gt;
+
+:::
+
+::: item
+
+
+.font_smaller[
+
+
+```r
+mpg
+```
+
+```
+  # A tibble: 234 x 11
+     manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
+     &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
+   1 audi         a4           1.8  1999     4 auto(l5)   f        18    29 p     compact
+   2 audi         a4           1.8  1999     4 manual(m5) f        21    29 p     compact
+   3 audi         a4           2    2008     4 manual(m6) f        20    31 p     compact
+   4 audi         a4           2    2008     4 auto(av)   f        21    30 p     compact
+   5 audi         a4           2.8  1999     6 auto(l5)   f        16    26 p     compact
+   6 audi         a4           2.8  1999     6 manual(m5) f        18    26 p     compact
+   7 audi         a4           3.1  2008     6 auto(av)   f        18    27 p     compact
+   8 audi         a4 quattro   1.8  1999     4 manual(m5) 4        18    26 p     compact
+   9 audi         a4 quattro   1.8  1999     4 auto(l5)   4        16    25 p     compact
+  10 audi         a4 quattro   2    2008     4 manual(m6) 4        20    28 p     compact
+  # … with 224 more rows
+```
+]
+
+
+:::
+
+---
+
+# Tidy data
+
+Typical aim of data handling is to make a tidy data
+
+.info-box[
+**What is a tidy data?**
+- Each variable must have its own column
+- Each observation must have its own row
+- Each value must have its own cell
+]
+
+- easy to manipulate, model and visualize
+
+.center[
+&lt;img src="images/tidy_data.png" style="width:900px"&gt;&lt;br&gt;
+]
+
+.footnote[
+Wickham, Hadley. 2014. “Tidy Data.” Journal of Statistical Software, Articles 59 (10): 1–23.
+]
+
+---
+
+# Data structure
+
+
+
+::: grid
+::: item
+
+.center[
+## Non-tidy data
+]
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; person &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; treatment_a &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; treatment_b &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Smith &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jane Doe &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mary Jhonson &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+:::
+
+::: item
+
+.center[
+## Tidy data
+]
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; person &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; treatment &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; result &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Smith &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; treatment_a &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jane Doe &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; treatment_a &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mary Jhonson &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; treatment_a &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Smith &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; treatment_b &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jane Doe &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; treatment_b &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mary Jhonson &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; treatment_b &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+:::
+
+.footnote[
+Wickham, Hadley. 2014. “Tidy Data.” Journal of Statistical Software, Articles 59 (10): 1–23.
+]
+
+---
+
+class: font_smaller
+
+
+```r
+non_tidy1
+```
+
+```
+  # A tibble: 3 x 3
+    person       treatment_a treatment_b
+    &lt;chr&gt;              &lt;dbl&gt;       &lt;dbl&gt;
+  1 John Smith            NA           2
+  2 Jane Doe              16          11
+  3 Mary Jhonson           3           1
+```
+
+--
+
+
+```r
+non_tidy1 %&gt;%
+  pivot_longer(2:3, names_to = "treatment", values_to = "result") %&gt;%
+  arrange(treatment)
+```
+
+```
+  # A tibble: 6 x 3
+    person       treatment   result
+    &lt;chr&gt;        &lt;chr&gt;        &lt;dbl&gt;
+  1 John Smith   treatment_a     NA
+  2 Jane Doe     treatment_a     16
+  3 Mary Jhonson treatment_a      3
+  4 John Smith   treatment_b      2
+  5 Jane Doe     treatment_b     11
+  6 Mary Jhonson treatment_b      1
+```
+
+---
+
+class: font_smaller
+
+# Goal 1: using this data, make the plot below
+
+
+
+
+
+
+
+
+&lt;img src="figure/plot1-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+--
+
+::: { .pos .bg-white top: 90px; right:5px; border: solid 3px black; width: 88%; }
+
+- DE: deciduous, evergreen, NA -&gt; remove missing values
+- LMA: leaf .red[mass] / leaf .blue[area]
+- N.red[mass]: leaf nitrogen / leaf .red[mass] -&gt; N.blue[area] =  N.red[mass]
+  `\(\times\)` LMA
+- A.blue[area]: photosynthetic rates / leaf .blue[area]
+- Rd.red[mass]: respiration rates / leaf .red[mass] -&gt; Rd.blue[area] =  Rd.red[mass]
+  `\(\times\)` LMA
+
+---
+
+# Mapping variable to aesthetistic (see `ggplot2`)
+
+.font_smaller[
+
+
+```
+  Rows: 2,548
+  Columns: 6
+  $ sp_code &lt;chr&gt; "ADEFAS", "ARBMEN", "ARCTOM", "ARTCAL", "BACPIL", "CEACUN", "CEAOLI", "CERBET", "CLELAS", "DIROCC", "ERICAL", "HETARB", "HOLDIS", "LEPCAL", "LONHIS", "LOTSCO", "MIMAUR", "PICMON", "PRUIIL", "QUEAGR", "QUEDUR", "RHACAL", "RHACRO", "RIBCAL", "RIBMAL", "SAMMEX", "SOLUMB", "TOXDIV", "CHETRY", "CHEOAH", "COMOCH", "METPOL", "MYOSAN", "MYRLES", "PELSP", "RHUSAN", "RUBHAW", "SOPCHR", "STYTAM", "VACCHA", "VACRET", "CARKAU", "DODVIS", "DUBSCA", "METPOL", "NEPSP", "DICLIN", "HETCON", "METPOL", "METPOL", "MYRSAN", "NEPSP", "PIPALB", "PSYSP", "BRUARG", "CIBGLA", "CLEMON", "FREARB", "ILEANO", "METPOL", "METPOL", "PEPSP", "COMERN", "COMOCH", "DICLIN", "HEDCEN", "MACMAR", "METPOL", "METPOL", "BETPAP", "PRUSER", "FRAAME", "QUERUB", "QUEALB", "CASDEN", "ULMAME", "ACERUB", "ACESAC", "ACEPEN", "ACASKU", "AEGCOS", "ALLCAM", "AMPTUX", "ASTMEX", "BACTRI", "BROALI", "BURSIM", "CAPBAD", "CASSYL", "CECOBT", "CHAALT", "CHAPIN", "CLABIF", "COCHON", "CORMEG", "CROSCH", "CUPDEN", "CYMBAI", "CYNRET…
+  $ DE      &lt;chr&gt; "E", "E", "E", "D", "E", "E", "E", "E", "D", "D", "E", "E", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "D", "D", "D", "D", "D", NA, "E", "E", NA, NA, NA, NA, NA, "E", NA, "E", "E", "E", NA, "E", "E", NA, NA, NA, NA, NA, NA, "E", NA, NA, "E", "E", NA, "E", NA, NA, NA, NA, NA, "E", "E", NA, "E", NA, NA, NA, "D", "D", "D", "D", "D", NA, "D", "D", "D", "D", "E", "D", "E", "E", "E", "E", "D", "D", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "D", "E", "D", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "D", "D", "E", "E", "E", "D", "E", "E", "D", "E", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", NA, NA, NA, NA, NA, NA, "D", NA, NA, "E", "E", NA, NA, "E", NA, "D", "E", "E", NA, "E", "E", "E", "E", NA, NA, NA, NA, NA, N…
+  $ LMA     &lt;dbl&gt; 281.838, 154.882, 141.254, 95.499, 107.152, 229.087, 120.226, 138.038, 74.131, 56.234, 177.828, 208.930, 77.625, 100.000, 107.152, 95.499, 112.202, 151.356, 151.356, 194.984, 208.930, 74.131, 125.893, 93.325, 74.131, 100.000, 79.433, 79.433, 89.125, 89.125, 79.433, 309.030, 147.911, 154.882, 66.069, 47.863, 36.308, 114.815, 204.174, 53.703, 169.824, 151.356, 144.544, 66.069, 194.984, 154.882, 83.176, 45.709, 141.254, 177.828, 45.709, 47.863, 61.660, 70.795, 72.444, 60.256, 32.359, 60.256, 95.499, 109.648, 204.174, 37.154, 81.283, 39.811, 109.648, 123.027, 223.872, 158.489, 363.078, 100.000, 56.234, 91.201, 109.648, 100.000, 57.544, 64.565, 104.713, 102.329, 58.884, 25.704, 42.658, 107.152, 85.114, 74.131, 54.954, 63.096, 85.114, 56.234, 63.096, 77.625, 41.687, 40.738, 107.152, 104.713, 85.114, 66.069, 114.815, 109.648, 128.825, 93.325, 83.176, 83.176, 48.978, 87.096, 131.826, 104.713, 45.709, 114.815, 100.000, 61.660, 51.286, 93.325, 97.724, 54.954, 100.000, 53.703, 1…
+  $ Nmass   &lt;dbl&gt; 1.172, 1.242, 1.033, NA, 2.443, 1.799, 2.128, 2.410, NA, 2.582, 1.667, 1.371, 1.941, 1.816, NA, 2.296, 1.156, NA, 2.046, NA, NA, 2.080, 2.128, 2.234, NA, 2.535, NA, 1.977, 1.191, 3.631, 1.291, 0.729, 1.291, 0.959, 1.300, 1.400, 2.951, 2.891, 0.820, 1.991, 0.889, 0.971, 1.400, 0.809, 0.859, 1.089, 1.089, 1.180, 0.859, 0.871, 1.050, 1.109, 1.600, 1.309, 1.340, 1.660, 2.851, 1.910, 1.239, 1.109, 0.769, 2.178, 0.991, 1.750, 0.959, 1.271, 0.690, 0.780, 0.590, 2.523, 2.679, 2.280, 2.547, 3.365, 2.588, 2.000, 1.714, 1.667, 2.541, 2.582, 1.552, 1.130, 1.426, 1.667, 1.538, 2.133, 1.514, 1.633, NA, 2.208, 1.202, 1.766, 2.099, NA, 2.133, 1.914, 1.503, 1.315, 1.180, 0.895, 1.687, 1.585, 2.780, 1.236, NA, 1.726, 1.738, 1.750, 1.600, 2.104, 2.118, NA, 2.477, 1.500, 1.514, 1.445, 1.690, 2.529, NA, 1.592, 2.123, 3.221, 2.301, 1.390, 1.671, 1.589, 1.069, 1.035, 1.791, 1.380, 1.091, 1.607, 1.871, 1.346, 0.753, 1.950, NA, 1.419, 2.244, 2.291, 2.168, 1.807, 1.687, 1.117, 2.831, 1.371, 1.…
+  $ Aarea   &lt;dbl&gt; 14.125, 11.220, 10.471, NA, 17.378, 22.909, 17.783, 24.547, NA, 7.762, 18.621, 12.303, 12.589, 12.589, NA, 21.380, 14.791, NA, 9.550, NA, NA, 10.715, 12.589, 10.965, NA, 19.055, NA, 13.183, 5.370, 14.791, 10.000, 4.467, 14.791, 7.244, NA, 16.596, NA, 7.762, NA, 5.129, NA, NA, NA, NA, 9.550, 1.445, NA, NA, NA, 10.965, NA, NA, 14.125, 1.950, 3.311, NA, 1.514, 2.344, NA, 3.311, 3.802, NA, NA, 1.288, NA, 3.715, NA, 4.571, 6.166, 19.498, 18.621, 9.120, 23.442, 22.909, 12.589, 12.882, 12.882, 6.918, 10.000, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 16.596, 12.589, 14.454, 13.490, 13.490, 8.511, 13.490, 15.136, 15.136, 17.378, 17.378, 19.055, 14.791, 8.913, 20.893, 12.882, 22.387, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+  $ Rdmass  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+```
+]
+
+.paddings[
+&lt;pre&gt;&lt;code&gt;
+ggplot(.bg-yellow[&amp;lt;DATA&amp;gt;], aes(x = .bg-yellow[&amp;lt;VAR&amp;gt;])) +
+  geom_histogram() +
+  facet_wrap(~ .bg-yellow[&amp;lt;GROUP&amp;gt;],
+             scale = "free",
+             nrow = 1)
+&lt;/code&gt; &lt;/pre&gt;
+
+]
+
+::: { .pos .bg-white top: 90px; right:5px; border: solid 3px black; width: 77%; }
+
+&lt;img src="figure/plot1-1.png" width="864" style="display: block; margin: auto;" /&gt;
+:::
+
+---
+
+# 🔧 Data wrangling
+
+&lt;br&gt;
+
+::: grid
+
+::: { .item border-right: dashed 3px black; }
+
+.center[
+## The data we *have*
+]
+
+&lt;img src="figure/tile1-1.png" width="504" style="display: block; margin: auto;" /&gt;
+
+
+:::
+
+::: item
+
+.center[
+## The data we *need*
+]
+
+
+&lt;img src="figure/unnamed-chunk-9-1.png" width="504" style="display: block; margin: auto;" /&gt;
+
+
+:::
+
+:::
+
+
+--
+
+::: {.pos .bg-white .font_small bottom: 10px; left: 25%; border: dashed 1px black; }
+
+&lt;pre&gt;&lt;code&gt;
+ggplot(.bg-yellow[&amp;lt;DATA&amp;gt;], aes(x = &lt;span class="bg-black" style="color:#E8E8E8; padding-left:3px;padding-right:3px;"&gt;value&lt;/span&gt;)) +
+  geom_histogram() +
+  facet_wrap(~ &lt;span class="bg-black" style="color:#E8E8E8; padding-left:3px;padding-right:3px;"&gt;name&lt;/span&gt;,
+             scale = "free",
+             nrow = 1)
+&lt;/code&gt; &lt;/pre&gt;
+
+:::
+
+---
+
+class: font_smaller
+
+# 🔧 Data wrangling using `tidyr::pivot_longer`
+
+
+::: grid
+
+::: { .item border-right: dashed 3pt black; }
+
+The following commands all produce the same output on the right:
+
+&lt;br&gt;
+.code-box[
+
+```r
+pivot_longer(dat,
+  cols = c("LMA", "Nmass", "Aarea", "Rdmass"))
+```
+
+```r
+pivot_longer(dat,
+  cols = c(LMA, Nmass, Aarea, Rdmass))
+```
+
+```r
+pivot_longer(dat, cols = LMA:Rdmass)
+```
+
+```r
+pivot_longer(dat, cols = 2:5)
+```
+]
+&lt;br&gt;
+
+:::
+
+::: item
+
+
+
+
+
+:::
+
+:::
+
+---
+
+class: font_smaller
+
+# pipes `%&gt;%`
+
+- `f(&lt;data&gt;, &lt;argA&gt;) = &lt;data&gt; %&gt;% f(&lt;argA&gt;)`
+
+- `g(f(&lt;data&gt;, &lt;argA&gt;), &lt;argB&gt;) = f(&lt;data&gt;, &lt;argA&gt;) %&gt;% g(&lt;argB&gt;)`
+
+&lt;br&gt;
+
+--
+
+Let's say you want to apply function `F` to `x` first, then apply `G`, then apply `H`, then apply `I`, then `K` ...
+
+--
+
+**Which one do you prefer?**
+
+`K(I(H(G(F(x)))))` or `F(x) %&gt;% G %&gt;% H %&gt;% I %&gt;% K`
+
+---
+
+
+class: font_smaller2
+
+# Filter observations using `dplyr::filter`
+
+::: grid
+
+::: { .item50 border-right: dashed 3px black}
+
+.code-box[
+
+```r
+dat
+```
+
+```
+  # A tibble: 2,548 x 6
+     sp_code DE      LMA Nmass Aarea Rdmass
+     &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+   1 ADEFAS  E     282.   1.17 14.1      NA
+   2 ARBMEN  E     155.   1.24 11.2      NA
+   3 ARCTOM  E     141.   1.03 10.5      NA
+   4 ARTCAL  D      95.5 NA    NA        NA
+   5 BACPIL  E     107.   2.44 17.4      NA
+   6 CEACUN  E     229.   1.80 22.9      NA
+   7 CEAOLI  E     120.   2.13 17.8      NA
+   8 CERBET  E     138.   2.41 24.5      NA
+   9 CLELAS  D      74.1 NA    NA        NA
+  10 DIROCC  D      56.2  2.58  7.76     NA
+  # … with 2,538 more rows
+```
+
+```r
+dat$DE %&gt;% unique
+```
+
+```
+  [1] "E" "D" NA
+```
+]
+
+:::
+
+--
+
+::: item
+
+
+
+.code-box[
+
+]
+
+--
+
+::: {.pos .bg-white .font_small bottom: 55%; left: 50%; border: dashed 1px black; }
+
+Base R
+
+&lt;pre&gt;&lt;code&gt;
+dat[!is.na(dat$DE), ]
+&lt;/code&gt; &lt;/pre&gt;
+
+:::
+
+--
+
+::: {.pos .bg-white .font_small bottom: 25%; left: 50%; border: dashed 1px black; }
+
+Base R
+
+&lt;pre&gt;&lt;code&gt;
+subset(dat, !is.na(dat$DE))
+&lt;/code&gt; &lt;/pre&gt;
+
+:::
+
+---
+
+# Make new variables using `dplyr::mutate`
+
+::: font_smaller
+
+.item[
+
+```r
+dat %&gt;% head(3)
+```
+
+```
+  # A tibble: 3 x 6
+    sp_code DE      LMA Nmass Aarea Rdmass
+    &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+  1 ADEFAS  E      282.  1.17  14.1     NA
+  2 ARBMEN  E      155.  1.24  11.2     NA
+  3 ARCTOM  E      141.  1.03  10.5     NA
+```
+]
+
+--
+
+::: item
+
+
+
+
+
+
+
+:::
+
+--
+
+::: {.pos .bg-white .font_small bottom: 25%; left: 33%; border: dashed 1px black; }
+
+Base R
+
+&lt;pre&gt;&lt;code&gt;
+dat$Narea &lt;- dat$LMA * dat$Nmass
+&lt;/code&gt; &lt;/pre&gt;
+
+:::
+
+
+---
+
+
+# Select variables using `dplyr::select`
+
+::: font_smaller
+
+
+```r
+dat %&gt;% head(3)
+```
+
+```
+  # A tibble: 3 x 6
+    sp_code DE      LMA Nmass Aarea Rdmass
+    &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+  1 ADEFAS  E      282.  1.17  14.1     NA
+  2 ARBMEN  E      155.  1.24  11.2     NA
+  3 ARCTOM  E      141.  1.03  10.5     NA
+```
+--
+
+
+
+
+:::
+
+--
+
+::: {.pos .bg-white .font_small bottom: 75%; left: 33%; border: dashed 1px black; }
+
+&lt;pre&gt;&lt;code&gt;
+dat %&gt;%
+  dplyr::.bg-yellow[select](sp_code, DE, LMA, Aarea)
+&lt;/code&gt; &lt;/pre&gt;
+
+:::
+
+--
+
+::: {.pos .bg-white .font_small bottom: 25%; left: 33%; border: dashed 1px black; }
+
+Base R
+
+&lt;pre&gt;&lt;code&gt;
+dat[, -which(names(dat) == "Nmass" | names(dat) == "Rdmass")]
+&lt;/code&gt; &lt;/pre&gt;
+
+:::
+
+---
+
+class: font_smaller2
+
+# Goal 1: Data wrangling for visualization
+
+&lt;pre&gt;&lt;code&gt;
+dat %&gt;%
+  .bg-yellow[filter](!is.na(DE)) %&gt;%
+  .bg-yellow[mutate](Narea = LMA * Nmass) %&gt;%
+  .bg-yellow[mutate](Rdarea = LMA * Rdmass) %&gt;%
+  .bg-yellow[dplyr::select](-Nmass, -Rdmass) %&gt;%
+  .bg-yellow[pivot_longer](cols = LMA:Rdarea) %&gt;%
+  .bg-yellow[mutate](name = factor(name, levels = c("LMA", "Narea", "Aarea", "Rdarea"))) %&gt;%
+  ggplot(., aes(x = value, fill = DE)) +
+  geom_histogram(alpha = 0.6, aes(col = DE)) +
+  facet_wrap(~ name, scale = "free", nrow = 1) +
+  scale_x_log10() +
+  theme(strip.text = element_text(size = 16))
+&lt;/code&gt; &lt;/pre&gt;
+
+&lt;img src="figure/plot1-1.png" width="1080" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: font_smaller
+
+# Goal 2: using this data, make the table below
+
+
+```r
+glimpse(dat)
+```
+
+```
+  Rows: 2,548
+  Columns: 6
+  $ sp_code &lt;chr&gt; "ADEFAS", "ARBMEN", "ARCTOM", "ARTCAL", "BACPIL", "CEACUN", "CEAOLI", "CERBET", "CLELAS", "DIROCC", "ERICAL", "HETARB", "HOLDIS", "LEPCAL", "LONHIS", "LOTSCO", "MIMAUR", "PICMON", "PRUIIL", "QUEAGR", "QUEDUR", "RHACAL", "RHACRO", "RIBCAL", "RIBMAL", "SAMMEX", "SOLUMB", "TOXDIV", "CHETRY", "CHEOAH", "COMOCH", "METPOL", "MYOSAN", "MYRLES", "PELSP", "RHUSAN", "RUBHAW", "SOPCHR", "STYTAM", "VACCHA", "VACRET", "CARKAU", "DODVIS", "DUBSCA", "METPOL", "NEPSP", "DICLIN", "HETCON", "METPOL", "METPOL", "MYRSAN", "NEPSP", "PIPALB", "PSYSP", "BRUARG", "CIBGLA", "CLEMON", "FREARB", "ILEANO", "METPOL", "METPOL", "PEPSP", "COMERN", "COMOCH", "DICLIN", "HEDCEN", "MACMAR", "METPOL", "METPOL", "BETPAP", "PRUSER", "FRAAME", "QUERUB", "QUEALB", "CASDEN", "ULMAME", "ACERUB", "ACESAC", "ACEPEN", "ACASKU", "AEGCOS", "ALLCAM", "AMPTUX", "ASTMEX", "BACTRI", "BROALI", "BURSIM", "CAPBAD", "CASSYL", "CECOBT", "CHAALT", "CHAPIN", "CLABIF", "COCHON", "CORMEG", "CROSCH", "CUPDEN", "CYMBAI", "CYNRET…
+  $ DE      &lt;chr&gt; "E", "E", "E", "D", "E", "E", "E", "E", "D", "D", "E", "E", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "D", "D", "D", "D", "D", NA, "E", "E", NA, NA, NA, NA, NA, "E", NA, "E", "E", "E", NA, "E", "E", NA, NA, NA, NA, NA, NA, "E", NA, NA, "E", "E", NA, "E", NA, NA, NA, NA, NA, "E", "E", NA, "E", NA, NA, NA, "D", "D", "D", "D", "D", NA, "D", "D", "D", "D", "E", "D", "E", "E", "E", "E", "D", "D", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "D", "E", "D", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "E", "E", "D", "E", "E", "E", "E", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "D", "D", "E", "E", "E", "D", "E", "E", "D", "E", "D", "D", "D", "D", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", NA, NA, NA, NA, NA, NA, "D", NA, NA, "E", "E", NA, NA, "E", NA, "D", "E", "E", NA, "E", "E", "E", "E", NA, NA, NA, NA, NA, N…
+  $ LMA     &lt;dbl&gt; 281.838, 154.882, 141.254, 95.499, 107.152, 229.087, 120.226, 138.038, 74.131, 56.234, 177.828, 208.930, 77.625, 100.000, 107.152, 95.499, 112.202, 151.356, 151.356, 194.984, 208.930, 74.131, 125.893, 93.325, 74.131, 100.000, 79.433, 79.433, 89.125, 89.125, 79.433, 309.030, 147.911, 154.882, 66.069, 47.863, 36.308, 114.815, 204.174, 53.703, 169.824, 151.356, 144.544, 66.069, 194.984, 154.882, 83.176, 45.709, 141.254, 177.828, 45.709, 47.863, 61.660, 70.795, 72.444, 60.256, 32.359, 60.256, 95.499, 109.648, 204.174, 37.154, 81.283, 39.811, 109.648, 123.027, 223.872, 158.489, 363.078, 100.000, 56.234, 91.201, 109.648, 100.000, 57.544, 64.565, 104.713, 102.329, 58.884, 25.704, 42.658, 107.152, 85.114, 74.131, 54.954, 63.096, 85.114, 56.234, 63.096, 77.625, 41.687, 40.738, 107.152, 104.713, 85.114, 66.069, 114.815, 109.648, 128.825, 93.325, 83.176, 83.176, 48.978, 87.096, 131.826, 104.713, 45.709, 114.815, 100.000, 61.660, 51.286, 93.325, 97.724, 54.954, 100.000, 53.703, 1…
+  $ Nmass   &lt;dbl&gt; 1.172, 1.242, 1.033, NA, 2.443, 1.799, 2.128, 2.410, NA, 2.582, 1.667, 1.371, 1.941, 1.816, NA, 2.296, 1.156, NA, 2.046, NA, NA, 2.080, 2.128, 2.234, NA, 2.535, NA, 1.977, 1.191, 3.631, 1.291, 0.729, 1.291, 0.959, 1.300, 1.400, 2.951, 2.891, 0.820, 1.991, 0.889, 0.971, 1.400, 0.809, 0.859, 1.089, 1.089, 1.180, 0.859, 0.871, 1.050, 1.109, 1.600, 1.309, 1.340, 1.660, 2.851, 1.910, 1.239, 1.109, 0.769, 2.178, 0.991, 1.750, 0.959, 1.271, 0.690, 0.780, 0.590, 2.523, 2.679, 2.280, 2.547, 3.365, 2.588, 2.000, 1.714, 1.667, 2.541, 2.582, 1.552, 1.130, 1.426, 1.667, 1.538, 2.133, 1.514, 1.633, NA, 2.208, 1.202, 1.766, 2.099, NA, 2.133, 1.914, 1.503, 1.315, 1.180, 0.895, 1.687, 1.585, 2.780, 1.236, NA, 1.726, 1.738, 1.750, 1.600, 2.104, 2.118, NA, 2.477, 1.500, 1.514, 1.445, 1.690, 2.529, NA, 1.592, 2.123, 3.221, 2.301, 1.390, 1.671, 1.589, 1.069, 1.035, 1.791, 1.380, 1.091, 1.607, 1.871, 1.346, 0.753, 1.950, NA, 1.419, 2.244, 2.291, 2.168, 1.807, 1.687, 1.117, 2.831, 1.371, 1.…
+  $ Aarea   &lt;dbl&gt; 14.125, 11.220, 10.471, NA, 17.378, 22.909, 17.783, 24.547, NA, 7.762, 18.621, 12.303, 12.589, 12.589, NA, 21.380, 14.791, NA, 9.550, NA, NA, 10.715, 12.589, 10.965, NA, 19.055, NA, 13.183, 5.370, 14.791, 10.000, 4.467, 14.791, 7.244, NA, 16.596, NA, 7.762, NA, 5.129, NA, NA, NA, NA, 9.550, 1.445, NA, NA, NA, 10.965, NA, NA, 14.125, 1.950, 3.311, NA, 1.514, 2.344, NA, 3.311, 3.802, NA, NA, 1.288, NA, 3.715, NA, 4.571, 6.166, 19.498, 18.621, 9.120, 23.442, 22.909, 12.589, 12.882, 12.882, 6.918, 10.000, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 16.596, 12.589, 14.454, 13.490, 13.490, 8.511, 13.490, 15.136, 15.136, 17.378, 17.378, 19.055, 14.791, 8.913, 20.893, 12.882, 22.387, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+  $ Rdmass  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+```
+
+.center[
+## Summary stats
+]
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; DE &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; mean_LMA &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sd_LMA &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; mean_Aarea &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sd_Aarea &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 78.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 602 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 199.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 154.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1004 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 85.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 942 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+class: font_smaller2
+
+# Calculating summary stats using `dplyr::group_by`
+
+::: grid
+
+::: { .item50 border-right: dashed 3pt black; }
+
+- Calculate the mean of LMA values for each DE (group) 
+
+.code-box[
+
+]
+
+
+
+::: 
+
+::: item 
+
+
+
+--
+
+- Calculate the mean of LMA values and count the sample size for each DE (group) 
+
+.code-box[
+
+]
+
+
+
+:::
+
+:::
+
+---
+
+class: font_smaller
+
+# Goal 2: Data wrangling for summary stats
+
+
+
+
+
+---
+
+# Cheat sheet
+
+.center[
+&lt;img src="images/cheat_sheet.png" style="width:1100px"&gt;
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLanguage": "r",
+"highlightLines": true,
+"highlightSpans": false,
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false,
+"touch": true,
+"click": false
+},
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<script src="assets/pandoc.js"></script>
+<script src="assets/cssgrid.js"></script>
+<script src="libs/countdown-0.2.0/countdown.js"></script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'assets/mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+# Species coexitence
+
+
+
+
+.footnote[
+[1] Gause, G.F. (1932)
+]
+
+---
+
+- a12 x a21 < 1
+- K1 and K2 are not too different
+
+---
+
+
+.left-column[
+
+
+```{r, fig.width =4, fig.height=4.5}
+
+plot(t,
+   show.tip.label = FALSE,
+   direction = "rightwards",
+   main = "Community phylogeny")
+
+tiplabels(t$tip.label,
+          cex = 2,
+          frame = "none")
+
+
+
+dist_all
+```
+
+]
+
+.right-column[
+
+# Mean pairwise distance
+
+$MPD = \frac{1}{n} \Sigma^n_i \Sigma^n_j \delta_{i,j} \; i \neq j$
+
+Greatest possible mean pairwise node distance for a community of 4 taxa = 22 /4 = 3.66 (for A, B, E, F)
+
+]
+
+---
+
+# Neighborhood analysis
+
+.footnote[
+[1] Lasky, J. R., Uriarte, M., Boukili, V. K. & Chazdon, R. L. Trait-mediated assembly processes predict successional changes in community diversity of tropical forests. Proceedings of the National Academy of Sciences 111, 5616–5621 (2014).
+]
+---
+
+# Forest dynamics
+
+.footnote[
+[1] Falster, D. S., Brännström, Å., Westoby, M. & Dieckmann, U. Multitrait successional forest dynamics enable diverse competitive coexistence. Proceedings of the National Academy of Sciences 114, E2719–E2728 (2017).
+]
+
+---

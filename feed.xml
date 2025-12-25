@@ -1,0 +1,4609 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-12-25T02:19:44+00:00</updated><id>/feed.xml</id><title type="html">Masatoshi Katabuchi - Community and funcitonal ecology</title><subtitle>A personal website of Masatoshi Katabuchi (片渕正紀)</subtitle><entry><title type="html">contact</title><link href="/contact" rel="alternate" type="text/html" title="contact" /><published>2000-01-07T00:00:00+00:00</published><updated>2000-01-07T00:00:00+00:00</updated><id>/contact</id><content type="html" xml:base="/contact">&lt;p&gt;Xishuangbanna Tropical Botanical Garden&lt;/p&gt;
+
+&lt;p&gt;Chinese Academy of Sciences&lt;/p&gt;
+
+&lt;p&gt;Menglun, Mengla, Yunnan 666303 China&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;more-icons&quot;&gt;
+  &lt;a href=&quot;mailto:mattocci27@gmail.com&quot;&gt;&lt;i class=&quot;fa fa-envelope fa-5x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/mattocci27/&quot;&gt;&lt;i class=&quot;fa fa-github fa-5x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://scholar.google.com/citations?user=ZF7iS6UAAAAJ&amp;amp;hl=en&quot;&gt;&lt;i class=&quot;ai ai-google-scholar fa-5x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/span&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Xishuangbanna Tropical Botanical Garden</summary></entry><entry><title type="html">post</title><link href="/post" rel="alternate" type="text/html" title="post" /><published>2000-01-06T00:00:00+00:00</published><updated>2000-01-06T00:00:00+00:00</updated><id>/post</id><content type="html" xml:base="/post">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/assets/poilog_mix/poilog_mix.html&quot;&gt;A mixture of a Poisson-lognormal distribution&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/assets/poilog.html&quot;&gt;Fitting a Poisson-lognormal distribution in Stan (rstan)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">A mixture of a Poisson-lognormal distribution Fitting a Poisson-lognormal distribution in Stan (rstan)</summary></entry><entry><title type="html">experience</title><link href="/exp" rel="alternate" type="text/html" title="experience" /><published>2000-01-05T00:00:00+00:00</published><updated>2000-01-05T00:00:00+00:00</updated><id>/exp</id><content type="html" xml:base="/exp">&lt;h2&gt;Education&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Tohoku University Japan&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;2012 Ph.D Graduate School of Life Sciences&lt;/li&gt;
+  &lt;li&gt;2009 M.S. Graduate School of Life Sciences&lt;/li&gt;
+  &lt;li&gt;2007 B.S. Department of Biology&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Professional experience&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;2017-2019 Postdoctoral Research Associate, Michigan State University, USA&lt;/li&gt;
+  &lt;li&gt;2016-2017 Postdoctoral Research Associate, University of Florida, USA&lt;/li&gt;
+  &lt;li&gt;2014-2016 JSPS Postdoctoral Fellow for Research Abroad, University of Florida, USA&lt;/li&gt;
+  &lt;li&gt;2012-2014 Postdoctoral Research Fellow, Xishuangbanna Tropical Botanical Garden, Chinese Academy of Sciences, China&lt;/li&gt;
+  &lt;li&gt;2012 Postdoctoral Research Fellow, Tohoku University, Japan&lt;/li&gt;
+  &lt;li&gt;2010-2012 JSPS Research Fellow, DC2, Tohoku University, Japan&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Teaching experience&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;2025- Advanced Statistics Workshop, Xishuangbanna Tropical Botanical Garden, Chinese Academy of Sciences, China&lt;/li&gt;
+  &lt;li&gt;2019- Advanced Field course in Ecology and Conservation, Xishuangbanna Tropical Botanical Garden, Chinese Academy of Sciences, China&lt;/li&gt;
+  &lt;li&gt;2013 Experimental Design and Data Analysis, ATBC Asia-Pacific chapter, Banda Aceh, Indonesia&lt;/li&gt;
+  &lt;li&gt;2013 R and generalized linear models, Xishuangbanna Tropical Botanical Garden, Chinese Academy of Sciences, China&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Education Tohoku University Japan 2012 Ph.D Graduate School of Life Sciences 2009 M.S. Graduate School of Life Sciences 2007 B.S. Department of Biology</summary></entry><entry><title type="html">software</title><link href="/software" rel="alternate" type="text/html" title="software" /><published>2000-01-04T00:00:00+00:00</published><updated>2000-01-04T00:00:00+00:00</updated><id>/software</id><content type="html" xml:base="/software">&lt;div class=&quot;feature columns&quot;&gt;
+  &lt;div class=&quot;column2 left&quot;&gt;
+    &lt;h3&gt;calba (R package)&lt;/h3&gt;
+    &lt;p&gt;Fast &apos;C++&apos;-backed tools for computing conspecific and total neighborhood basal area in mapped forest plots. Includes unweighted and distance-weighted neighborhoods, multiple radii, decay kernels, and basic edge correction. Outputs are model-ready covariates for forest competition, growth, and survival models, following neighborhood modeling workflows commonly used in spatial ecology . &lt;a href=&quot;https://cran.r-project.org/web/packages/calba/index.html&quot;&gt; CRAN &lt;/a&gt; &lt;a href=&quot;https://github.com/mattocci27/calba&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;column2 right&quot;&gt;
+    &lt;span class=&quot;calba-img&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- end feature --&gt;&lt;/p&gt;
+
+&lt;div class=&quot;feature columns reverse&quot;&gt;
+  &lt;div class=&quot;column2 left&quot;&gt;
+    &lt;h3&gt;LeafArea (R package)&lt;/h3&gt;
+    &lt;p&gt;The package LeafArea allows one to conveniently run ImageJ software within R. The package provides a user-friendly, automated tool for measuring leaf area from digital images (&lt;a href=&quot;http://link.springer.com/article/10.1007/s11284-015-1307-x&quot;&gt; Katabuchi 2015&lt;/a&gt;). &lt;a href=&quot;https://cran.r-project.org/web/packages/LeafArea/index.html&quot;&gt; CRAN &lt;/a&gt; &lt;a href=&quot;https://github.com/mattocci27/LeafArea&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;column2 right&quot;&gt;
+    &lt;span class=&quot;leaf-img&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- end feature --&gt;&lt;/p&gt;
+
+&lt;div class=&quot;feature columns&quot;&gt;
+  &lt;div class=&quot;column2 left&quot;&gt;
+    &lt;h3&gt;mglmn (R package)&lt;/h3&gt;
+    &lt;p&gt;Tools for univariate and multivariate generalized linear models with model averaging and null model technique (used in &lt;a href=&quot;http://onlinelibrary.wiley.com/doi/10.1111/jbi.12520/full&quot;&gt; Nakamura et al. 2015&lt;/a&gt;).&lt;a href=&quot;https://cran.r-project.org/web/packages/mglmn/index.html&quot;&gt; CRAN &lt;/a&gt; &lt;a href=&quot;https://github.com/mattocci27/mglmn&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;column2 right&quot;&gt;
+    &lt;span class=&quot;mglmn-img&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- end feature --&gt;&lt;/p&gt;
+
+&lt;div class=&quot;feature columns reverse&quot;&gt;
+  &lt;div class=&quot;column2 left&quot;&gt;
+    &lt;h3&gt;ztpln (R package)&lt;/h3&gt;
+    &lt;p&gt;Functions for obtaining the density, random variates and maximum likelihood estimates of the Zero-truncated Poisson lognormal distribution and their mixture distribution. &lt;a href=&quot;https://cran.r-project.org/web/packages/ztpln/index.html&quot;&gt; CRAN &lt;/a&gt; &lt;a href=&quot;https://github.com/mattocci27/ztpln&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;column2 right&quot;&gt;
+    &lt;span class=&quot;ztpln-img&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;!-- end feature --&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">calba (R package) Fast &apos;C++&apos;-backed tools for computing conspecific and total neighborhood basal area in mapped forest plots. Includes unweighted and distance-weighted neighborhoods, multiple radii, decay kernels, and basic edge correction. Outputs are model-ready covariates for forest competition, growth, and survival models, following neighborhood modeling workflows commonly used in spatial ecology . CRAN Github</summary></entry><entry><title type="html">PUBLICATION</title><link href="/publication" rel="alternate" type="text/html" title="PUBLICATION" /><published>2000-01-03T00:00:00+00:00</published><updated>2000-01-03T00:00:00+00:00</updated><id>/publication</id><content type="html" xml:base="/publication">&lt;!-- &lt;p&gt;
+&lt;a href=&quot;https://scholar.google.com/citations?user=ZF7iS6UAAAAJ&amp;hl=en&quot;&gt;
+  &lt;i  class=&quot;ai ai-google-scholar fa-1x&quot;&gt;&lt;/i&gt;
+   Google Scholar
+&lt;/a&gt;
+&lt;/p&gt; --&gt;
+
+&lt;!-- ## -submitted/preprint- --&gt;
+
+&lt;!-- &lt;ol class=&quot;bibliography&quot;&gt;&lt;/ol&gt; --&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2026-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Leaf litter decomposition along an elevation gradient across two contrasting forest types: Implications for future climate change&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Kurokawa H,
+          
+        
+      
+    
+      
+        
+          
+          Arai T,
+          
+        
+      
+    
+      
+        
+          
+          Takayanagi S,
+          
+        
+      
+    
+      
+        
+          
+          Kobayashi M,
+          
+        
+      
+    
+      
+        
+          
+          Fukuzawa K,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Oguro M,
+          
+        
+      
+    
+      
+        
+          
+          Aiba M,
+          
+        
+      
+    
+      
+        
+          
+          Nagano S,
+          
+        
+      
+    
+      
+        
+          
+          Hikosaka K,
+          
+        
+      
+    
+      
+        
+          
+          Shibata H,
+          
+        
+      
+    
+      
+        
+          
+          Kaneko N,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Nakashizuka T.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecological Research&lt;/em&gt;
+  
+  
+    2026
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/1440-1703.70021&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/1440-1703.70021 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/1440-1703.70021&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2025-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Saturating Allometric Relationships Reveal How Wood Density Shapes Global Tree Architecture&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Nguyen TD,
+          
+        
+      
+    
+      
+        and
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+          Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Journal of Forestry Research&lt;/em&gt;
+  
+  
+    2025
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1007/s11676-025-01898-9&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1007/s11676-025-01898-9 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;https://github.com/mattocci27/&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Github &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1007/s11676-025-01898-9&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Decomposing Leaf Mass into Metabolic and Structural Components Explains Divergent Patterns of Trait Variation within and among Plant Species&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Kitajima K,
+          
+        
+      
+    
+      
+        
+          
+          Wright SJ,
+          
+        
+      
+    
+      
+        
+          
+          Van Bael SA,
+          
+        
+      
+    
+      
+        
+          
+          Osnas JLD,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Lichstein JW.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Oecologia&lt;/em&gt;
+  
+  
+    2025
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1007/s00442-025-05714-3&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1007/s00442-025-05714-3 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;https://github.com/mattocci27/LMAms&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Github &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1007/s00442-025-05714-3&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Hydraulic conductivity-induced systematic parameter variation in a widely used thermal dissipation sap-flow technique&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Chen Y,
+          
+        
+      
+    
+      
+        
+          
+          Maenpuen P,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Tor-ngern P,
+          
+        
+      
+    
+      
+        
+          
+          Palmroth S,
+          
+        
+      
+    
+      
+        
+          
+          Zhang S,
+          
+        
+      
+    
+      
+        
+          
+          Xiao Y,
+          
+        
+      
+    
+      
+        
+          
+          Liu M,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Oren R.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;New Phytologist&lt;/em&gt;
+  
+  
+    2025
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/nph.70488&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/nph.70488 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;https://github.com/mattocci27/sap-comparison&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Github &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/nph.70488&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Earth Observations for Deforestation&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Yang D,
+          
+        
+      
+    
+      
+        
+          
+          Tai X,
+          
+        
+      
+    
+      
+        
+          
+          He Y,
+          
+        
+      
+    
+      
+        
+          
+          Liu T,
+          
+        
+      
+    
+      
+        
+          
+          Li S,
+          
+        
+      
+    
+      
+        and
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+          Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;In Data-Driven Earth Observation for Disaster Management: From Theory to Practical Applications&lt;/em&gt;
+  
+  
+    2025
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2024-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Drought Tolerance and Species Abundance Mediate Dry Season Negative Density Dependence in a Tropical Forest&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Song X,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Chase JM,
+          
+        
+      
+    
+      
+        
+          
+          Johnson DJ,
+          
+        
+      
+    
+      
+        
+          
+          Zhang W,
+          
+        
+      
+    
+      
+        
+          
+          Deng X,
+          
+        
+      
+    
+      
+        
+          
+          Cao M,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Yang J.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecology&lt;/em&gt;
+  
+  
+    2024
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1002/ecy.4382&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1002/ecy.4382 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;https://github.com/mattocci27/trait-ndd&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Github &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1002/ecy.4382&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2023-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Interspecific and intraspecific adaptations of pteridophyte leaf traits in limestone and non-limestone forests of monsoon tropical regions of southwest China&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Phoutthavong K,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Nakamura A,
+          
+        
+      
+    
+      
+        
+          
+          Cheng X,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Cao M.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Journal of Plant Ecology&lt;/em&gt;
+  
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1093/jpe/rtad026&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1093/jpe/rtad026 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1093/jpe/rtad026&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Artificial Light at Night (ALAN) Influences Understory Plant Traits through Ecological Processes: A Two-Year Experiment in a Rubber Plantation in China&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Zhou C,
+          
+        
+      
+    
+      
+        
+          
+          Nakamura A,
+          
+        
+      
+    
+      
+        
+          
+          Song X,
+          
+        
+      
+    
+      
+        and
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+          Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecologies&lt;/em&gt;
+  
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.3390/ecologies4040046&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.3390/ecologies4040046 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.3390/ecologies4040046&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2022-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Sources and Consequences of Mismatch between Leaf Disc and Whole-Leaf Leaf Mass per Area (LMA)&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Maenpuen P,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Onoda Y,
+          
+        
+      
+    
+      
+        
+          
+          Zhou C,
+          
+        
+      
+    
+      
+        
+          
+          Zhang J,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Chen Y.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;American Journal of Botany&lt;/em&gt;
+  
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1002/ajb2.16038&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1002/ajb2.16038 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;https://github.com/mattocci27/leaf-disc&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Github &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1002/ajb2.16038&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2021-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Hydraulic Prediction of Drought-Induced Plant Dieback and Top-Kill Depends on Leaf Habit and Growth Form&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Chen Y,
+          
+        
+      
+    
+      
+        
+          
+          Choat B,
+          
+        
+      
+    
+      
+        
+          
+          Sterck F,
+          
+        
+      
+    
+      
+        
+          
+          Maenpuen P,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Zhang S,
+          
+        
+      
+    
+      
+        
+          
+          Tomlinson KW,
+          
+        
+      
+    
+      
+        
+          
+          Oliveira RS,
+          
+        
+      
+    
+      
+        
+          
+          Zhang Y,
+          
+        
+      
+    
+      
+        
+          
+          Shen J,
+          
+        
+      
+    
+      
+        
+          
+          Cao K,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Jansen S.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecology Letters&lt;/em&gt;
+  
+  
+    2021
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/ele.13856&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/ele.13856 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;https://github.com/mattocci27/drought-mortality&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Github &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/ele.13856&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Quantifying Vulnerability to Embolism in Tropical Trees and Lianas Using Five Methods: Can Discrepancies Be Explained by Xylem Structural Traits?&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Chen Y,
+          
+        
+      
+    
+      
+        
+          
+          Maenpuen P,
+          
+        
+      
+    
+      
+        
+          
+          Zhang Y,
+          
+        
+      
+    
+      
+        
+          
+          Barai K,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Gao H,
+          
+        
+      
+    
+      
+        
+          
+          Kaewkamol S,
+          
+        
+      
+    
+      
+        
+          
+          Tao L,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Zhang J.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;New Phytologist&lt;/em&gt;
+  
+  
+    2021
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/nph.16927&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/nph.16927 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/nph.16927&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2020-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Long-Term Shifts in the Functional Composition and Diversity of a Tropical Dry Forest: A 30-Yr Study&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Swenson NG,
+          
+        
+      
+    
+      
+        
+          
+          Hulshof CM,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        and
+        
+          
+            Enquist BJ.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecol. Monogr.&lt;/em&gt;
+  
+  
+    2020
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1002/ecm.1408&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1002/ecm.1408 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1002/ecm.1408&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2018-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Climate sensitive size-dependent survival in tropical trees&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Johnson DJ,
+          
+        
+      
+    
+      
+        
+          
+          Needham J,
+          
+        
+      
+    
+      
+        
+          
+          Xu C,
+          
+        
+      
+    
+      
+        
+          
+          Massoud EC,
+          
+        
+      
+    
+      
+        
+          
+          Davies SJ,
+          
+        
+      
+    
+      
+        
+          
+          Anderson-Teixeira KJ,
+          
+        
+      
+    
+      
+        
+          
+          Bunyavejchewin S,
+          
+        
+      
+    
+      
+        
+          
+          Chambers JQ,
+          
+        
+      
+    
+      
+        
+          
+          Chang-Yang C,
+          
+        
+      
+    
+      
+        
+          
+          Chiang J,
+          
+        
+      
+    
+      
+        
+          
+          Chuyong GB,
+          
+        
+      
+    
+      
+        
+          
+          Condit R,
+          
+        
+      
+    
+      
+        
+          
+          Cordell S,
+          
+        
+      
+    
+      
+        
+          
+          Fletcher C,
+          
+        
+      
+    
+      
+        
+          
+          Giardina CP,
+          
+        
+      
+    
+      
+        
+          
+          Giambelluca TW,
+          
+        
+      
+    
+      
+        
+          
+          Gunatilleke N,
+          
+        
+      
+    
+      
+        
+          
+          Gunatilleke S,
+          
+        
+      
+    
+      
+        
+          
+          Hsieh C,
+          
+        
+      
+    
+      
+        
+          
+          Hubbell S,
+          
+        
+      
+    
+      
+        
+          
+          Inman-Narahari F,
+          
+        
+      
+    
+      
+        
+          
+          Kassim AR,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Kenfack D,
+          
+        
+      
+    
+      
+        
+          
+          Litton CM,
+          
+        
+      
+    
+      
+        
+          
+          Lum S,
+          
+        
+      
+    
+      
+        
+          
+          Mohamad M,
+          
+        
+      
+    
+      
+        
+          
+          Nasardin M,
+          
+        
+      
+    
+      
+        
+          
+          Ong PS,
+          
+        
+      
+    
+      
+        
+          
+          Ostertag R,
+          
+        
+      
+    
+      
+        
+          
+          Sack L,
+          
+        
+      
+    
+      
+        
+          
+          Swenson NG,
+          
+        
+      
+    
+      
+        
+          
+          Sun IF,
+          
+        
+      
+    
+      
+        
+          
+          Tan S,
+          
+        
+      
+    
+      
+        
+          
+          Thomas DW,
+          
+        
+      
+    
+      
+        
+          
+          Thompson J,
+          
+        
+      
+    
+      
+        
+          
+          Umaña MN,
+          
+        
+      
+    
+      
+        
+          
+          Uriarte M,
+          
+        
+      
+    
+      
+        
+          
+          Valencia R,
+          
+        
+      
+    
+      
+        
+          
+          Yap S,
+          
+        
+      
+    
+      
+        
+          
+          Zimmerman J,
+          
+        
+      
+    
+      
+        
+          
+          McDowell NG,
+          
+        
+      
+    
+      
+        and
+        
+          
+            McMahon SM.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Nature Ecology &amp;amp; Evolution&lt;/em&gt;
+  
+  
+    2018
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1038/s41559-018-0626-z&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1038/s41559-018-0626-z &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1038/s41559-018-0626-z&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Spatial scale changes the relationship between beta diversity, species richness and latitude&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Sreekar R,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Nakamura A,
+          
+        
+      
+    
+      
+        
+          
+          Corlett RT,
+          
+        
+      
+    
+      
+        
+          
+          Slik JWF,
+          
+        
+      
+    
+      
+        
+          
+          Fletcher C,
+          
+        
+      
+    
+      
+        
+          
+          He F,
+          
+        
+      
+    
+      
+        
+          
+          Weiblen GD,
+          
+        
+      
+    
+      
+        
+          
+          Shen G,
+          
+        
+      
+    
+      
+        
+          
+          Xu H,
+          
+        
+      
+    
+      
+        
+          
+          Sun I,
+          
+        
+      
+    
+      
+        
+          
+          Cao K,
+          
+        
+      
+    
+      
+        
+          
+          Ma K,
+          
+        
+      
+    
+      
+        
+          
+          Chang L,
+          
+        
+      
+    
+      
+        
+          
+          Cao M,
+          
+        
+      
+    
+      
+        
+          
+          Jiang M,
+          
+        
+      
+    
+      
+        
+          
+          Gunatilleke IAUN,
+          
+        
+      
+    
+      
+        
+          
+          Ong P,
+          
+        
+      
+    
+      
+        
+          
+          Yap S,
+          
+        
+      
+    
+      
+        
+          
+          Gunatilleke CVS,
+          
+        
+      
+    
+      
+        
+          
+          Novotny V,
+          
+        
+      
+    
+      
+        
+          
+          Brockelman WY,
+          
+        
+      
+    
+      
+        
+          
+          Xiang W,
+          
+        
+      
+    
+      
+        
+          
+          Mi X,
+          
+        
+      
+    
+      
+        
+          
+          Li X,
+          
+        
+      
+    
+      
+        
+          
+          Wang X,
+          
+        
+      
+    
+      
+        
+          
+          Qiao X,
+          
+        
+      
+    
+      
+        
+          
+          Li Y,
+          
+        
+      
+    
+      
+        
+          
+          Tan S,
+          
+        
+      
+    
+      
+        
+          
+          Condit R,
+          
+        
+      
+    
+      
+        
+          
+          Harrison RD,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Koh LP.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Open Science&lt;/em&gt;
+  
+  
+    2018
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1098/rsos.181168&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1098/rsos.181168 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1098/rsos.181168&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Divergent drivers of leaf trait variation within species, among species, and among functional groups&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Osnas JLD,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Kitajima K,
+          
+        
+      
+    
+      
+        
+          
+          Wright SJ,
+          
+        
+      
+    
+      
+        
+          
+          Reich PB,
+          
+        
+      
+    
+      
+        
+          
+          Van Bael SA,
+          
+        
+      
+    
+      
+        
+          
+          Kraft NJB,
+          
+        
+      
+    
+      
+        
+          
+          Samaniego MJ,
+          
+        
+      
+    
+      
+        
+          
+          Pacala SW,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Lichstein JW.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Proceedings of the National Academy of Sciences&lt;/em&gt;
+  
+  
+    2018
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1073/pnas.1803989115&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1073/pnas.1803989115 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1073/pnas.1803989115&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2017-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Contrasting outcomes of species- and community-level analyses of the temporal consistency of functional composition&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Wright SJ,
+          
+        
+      
+    
+      
+        
+          
+          Swenson NG,
+          
+        
+      
+    
+      
+        
+          
+          Feeley KJ,
+          
+        
+      
+    
+      
+        
+          
+          Condit R,
+          
+        
+      
+    
+      
+        
+          
+          Hubbell SP,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Davies SJ.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecology&lt;/em&gt;
+  
+  
+    2017
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1002/ecy.1952&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1002/ecy.1952 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;https://github.com/mattocci27/TurnoverBCImain&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Github &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1002/ecy.1952&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Habitat filtering determines the functional niche occupancy of plant communities worldwide&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Li Y,
+          
+        
+      
+    
+      
+        
+          
+          Shipley B,
+          
+        
+      
+    
+      
+        
+          
+          Price JN,
+          
+        
+      
+    
+      
+        
+          
+          L. Dantas V,
+          
+        
+      
+    
+      
+        
+          
+          Tamme R,
+          
+        
+      
+    
+      
+        
+          
+          Westoby M,
+          
+        
+      
+    
+      
+        
+          
+          Siefert A,
+          
+        
+      
+    
+      
+        
+          
+          Schamp BS,
+          
+        
+      
+    
+      
+        
+          
+          Spasojevic MJ,
+          
+        
+      
+    
+      
+        
+          
+          Jung V,
+          
+        
+      
+    
+      
+        
+          
+          Laughlin DC,
+          
+        
+      
+    
+      
+        
+          
+          Richardson SJ,
+          
+        
+      
+    
+      
+        
+          
+          Bagousse-Pinguet YL,
+          
+        
+      
+    
+      
+        
+          
+          Schöb C,
+          
+        
+      
+    
+      
+        
+          
+          Gazol A,
+          
+        
+      
+    
+      
+        
+          
+          Prentice HC,
+          
+        
+      
+    
+      
+        
+          
+          Gross N,
+          
+        
+      
+    
+      
+        
+          
+          Overton J,
+          
+        
+      
+    
+      
+        
+          
+          Cianciaruso MV,
+          
+        
+      
+    
+      
+        
+          
+          Louault F,
+          
+        
+      
+    
+      
+        
+          
+          Kamiyama C,
+          
+        
+      
+    
+      
+        
+          
+          Nakashizuka T,
+          
+        
+      
+    
+      
+        
+          
+          Hikosaka K,
+          
+        
+      
+    
+      
+        
+          
+          Sasaki T,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Dussault CF,
+          
+        
+      
+    
+      
+        
+          
+          Gaucherand S,
+          
+        
+      
+    
+      
+        
+          
+          Chen N,
+          
+        
+      
+    
+      
+        
+          
+          Vandewalle M,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Batalha MA.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Journal of Ecology&lt;/em&gt;
+  
+  
+    2017
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/1365-2745.12802&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/1365-2745.12802 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/1365-2745.12802&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2016-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Identifying indicator species of elevation: Comparing the utility of woody plants, ants and moths for long-term monitoring&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Nakamura A,
+          
+        
+      
+    
+      
+        
+          
+          Burwell CJ,
+          
+        
+      
+    
+      
+        
+          
+          Ashton LA,
+          
+        
+      
+    
+      
+        
+          
+          Laidlaw MJ,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        and
+        
+          
+            Kitching RL.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Austral Ecology&lt;/em&gt;
+  
+  
+    2016
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/aec.12291&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/aec.12291 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/aec.12291&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Vertical stratification of moths across elevation and latitude&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Ashton LA,
+          
+        
+      
+    
+      
+        
+          
+          Nakamura A,
+          
+        
+      
+    
+      
+        
+          
+          Basset Y,
+          
+        
+      
+    
+      
+        
+          
+          Burwell CJ,
+          
+        
+      
+    
+      
+        
+          
+          Cao M,
+          
+        
+      
+    
+      
+        
+          
+          Eastwood R,
+          
+        
+      
+    
+      
+        
+          
+          Odell E,
+          
+        
+      
+    
+      
+        
+          
+          Oliveira EG,
+          
+        
+      
+    
+      
+        
+          
+          Hurley K,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Maunsell S,
+          
+        
+      
+    
+      
+        
+          
+          McBroom J,
+          
+        
+      
+    
+      
+        
+          
+          Schmidl J,
+          
+        
+      
+    
+      
+        
+          
+          Sun Z,
+          
+        
+      
+    
+      
+        
+          
+          Tang Y,
+          
+        
+      
+    
+      
+        
+          
+          Whitaker T,
+          
+        
+      
+    
+      
+        
+          
+          Laidlaw MJ,
+          
+        
+      
+    
+      
+        
+          
+          McDonald WJF,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Kitching RL.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Journal of Biogeography&lt;/em&gt;
+  
+  
+    2016
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/jbi.12616&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/jbi.12616 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/jbi.12616&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Trait-Based Approaches for Understanding Species Niche, Coexistence, and Functional Diversity in Subalpine Moorlands&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Hikosaka K,
+          
+        
+      
+    
+      
+        
+          
+          Sasaki T,
+          
+        
+      
+    
+      
+        
+          
+          Kamiyama C,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Oikawa S,
+          
+        
+      
+    
+      
+        
+          
+          Shimazaki M,
+          
+        
+      
+    
+      
+        
+          
+          Kimura H,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Nakashizuka T.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;In Structure and Function of Mountain Ecosystems in Japan&lt;/em&gt;
+  
+  
+    2016
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1007/978-4-431-55954-2_2&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1007/978-4-431-55954-2_2 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1007/978-4-431-55954-2_2&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2015-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Impact of Striped-Squirrel Nectar-Robbing Behaviour on Gender Fitness in Alpinia roxburghii Sweet (Zingiberaceae)&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Deng X,
+          
+        
+      
+    
+      
+        
+          
+          Mohandass D,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Hughes AC,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Roubik DW.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;PLOS ONE&lt;/em&gt;
+  
+  
+    2015
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1371/journal.pone.0144585&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1371/journal.pone.0144585 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1371/journal.pone.0144585&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;A global meta-analysis of the relative extent of intraspecific trait variation in plant communities&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Siefert A,
+          
+        
+      
+    
+      
+        
+          
+          Violle C,
+          
+        
+      
+    
+      
+        
+          
+          Chalmandrier L,
+          
+        
+      
+    
+      
+        
+          
+          Albert CH,
+          
+        
+      
+    
+      
+        
+          
+          Taudiere A,
+          
+        
+      
+    
+      
+        
+          
+          Fajardo A,
+          
+        
+      
+    
+      
+        
+          
+          Aarssen LW,
+          
+        
+      
+    
+      
+        
+          
+          Baraloto C,
+          
+        
+      
+    
+      
+        
+          
+          Carlucci MB,
+          
+        
+      
+    
+      
+        
+          
+          Cianciaruso MV,
+          
+        
+      
+    
+      
+        
+          
+          L. Dantas V,
+          
+        
+      
+    
+      
+        
+          
+          Bello F,
+          
+        
+      
+    
+      
+        
+          
+          Duarte LDS,
+          
+        
+      
+    
+      
+        
+          
+          Fonseca CR,
+          
+        
+      
+    
+      
+        
+          
+          Freschet GT,
+          
+        
+      
+    
+      
+        
+          
+          Gaucherand S,
+          
+        
+      
+    
+      
+        
+          
+          Gross N,
+          
+        
+      
+    
+      
+        
+          
+          Hikosaka K,
+          
+        
+      
+    
+      
+        
+          
+          Jackson B,
+          
+        
+      
+    
+      
+        
+          
+          Jung V,
+          
+        
+      
+    
+      
+        
+          
+          Kamiyama C,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Kembel SW,
+          
+        
+      
+    
+      
+        
+          
+          Kichenin E,
+          
+        
+      
+    
+      
+        
+          
+          Kraft NJB,
+          
+        
+      
+    
+      
+        
+          
+          Lagerström A,
+          
+        
+      
+    
+      
+        
+          
+          Bagousse-Pinguet YL,
+          
+        
+      
+    
+      
+        
+          
+          Li Y,
+          
+        
+      
+    
+      
+        
+          
+          Mason N,
+          
+        
+      
+    
+      
+        
+          
+          Messier J,
+          
+        
+      
+    
+      
+        
+          
+          Nakashizuka T,
+          
+        
+      
+    
+      
+        
+          
+          Overton JM,
+          
+        
+      
+    
+      
+        
+          
+          Peltzer DA,
+          
+        
+      
+    
+      
+        
+          
+          Pérez-Ramos IM,
+          
+        
+      
+    
+      
+        
+          
+          Pillar VD,
+          
+        
+      
+    
+      
+        
+          
+          Prentice HC,
+          
+        
+      
+    
+      
+        
+          
+          Richardson S,
+          
+        
+      
+    
+      
+        
+          
+          Sasaki T,
+          
+        
+      
+    
+      
+        
+          
+          Schamp BS,
+          
+        
+      
+    
+      
+        
+          
+          Schöb C,
+          
+        
+      
+    
+      
+        
+          
+          Shipley B,
+          
+        
+      
+    
+      
+        
+          
+          Sundqvist M,
+          
+        
+      
+    
+      
+        
+          
+          Sykes MT,
+          
+        
+      
+    
+      
+        
+          
+          Vandewalle M,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Wardle DA.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecology Letters&lt;/em&gt;
+  
+  
+    2015
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/ele.12508&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/ele.12508 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/ele.12508&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;LeafArea: an R package for rapid digital image analysis of leaf area&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+         &lt;span class=&quot;my_name&quot;&gt;
+          Katabuchi M.
+         &lt;/span&gt;
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecological Research&lt;/em&gt;
+  
+  
+    2015
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1007/s11284-015-1307-x&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1007/s11284-015-1307-x &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;https://github.com/mattocci27/LeafArea&quot;&gt;
+    &lt;i class=&quot;fa fa-github&quot;&gt;&lt;/i&gt; Github &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1007/s11284-015-1307-x&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;The role of human disturbance in island biogeography of arthropods and plants: an information theoretic approach&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Nakamura A,
+          
+        
+      
+    
+      
+        
+          
+          Burwell CJ,
+          
+        
+      
+    
+      
+        
+          
+          Lambkin CL,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          McDougall A,
+          
+        
+      
+    
+      
+        
+          
+          Raven RJ,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Neldner VJ.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Journal of Biogeography&lt;/em&gt;
+  
+  
+    2015
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/jbi.12520&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/jbi.12520 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/jbi.12520&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2014-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Leaf-trait responses to environmental gradients in moorland communities: contribution of intraspecific variation, species replacement and functional group replacement&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Kamiyama C,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Sasaki T,
+          
+        
+      
+    
+      
+        
+          
+          Shimazaki M,
+          
+        
+      
+    
+      
+        
+          
+          Nakashizuka T,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Hikosaka K.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecological Research&lt;/em&gt;
+  
+  
+    2014
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1007/s11284-014-1148-z&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1007/s11284-014-1148-z &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1007/s11284-014-1148-z&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Vulnerability of moorland plant communities to environmental change: consequences of realistic species loss on functional diversity&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Sasaki T,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Kamiyama C,
+          
+        
+      
+    
+      
+        
+          
+          Shimazaki M,
+          
+        
+      
+    
+      
+        
+          
+          Nakashizuka T,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Hikosaka K.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Journal of Applied Ecology&lt;/em&gt;
+  
+  
+    2014
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/1365-2664.12192&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/1365-2664.12192 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/1365-2664.12192&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2013-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Robustness of trait distribution metrics for community assembly studies under the uncertainties of assembly processes&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Aiba M,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Takafumi H,
+          
+        
+      
+    
+      
+        
+          
+          Matsuzaki SS,
+          
+        
+      
+    
+      
+        
+          
+          Sasaki T,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Hiura T.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecology&lt;/em&gt;
+  
+  
+    2013
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1890/13-0269.1&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1890/13-0269.1 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1890/13-0269.1&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Relative importance of habitat use, range expansion, and speciation in local species diversity ofAnolislizards in Cuba&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Cádiz A,
+          
+        
+      
+    
+      
+        
+          
+          Nagata N,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Dı́az LM,
+          
+        
+      
+    
+      
+        
+          
+          Echenique-Dı́az LM,
+          
+        
+      
+    
+      
+        
+          
+          Akashi HD,
+          
+        
+      
+    
+      
+        
+          
+          Makino T,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Kawata M.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Ecosphere&lt;/em&gt;
+  
+  
+    2013
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1890/es12-00383.1&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1890/es12-00383.1 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1890/es12-00383.1&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Relationships between functional traits and the ability of forest tree species to reestablish in secondary forest and enrichment plantations in the uplands of northern Thailand&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Asanok L,
+          
+        
+      
+    
+      
+        
+          
+          Marod D,
+          
+        
+      
+    
+      
+        
+          
+          Duengkae P,
+          
+        
+      
+    
+      
+        
+          
+          Pranmongkol U,
+          
+        
+      
+    
+      
+        
+          
+          Kurokawa H,
+          
+        
+      
+    
+      
+        
+          
+          Aiba M,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        and
+        
+          
+            Nakashizuka T.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Forest Ecology and Management&lt;/em&gt;
+  
+  
+    2013
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1016/j.foreco.2013.01.029&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1016/j.foreco.2013.01.029 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1016/j.foreco.2013.01.029&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Variations in Species Composition of Moorland Plant Communities Along Environmental Gradients Within a Subalpine Zone in Northern Japan&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Sasaki T,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Kamiyama C,
+          
+        
+      
+    
+      
+        
+          
+          Shimazaki M,
+          
+        
+      
+    
+      
+        
+          
+          Nakashizuka T,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Hikosaka K.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Wetlands&lt;/em&gt;
+  
+  
+    2013
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1007/s13157-013-0380-6&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1007/s13157-013-0380-6 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1007/s13157-013-0380-6&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2012-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Nestedness and niche-based species loss in moorland plant communities&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Sasaki T,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Kamiyama C,
+          
+        
+      
+    
+      
+        
+          
+          Shimazaki M,
+          
+        
+      
+    
+      
+        
+          
+          Nakashizuka T,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Hikosaka K.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Oikos&lt;/em&gt;
+  
+  
+    2012
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/j.1600-0706.2012.20152.x&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/j.1600-0706.2012.20152.x &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/j.1600-0706.2012.20152.x&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Diversity partitioning of moorland plant communities across hierarchical spatial scales&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+          
+          Sasaki T,
+          
+        
+      
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Kamiyama C,
+          
+        
+      
+    
+      
+        
+          
+          Shimazaki M,
+          
+        
+      
+    
+      
+        
+          
+          Nakashizuka T,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Hikosaka K.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Biodiversity and Conservation&lt;/em&gt;
+  
+  
+    2012
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1007/s10531-012-0265-7&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1007/s10531-012-0265-7 &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1007/s10531-012-0265-7&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Soil resource availability shapes community trait structure in a species-rich dipterocarp forest&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Kurokawa H,
+          
+        
+      
+    
+      
+        
+          
+          Davies SJ,
+          
+        
+      
+    
+      
+        
+          
+          Tan S,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Nakashizuka T.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Journal of Ecology&lt;/em&gt;
+  
+  
+    2012
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/j.1365-2745.2011.01937.x&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/j.1365-2745.2011.01937.x &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/j.1365-2745.2011.01937.x&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;h3 class=&quot;year&quot;&gt;&lt;font size=&quot;+3&quot;&gt;-2008-&lt;/font&gt;&lt;/h3&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Development of 17 microsatellite markers for &lt;em&gt;Ceratosolen constrictus&lt;/em&gt;, the pollinating fig wasp of &lt;em&gt;Ficus fistulosa&lt;/em&gt;&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Isagi Y,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Nakashizuka T.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Molecular Ecology Resources&lt;/em&gt;
+  
+  
+    2008
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/j.1755-0998.2007.02084.x&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/j.1755-0998.2007.02084.x &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/j.1755-0998.2007.02084.x&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+&lt;li&gt;&lt;div class=&quot;ref&quot;&gt;
+&lt;!-- Title --&gt;
+&lt;div class=&quot;title&quot;&gt;Documenting the Effect of Foundress Number in a Dioecious Fig, &lt;em&gt;Ficus fistulosa&lt;/em&gt;, in Malaysia&lt;/div&gt; 
+  &lt;!-- List of authors --&gt;
+  &lt;div class=&quot;author&quot;&gt;
+   
+   
+    
+      
+        
+         &lt;span class=&quot;my_name&quot;&gt;
+           Katabuchi M,
+         &lt;/span&gt;
+        
+      
+    
+      
+        
+          
+          Harrison RD,
+          
+        
+      
+    
+      
+        and
+        
+          
+            Nakashizuka T.
+          
+        
+      
+    
+  
+
+  &lt;/div&gt;
+
+  &lt;!-- Date/Journal --&gt;
+  &lt;div class=&quot;periodical&quot;&gt;
+  
+    &lt;em&gt;Biotropica&lt;/em&gt;
+  
+  
+    2008
+  
+  &lt;/div&gt;
+
+  &lt;!-- Links --&gt;
+  
+  &lt;span class=&quot;label&quot;&gt; 
+  &lt;a href=&quot;http://doi.org/10.1111/j.1744-7429.2008.00405.x&quot;&gt;
+    &lt;i class=&quot;ai ai-doi&quot;&gt;&lt;/i&gt; 10.1111/j.1744-7429.2008.00405.x &lt;/a&gt;
+  &lt;/span&gt;
+  
+
+  
+
+
+&lt;!-- &lt;span data-badge-popover=&quot;right&quot; data-badge-type=&quot;1&quot; data-doi=&quot;10.1111/j.1744-7429.2008.00405.x&quot;
+data-condensed=&quot;true&quot; data-hide-no-mentions=&quot;true&quot; class=&quot;altmetric-embed&quot;&gt;&lt;/span&gt; ---&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;&lt;/ol&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Research</title><link href="/research" rel="alternate" type="text/html" title="Research" /><published>2000-01-02T00:00:00+00:00</published><updated>2000-01-02T00:00:00+00:00</updated><id>/research</id><content type="html" xml:base="/research">&lt;h2&gt;Community assembly and dynamics of tropical trees&lt;/h2&gt;
+&lt;p&gt;How tropical forest tree communities are assembled from species pool? Numerous hypotheses have been proposed to explain patterns of diversity in tropical tree communities. For example, we showed that &lt;a href=&quot;http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2745.2011.01937.x/full&quot;&gt;soil fertility works as a strong habitat filter&lt;/a&gt; for a tropical forest tree community. A long-term goal of this work is to create a more quantitative approach for understanding community assembly rules and for predicting future biodiversity.&lt;/p&gt;
+
+&lt;p&gt;The composition of natural communities is changing as species respond to multiple anthropogenic drivers. We are contrasting multiple-level (i.e., species, community…) analyses of change in the functional composition in tropical forests to gain mechanistic understanding of forest responses.&lt;/p&gt;
+
+&lt;h2&gt;Leaf functional diversity&lt;/h2&gt;
+&lt;p&gt;Across the global flora, photosynthetic and metabolic rates depend more strongly on leaf area than leaf mass. In contrast, intraspecific variation in these rates is strongly mass-dependent. This inconstancy poses a fundamental question for ecophysiologists, as well as challenge for accurately representing leaf function in dynamic global vegetation models (DVGMs).&lt;/p&gt;
+
+&lt;p&gt;We are developing &lt;a href=&quot;http://biorxiv.org/content/early/2017/03/22/116855&quot;&gt;new quantitative framework&lt;/a&gt; to understand causes and consequences of leaf trait variation.&lt;/p&gt;</content><author><name></name></author><summary type="html">Community assembly and dynamics of tropical trees How tropical forest tree communities are assembled from species pool? Numerous hypotheses have been proposed to explain patterns of diversity in tropical tree communities. For example, we showed that soil fertility works as a strong habitat filter for a tropical forest tree community. A long-term goal of this work is to create a more quantitative approach for understanding community assembly rules and for predicting future biodiversity.</summary></entry><entry><title type="html">home</title><link href="/intro" rel="alternate" type="text/html" title="home" /><published>2000-01-01T00:00:00+00:00</published><updated>2000-01-01T00:00:00+00:00</updated><id>/intro</id><content type="html" xml:base="/intro">&lt;style&gt;
+.moge {
+  background: url(../img/Lake.png);
+}
+
+.more-icons .fa-bluesky {
+  font-size: 4.5em;
+}
+
+&lt;/style&gt;
+
+&lt;h1&gt;&lt;strong&gt;Masatoshi Katabuchi&lt;/strong&gt; (片渕正紀)&lt;/h1&gt;
+
+&lt;p&gt;I am an Associate Professor at &lt;a href=&quot;http://english.xtbg.cas.cn/&quot;&gt;Xishuangbanna Tropical Botanical Garden&lt;/a&gt; (XTBG), &lt;a href=&quot;http://english.cas.cn/&quot;&gt;Chinese Academy of Sciences&lt;/a&gt; (CAS). My research focuses on using functional traits and statistical and simulation models to better understand forest diversity, including how they respond to climate change.&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;span class=&quot;more-icons&quot;&gt;
+  &lt;a class=&quot;icon-bsky&quot; href=&quot;https://bsky.app/profile/mattocci.bsky.social&quot;&gt;
+    &lt;i class=&quot;fa-brands fa-bluesky fa-5x&quot;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/mattocci&quot;&gt;&lt;i class=&quot;fa fa-twitter fa-5x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/mattocci27/&quot;&gt;&lt;i class=&quot;fa fa-github fa-5x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;a href=&quot;mailto:mattocci27@gmail.com&quot;&gt;&lt;i class=&quot;fa fa-envelope fa-5x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://scholar.google.com/citations?user=ZF7iS6UAAAAJ&amp;amp;hl=en&quot;&gt;&lt;i class=&quot;ai ai-google-scholar fa-5x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://mattocci27.github.io/my-cv/Katabuchi_CV.pdf&quot;&gt;&lt;i class=&quot;ai ai-cv fa-5x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2&gt;News&lt;/h2&gt;
+
+&lt;p&gt;December 2025&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;New &lt;a href=&quot;https://doi.org/10.1016/B978-0-443-33803-8.00003-2&quot;&gt;book chapter&lt;/a&gt;, led by &lt;a href=&quot;https://geog.ufl.edu/directory/dr-di-yang/&quot;&gt;Di Yang&lt;/a&gt;, on deforestation assessment using Earth observation technologies is now online.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom: 30px;&quot;&gt;
+  &lt;img src=&quot;img/eo_cover.png&quot; style=&quot;height: 140px; object-fit: cover; border-radius: 4px;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;New &lt;a href=&quot;https://cran.r-project.org/web/packages/calba/index.html&quot;&gt;R package&lt;/a&gt;, for computing conspecific and total neighborhood basal area in mapped forest plots, is out. &lt;a href=&quot;https://github.com/mattocci27/calba&quot;&gt;GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom: 30px;&quot;&gt;
+  &lt;img src=&quot;img/calba.png&quot; style=&quot;height: 140px; object-fit: cover; border-radius: 4px;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;New &lt;a href=&quot;https://esj-journals.onlinelibrary.wiley.com/doi/10.1111/1440-1703.12414&quot;&gt;paper&lt;/a&gt;, led by &lt;a href=&quot;https://kdb.iimc.kyoto-u.ac.jp/profile/en.b901ce77850360da.html&quot;&gt;Hiroko Kurokawa&lt;/a&gt;, examining leaf litter decomposition along elevation gradients across contrasting forest types is now online in &lt;em&gt;Ecological Research&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;November 2025&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Taught a session on community ecology in the AFEC-X course, followed by field-based training in the &lt;a href=&quot;https://forestgeo.si.edu/sites/asia/xishuangbanna&quot;&gt;Xishuangbanna 20 ha plot&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; margin-bottom: 30px;&quot;&gt;
+  &lt;img src=&quot;img/afec2025_class.jpg&quot; style=&quot;height: 280px; object-fit: cover; border-radius: 4px;&quot; /&gt;
+  &lt;img src=&quot;img/afec2025_forest.jpg&quot; style=&quot;height: 280px; object-fit: cover; border-radius: 4px;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;July 2025&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;New &lt;a href=&quot;https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.70488&quot;&gt;paper&lt;/a&gt; showing how hydraulic conductivity drives systematic parameter variation in thermal-dissipation sap-flow techniques is now online in &lt;em&gt;New Phytologist&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;June 2025&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Taught a short module on Bayesian statistical modeling in &lt;a href=&quot;https://mp.weixin.qq.com/s/4hihHhv6JFnZZ4QVlXUnKQ&quot;&gt;The 8th Advanced Statistics Workshop at XTBG&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;margin-bottom: 30px;&quot;&gt;
+  &lt;img src=&quot;img/asat2025_group.jpg&quot; style=&quot;height: 280px; object-fit: cover; border-radius: 4px;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;April 2025&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;New &lt;a href=&quot;https://link.springer.com/article/10.1007/s00442-025-05714-3&quot;&gt;paper&lt;/a&gt; on LMA components is now online in &lt;em&gt;Oecologia&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;New &lt;a href=&quot;https://link.springer.com/article/10.1007/s11676-025-01898-9&quot;&gt;paper&lt;/a&gt;, led by graduate student Thi Duyen Nguyen, revealing how wood density shapes global tree architecture is now online in &lt;em&gt;Journal of Forestry Research&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;November 2024&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Taught a session on community ecology in the AFEC-X course, followed by field-based training in the &lt;a href=&quot;https://forestgeo.si.edu/sites/asia/Ailaoshan&quot;&gt;Ailaoshan 20 ha plot&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div align=&quot;center&quot; style=&quot;display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; margin-bottom: 30px;&quot;&gt;
+  &lt;img src=&quot;img/afec2024_group.jpeg&quot; style=&quot;height: 280px; object-fit: cover; border-radius: 4px;&quot; /&gt;
+  &lt;img src=&quot;img/afec2024_forest.jpeg&quot; style=&quot;height: 280px; object-fit: cover; border-radius: 4px;&quot; /&gt;
+&lt;/div&gt;
+
+&lt;p&gt;May 2024&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;New &lt;a href=&quot;https://doi.org/10.1002/ecy.4382&quot;&gt;paper&lt;/a&gt; on how drought tolerance and species abundance mediate dry-season negative density dependence in a tropical forest is now online in &lt;em&gt;Ecology&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;November 2023&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;New &lt;a href=&quot;https://doi.org/10.3390/ecologies4040046&quot;&gt;paper&lt;/a&gt;, led by graduate student Cong Zhou, showing how artificial light at night (ALAN) influences understory plant traits in a rubber plantation is now online in &lt;em&gt;Ecologies&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;July 2023&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;New &lt;a href=&quot;https://academic.oup.com/jpe/article/16/6/o/7222985&quot;&gt;paper&lt;/a&gt;, led by graduate student Kittisack Phoutthavong, on
+fern leaf-trait adaptations across limestone and non-limestone forests is now online in &lt;em&gt;Journal of Plant Ecology&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html"></summary></entry></feed>
