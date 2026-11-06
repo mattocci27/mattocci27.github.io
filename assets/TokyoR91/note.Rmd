@@ -1,0 +1,87 @@
+
+
+
+```{r, eval=FALSE, echo=FALSE}
+# Non-tidy data 
+dat %>%
+  group_by(DE) %>%
+  summarize(Nmass= mean(Nmass, na.rm = TRUE) %>% round(1),
+            LMA = mean(LMA, na.rm = TRUE) %>% round(1),
+            Aarea = mean(Aarea, na.rm = TRUE) %>% round(1)) %>%
+  rename(Trait_Nmass = Nmass) %>%
+  rename(Trait_LMA = LMA) %>%
+  rename(Trait_Aarea = Aarea) %>%
+  mutate(DE = case_when(
+  DE == "D" ~ "Deciduous",
+  DE == "E" ~ "Evergreen",
+  is.na(DE) ~ "Unknown",
+                        )) %>%
+  rename(`Leaf habit` = DE) %>%
+  kbl %>%
+  kable_styling()
+```
+---
+
+```{r, filter-base}
+dat3 <- dat[!is.na(dat$DE), ]
+dat3$DE %>% unique
+```
+
+```{r, filter-subset}
+dat4 <- subset(dat, !is.na(dat$DE))
+dat4$DE %>% unique
+```
+
+```{r, mutate-base, echo = FALSE}
+dat$Narea <- dat$LMA * dat$Nmass
+dat
+```
+
+```{r, select-base}
+dat[, -which(names(dat) == "Nmass" | names(dat) == "Rdmass")]
+```
+
+--
+
+::: {.pos .bg-white .font_small bottom: 600px; left: 25%; border: dashed 1px black; }
+
+<pre><code>
+dat[, -which(names(dat) == "Nmass" | names(dat) == "Rdmass")]
+</code> </pre>
+
+:::
+
+```{r, melt}
+reshape2::melt(dat) %>% head
+```
+
+  font-family: 'Cousine', mono;
+
+---
+
+# Basic functions in `dplyr` and `tidy`
+
+- filter(): subset observations (reduces raw)
+- arrange(): later
+- select(): select and rename variables (reduces column)
+- mutate(): create new or overwrite existing variables
+- rename(): (just) rename variables
+- group_by(): group operations
+  - summarise(): reduce data to a summary statistics
+- pivot_longer(): make data longer
+  - functions for row (observation) and col (variable)
+
+
+```{r plot1, echo = FALSE, fig.width = 15, fig.height = 3.5}
+```
+
+```{r, echo = FALSE, eval = flair_on}
+decorate("plot1") %>%
+  flair("filter") %>%
+  flair("mutate") %>%
+  flair("dplyr::select") %>%
+  flair("pivot_longer") 
+```
+
+<img src="images/xtbg.png" style="width:75px">
+<img src="images/cas.png" style="width:75px">

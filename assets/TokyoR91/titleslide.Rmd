@@ -1,0 +1,38 @@
+count: false
+background-image: url(`r rmarkdown::metadata$titleslide_bgimg`)
+background-size: cover
+class: hide-slide-number title-slide
+
+
+<div class="grid-row" style="grid: 1fr / 2fr;">
+
+
+.item.center[
+
+# <span style="text-shadow: 2px 2px 30px white;">`r rmarkdown::metadata$title`</span>
+
+<!-- ## <span style="color:`r rmarkdown::metadata$color_theme`;text-shadow: 2px 2px 30px black;">`r knitr::asis_output(rmarkdown::metadata$subtitle)`</span> -->
+
+]
+
+
+.center.shade_black.animated.bounceInUp.slower[
+
+`r rmarkdown::metadata$author`
+
+Xishuangbanna Tropical Botanical Garden, 
+
+Chinese Academy of Sciences
+
+<img src="images/xtbg.png" style="width:75px"><br>
+
+`r anicon::faa("envelope", animate="float")`  `r rmarkdown::metadata$email`
+`r anicon::faa("twitter", animate="float", speed="fast")` `r rmarkdown::metadata$twitter`
+
+.bottom_abs.width100.bg-black[
+`r rmarkdown::metadata$date`
+]
+
+]
+
+</div>
