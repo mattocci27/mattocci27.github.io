@@ -4,7 +4,7 @@ Modified from [t413.com/SinglePaged](https://github.com/t413/SinglePaged).
 
 
 ## Requirements
-- Ruby
+- Ruby 3.3 (the latest patch release)
 - Bundler
 - gem packages in Gemfile
 
@@ -12,6 +12,17 @@ Modified from [t413.com/SinglePaged](https://github.com/t413/SinglePaged).
 % gem install bundler
 % bundle install
 ```
+
+## Checks
+
+```shell
+bundle exec bundler-audit check --update
+bundle exec jekyll build
+bundle exec jekyll doctor
+```
+
+Pull requests run these checks without publishing the site. Publishing only runs
+after a push to `source`.
 
 ## Usage
 

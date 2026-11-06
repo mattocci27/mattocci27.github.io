@@ -1,9 +1,15 @@
-name: Publish Site
+name: Check and Publish Site
 
 on:
+  pull_request:
+    branches:
+      - source
   push:
     branches:
       - source
+
+permissions:
+  contents: read
 
 jobs:
   build-and-publish:
@@ -12,10 +18,33 @@ jobs:
     steps:
       # Checkout the source code
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      # Install Ruby and Bundler
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: bundle install
+
+      - name: Audit Dependencies
+        run: bundle exec bundler-audit check --update
+
+      # Build the Jekyll site
+      - name: Build Site
+        run: bundle exec jekyll build
+
+      - name: Check Site Configuration
+        run: bundle exec jekyll doctor
 
       # Set up SSH keys for GitHub access
       - name: Set up Deploy Key
+        if: github.event_name == 'push' && github.ref == 'refs/heads/source'
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_ed25519
@@ -25,23 +54,9 @@ jobs:
             IdentityFile ~/.ssh/id_ed25519
             StrictHostKeyChecking no" > ~/.ssh/config
 
-      # Install Ruby and Bundler
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0.2
-          bundler-cache: true
-
-      # Install dependencies
-      - name: Install Dependencies
-        run: bundle install
-
-      # Build the Jekyll site
-      - name: Build Site
-        run: bundle exec jekyll build
-
       # Push the generated site to the master branch
       - name: Publish Site to Master
+        if: github.event_name == 'push' && github.ref == 'refs/heads/source'
         run: |
           cd _site
           git init
