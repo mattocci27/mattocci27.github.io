@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby "~> 3.3.0"
+
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
 # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
@@ -8,7 +10,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", ">= 4.0.0"
+gem "jekyll", "~> 4.4"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.5"
@@ -23,7 +25,7 @@ gem "rb-fsevent", "~> 0.10.3"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.13.0"
-  gem "jekyll-scholar" , "~> 6.5.0"
+  gem "jekyll-scholar" , "~> 7.1.3"
 
 end
 
@@ -34,3 +36,7 @@ gem "unicode"
 
 #Upgrade kramdown to version 2.3.0 or later. For example:
 gem "kramdown", ">= 2.3.0"
+
+group :development do
+  gem "bundler-audit", "~> 0.9.3", require: false
+end
